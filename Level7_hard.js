@@ -3,6 +3,7 @@ Game.Level7_hard = function(game){
 };
 
 var counter = 0;
+var countera = 0;
 var localStorageName = "drahtscore";
 var highscore;
 var sprite;
@@ -46,28 +47,25 @@ Game.Level7_hard.prototype = {
         currentTimeText.angle = 90;
         
         //add hot wire
-        draht1 = game.add.sprite(this.game.width / 2 - 88.5, 0, 'draht7');    
-        draht2 = game.add.sprite(this.game.width / 2 - 88.5, 200, 'draht3');
-        draht3 = game.add.sprite(this.game.width / 2 - 279, 200, 'draht8');
-        draht4 = game.add.sprite(this.game.width / 2 - 338, 200, 'draht1');
-        draht5 = game.add.sprite(this.game.width / 2 - 338, 259, 'draht5');
-        draht6 = game.add.sprite(this.game.width / 2 - 338, 659, 'draht3');
-        draht7 = game.add.sprite(this.game.width / 2 - 538, 659, 'draht8');
-        draht8 = game.add.sprite(this.game.width / 2 - 597, 659, 'draht1');
-        draht9 = game.add.sprite(this.game.width / 2 - 597, 718, 'draht5');
-        draht10 = game.add.sprite(this.game.width / 2 - 597, 1118, 'draht7');
-        draht11 = game.add.sprite(this.game.width / 2 - 597, 1318, 'draht4');
-        draht12 = game.add.sprite(this.game.width / 2 - 544, 1318, 'draht6');
-        draht13 = game.add.sprite(this.game.width / 2 - 144, 1318, 'draht6');
-        draht14 = game.add.sprite(this.game.width / 2 + 256, 1318, 'draht2');
-        draht15 = game.add.sprite(this.game.width / 2 + 256, 1377, 'draht7');
-        draht16 = game.add.sprite(this.game.width / 2 + 256, 1577, 'draht3');
-        draht17 = game.add.sprite(this.game.width / 2 + 56, 1577, 'draht8');
-        draht18 = game.add.sprite(this.game.width / 2 - 3, 1577, 'draht1');
-        draht19 = game.add.sprite(this.game.width / 2 - 3, 1636, 'draht7');
-        draht20 = game.add.sprite(this.game.width / 2 - 3, 1661, 'draht7');
-        ziel = game.add.sprite(this.game.width / 2 - 3, this.game.height - 59, 'ziel');
-		
+        draht1 = game.add.sprite(this.game.width / 2 -88.5, 0, 'draht5');    
+        draht2 = game.add.sprite(this.game.width / 2 -88.5 , 400, 'draht4');
+        draht3 = game.add.sprite(this.game.width / 2 - 30, 400, 'draht8');
+        draht4 = game.add.sprite(this.game.width / 2 + 29, 400, 'draht8');
+        draht5 = game.add.sprite(this.game.width / 2 + 229, 400, 'draht3');
+        draht6 = game.add.sprite(this.game.width / 2 + 229.5, 200, 'draht7');
+        draht7 = game.add.sprite(this.game.width / 2 + 229.5, 141, 'draht2');
+        draht8 = game.add.sprite(this.game.width / 2 - 170, 141, 'draht6');
+        draht9 = game.add.sprite(this.game.width / 2 - 229, 141, 'draht1');
+        draht10 = game.add.sprite(this.game.width / 2 - 229, 200, 'draht5');
+        draht11 = game.add.sprite(this.game.width / 2 - 229, 600, 'draht5');
+        draht12 = game.add.sprite(this.game.width / 2 - 229, 918, 'draht5');
+        draht13 = game.add.sprite(this.game.width / 2 - 229, 1318, 'draht4');
+        draht14 = game.add.sprite(this.game.width / 2 - 170, 1318, 'draht8');
+        draht15 = game.add.sprite(this.game.width / 2 + 30, 1318, 'draht2');
+        draht16 = game.add.sprite(this.game.width / 2 + 30, 1377, 'draht5');
+        draht17 = game.add.sprite(this.game.width / 2 + 30, this.game.height - 259, 'draht7');
+        ziel = game.add.sprite(this.game.width / 2 + 30, this.game.height - 59, 'ziel');
+
         //scale mode - central
         //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 
@@ -115,6 +113,7 @@ Game.Level7_hard.prototype = {
 		}
 		else if (this.checkOverlap(sprite, draht2))
 		{
+           countera = 1;
             //text.text = 'Drag the sprites. Overlapping: true';
 		}
 		else if (this.checkOverlap(sprite, draht3))
@@ -134,12 +133,23 @@ Game.Level7_hard.prototype = {
             //text.text = 'Drag the sprites. Overlapping: true';
         }
         else if (this.checkOverlap(sprite, draht7))
+        {
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht7))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
         }
         else if (this.checkOverlap(sprite, draht8))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
+            if(countera == 1){
+            }
+            else{
+                this.wrongwayMessageBox(1512, 1050)
+                sprite.inputEnabled = false;
+
+            }
         }
         else if (this.checkOverlap(sprite, draht9))
 		{
@@ -172,18 +182,6 @@ Game.Level7_hard.prototype = {
             //text.text = 'Drag the sprites. Overlapping: true';
         }
         else if (this.checkOverlap(sprite, draht17))
-		{
-            //text.text = 'Drag the sprites. Overlapping: true';
-        }
-        else if (this.checkOverlap(sprite, draht18))
-		{
-            //text.text = 'Drag the sprites. Overlapping: true';
-        }
-        else if (this.checkOverlap(sprite, draht19))
-		{
-            //text.text = 'Drag the sprites. Overlapping: true';
-        }
-        else if (this.checkOverlap(sprite, draht20))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
         }
@@ -404,6 +402,68 @@ failMessageBox(w = 1050, h = 1512) {
         if(t==1) {
             failsound.play();
         }
+},
+
+wrongwayMessageBox(w = 1050, h = 1512) {
+    //destroy messagebox if already exists
+    if (this.msgBox) {
+        this.msgBox.destroy();
+    }
+    //group for all boxitmes
+    var msgBox = this.game.add.group();
+    var back = this.game.add.sprite(0, 0, "gameoverBackground");
+    var upperButton = this.game.add.sprite(0, 0, "buttonAgain");
+    var lowerButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+    
+    //make a text field
+    var style = {font:"70px Arial", align:"center"};
+    var style2 = {font:"70px Arial", align:"center", fill:"#ff0000", fontWeight:"bold"};
+
+    var doneText1 = this.game.add.text(0, 0, "Du bist den falschen Weg gegangen!", style);
+
+    doneText1.wordWrap = true;
+    doneText1.wordWrapWidth = w * .9;
+
+    //set the width and height passed in the parameters
+    back.width = w;
+    back.height = h;
+
+    //add elements to group
+    msgBox.add(back);
+    msgBox.add(upperButton);
+    msgBox.add(lowerButton);
+    msgBox.add(doneText1);
+    msgBox.angle = 90;
+    
+    //set the button in the center
+    upperButton.x = back.width / 2 - upperButton.width / 2;
+    upperButton.y = back.height - upperButton.height - 400;
+
+    lowerButton.x = back.width / 2 - upperButton.width / 2;
+    lowerButton.y = back.height - upperButton.height-100;
+
+    //enable button for input
+    upperButton.inputEnabled = true;
+    lowerButton.inputEnabled = true;
+
+    //add a listener to destroy box
+    upperButton.events.onInputDown.add(this.loadThisLevelEvent, this);
+    lowerButton.events.onInputDown.add(this.backToSelectModeEvent, this);
+
+    //set the message box in the center
+    msgBox.x = this.game.width / 2 + msgBox.height/2;
+    msgBox.y = this.game.height / 2 - msgBox.width / 2;
+    
+    //text position
+    doneText1.x = back.width / 2 - doneText1.width / 2;
+    doneText1.y = back.height / 2 - doneText1.height / 2 - 200;
+
+    this.game.time.events.stop();
+    this.msgBox = msgBox;
+
+    if(t==1) {
+        failsound.play();
+    }
 },
 
 	unpauseEvent() {
