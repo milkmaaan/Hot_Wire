@@ -19,6 +19,7 @@ Game.Anleitung.prototype = {
 
         //add background
         game.add.tileSprite(0, 0, 1216, 1920, 'background_anleitung');
+        game.add.tileSprite(0, 0, 927, 1920, 'anleitungneu');
 
         //add clicksound
 		clicksound = this.game.add.audio('clicksound');

@@ -13,7 +13,7 @@ Game.Preloader.prototype = {
 		this.load.image("background_anleitung", "assets/backgrounds/background_anleitung.png");
 		this.load.image("background_highscore", "assets/backgrounds/background_highscore.png");
 		this.load.image("background_clear", "assets/backgrounds/background_clear.png");
-		//this.load.image("background_clear", "assets/backgrounds/background_clear.png");
+		this.load.image("anleitungneu", "assets/backgrounds/anleitungneu.png");
 
 
 		//trophies
@@ -89,9 +89,9 @@ Game.Preloader.prototype = {
 
 	create:function(){
 		//this.state.start('MainMenu');
-		//this.state.start('Level2_easy');
+		this.state.start('Level1_easy');
 		//this.state.start('Level5_easy');
-		this.state.start('Level2_hard');
+		//this.state.start('Level2_hard');
 		//this.state.start('Level5_hard');
 		
 	}
