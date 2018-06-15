@@ -20,7 +20,7 @@ Game.Preloader.prototype = {
 		this.load.image("trophygold", "assets/trophies/trophy_gold.png");
 		this.load.image("trophysilber", "assets/trophies/trophy_silber.png");
 		this.load.image("trophybronze", "assets/trophies/trophy_bronze.png");
-		this.load.image("trophytimeeasy1", "assets/trophies/easylevel1.png");
+		this.load.image("trophytimehard1", "assets/trophies/hardlevel1.png");
 
 		//trophyboard
 		this.load.image("trophyschrank", "assets/trophies/trophyschrank.png");
@@ -88,11 +88,11 @@ Game.Preloader.prototype = {
 	},
 
 	create:function(){
-		//this.state.start('MainMenu');
+		this.state.start('MainMenu');
 		//this.state.start('Level1_easy');
 		//this.state.start('Level5_easy');
 		//this.state.start('Level3_hard');
-		this.state.start('Level2_hard');
+		//this.state.start('Level2_hard');
 		
 	}
 };

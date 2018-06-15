@@ -1,4 +1,4 @@
-Game.Level4_hard = function(game){
+Game.Level7_hard = function(game){
 	this.player = null;
 };
 
@@ -11,7 +11,7 @@ var t;
 var timerText = 0;
 var currentTimeText = 0;
 
-Game.Level4_hard.prototype = {
+Game.Level7_hard.prototype = {
 
 	create:function(game){
 
@@ -31,7 +31,7 @@ Game.Level4_hard.prototype = {
         schwerIcon = this.game.add.sprite(1200, this.game.height / 2 - 130, "schwerIcon");
         schwerIcon.angle = 90;
 
-        levelText = this.add.text(1204, this.game.height / 2 + 80, 'LEVEL \n4', { fill: "#ffffff", font: "45px Arial", fontWeight: "bold", align: "center" });
+        levelText = this.add.text(1204, this.game.height / 2 + 80, 'LEVEL \n7', { fill: "#ffffff", font: "45px Arial", fontWeight: "bold", align: "center" });
         levelText.angle = 90;
 
         fail = game.add.sprite(this.game.width / 2 + 495, 1660, 'rot');
@@ -194,12 +194,12 @@ Game.Level4_hard.prototype = {
             sprite.inputEnabled = false;
             t++;
 
-            if (localStorage.getItem('level4_hard') === null) {
+            if (localStorage.getItem('level7_hard') === null) {
                 //kein Highscore gespeicher
-                localStorage.setItem('level4_hard', counter);
-            } else if (localStorage.getItem('level4_hard') > counter) {
+                localStorage.setItem('level7_hard', counter);
+            } else if (localStorage.getItem('level7_hard') > counter) {
                 //neuer Highscore
-                localStorage.setItem('level4_hard', counter);
+                localStorage.setItem('level7_hard', counter);
             }
 		}
 		else
@@ -298,7 +298,7 @@ Game.Level4_hard.prototype = {
 
         var doneText1 = this.game.add.text(0, 0, "Du hast das Level geschafft!\n Deine Zeit: " + counter + " Sekunden", style);
 
-        var highscoretxt = this.game.add.text(0, 0, "Dein Highscore: " + localStorage.getItem('level4_hard') +" Sekunden", style2);
+        var highscoretxt = this.game.add.text(0, 0, "Dein Highscore: " + localStorage.getItem('level7_hard') +" Sekunden", style2);
 
         doneText1.wordWrap = true;
         doneText1.wordWrapWidth = w * .9;
@@ -428,7 +428,7 @@ failMessageBox(w = 1050, h = 1512) {
     
 	loadNextLevelEvent() {
 		this.gamePlay();
-		this.state.start('Level5_hard');
+		this.state.start('Level8_hard');
 		counter = 0;
         this.msgBox.destroy();
         clicksound.play();	
@@ -437,7 +437,7 @@ failMessageBox(w = 1050, h = 1512) {
 
     loadThisLevelEvent() {
 		this.gamePlay();
-		this.state.start('Level4_hard');
+		this.state.start('Level7_hard');
 		counter = 0;
         this.msgBox.destroy();
         clicksound.play();			
