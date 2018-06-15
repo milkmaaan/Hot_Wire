@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8"></eta>
+	<style type="text/css">
+		body{
+			background: #ffff;
+			padding:0px;
+			margin:0px;
+		}
+	</style>
+	<script src="phaser.js"></script>
+
+	<script src="Boot.js"></script>
+	<script src="Preloader.js"></script>
+	<script src="MainMenu.js"></script>
+	<script src="SelectMode.js"></script>
+	<script src="Highscores.js"></script>	
+	<script src="Steuerung.js"></script>	
+	<script src="Anleitung.js"></script>
+
+	<script src="Level1_easy.js"></script>
+	<script src="Level2_easy.js"></script>
+	<script src="Level3_easy.js"></script>
+	<script src="Level4_easy.js"></script>
+	<script src="Level5_easy.js"></script>
+
+	<script src="Level1_hard.js"></script>
+	<script src="Level2_hard.js"></script>
+	<script src="Level3_hard.js"></script>
+	<script src="Level4_hard.js"></script>
+	<script src="Level5_hard.js"></script>
+
+	<!--<script src="gyro.min.js"></script>-->
+	</head>
+	<body>
+		<script type="text/javascript">
+	
+			window.onload = function() {
+			var game = new Phaser.Game(1216,1920, Phaser.CANVAS,'');
+
+			//var game = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.CANVAS, '');
+
+				game.state.add('Boot', Game.Boot);
+				game.state.add('Preloader', Game.Preloader);
+				game.state.add('MainMenu', Game.MainMenu);
+				game.state.add('SelectMode', Game.SelectMode);
+				game.state.add('Highscores', Game.Highscores);
+				game.state.add('Steuerung', Game.Steuerung);
+				game.state.add('Anleitung', Game.Anleitung);
+
+				game.state.add('Level1_easy', Game.Level1_easy);
+				game.state.add('Level2_easy', Game.Level2_easy);
+				game.state.add('Level3_easy', Game.Level3_easy);
+				game.state.add('Level4_easy', Game.Level4_easy);
+				game.state.add('Level5_easy', Game.Level5_easy);
+				
+				game.state.add('Level1_hard', Game.Level1_hard);
+				game.state.add('Level2_hard', Game.Level2_hard);
+				game.state.add('Level3_hard', Game.Level3_hard);
+				game.state.add('Level4_hard', Game.Level4_hard);
+				game.state.add('Level5_hard', Game.Level5_hard);
+
+				game.state.start('Boot');
+		
+			}
+
+
+		</script>
+	</body>
+</html>
