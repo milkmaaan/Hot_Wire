@@ -92,7 +92,7 @@ Game.Preloader.prototype = {
 		//this.state.start('Level1_easy');
 		//this.state.start('Level5_easy');
 		//this.state.start('Level3_hard');
-		this.state.start('Level5_hard');
+		this.state.start('Level2_hard');
 		
 	}
 };
