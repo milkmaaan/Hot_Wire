@@ -1,4 +1,4 @@
-Game.Level5_hard = function(game){
+Game.Level8_hard = function(game){
 	this.player = null;
 };
 
@@ -11,7 +11,7 @@ var t;
 var timerText = 0;
 var currentTimeText = 0;
 
-Game.Level5_hard.prototype = {
+Game.Level8_hard.prototype = {
 
 	create:function(game){
 
@@ -31,7 +31,7 @@ Game.Level5_hard.prototype = {
         schwerIcon = this.game.add.sprite(1200, this.game.height / 2 - 130, "schwerIcon");
         schwerIcon.angle = 90;
 
-        levelText = this.add.text(1204, this.game.height / 2 + 80, 'LEVEL \n5', { fill: "#ffffff", font: "45px Arial", fontWeight: "bold", align: "center" });
+        levelText = this.add.text(1204, this.game.height / 2 + 80, 'LEVEL \n8', { fill: "#ffffff", font: "45px Arial", fontWeight: "bold", align: "center" });
         levelText.angle = 90;
 
         fail = game.add.sprite(this.game.width / 2 + 495, 1660, 'rot');
@@ -47,26 +47,30 @@ Game.Level5_hard.prototype = {
         
         //add hot wire
         draht1 = game.add.sprite(this.game.width / 2 - 88.5, 0, 'draht7');  
-        draht2 = game.add.sprite(this.game.width / 2 - 88.5, 200, 'draht4');
-        draht3 = game.add.sprite(this.game.width / 2 - 30, 200, 'draht8');
-        draht4 = game.add.sprite(this.game.width / 2, 200, 'draht8');
-        draht5 = game.add.sprite(this.game.width / 2 + 200, 200, 'draht2');
-        draht6 = game.add.sprite(this.game.width / 2 + 200, 229.5, 'draht7');
-        draht7 = game.add.sprite(this.game.width / 2 + 200, 429.5, 'draht4');
-        draht8 = game.add.sprite(this.game.width / 2 + 220, 429.5, 'draht8');
-        draht9 = game.add.sprite(this.game.width / 2 + 420, 429.5, 'draht2');
-        draht10 = game.add.sprite(this.game.width / 2 + 420, 488, 'draht5');
-        draht11 = game.add.sprite(this.game.width / 2 + 420, 888, 'draht5');
-        draht12 = game.add.sprite(this.game.width / 2 + 420, 1288, 'draht3');
-        draht13 = game.add.sprite(this.game.width / 2 + 229.5, 1288, 'draht8');
-        draht14 = game.add.sprite(this.game.width / 2 + 171, 1288, 'draht1');
-        draht15 = game.add.sprite(this.game.width / 2 + 171, 1347, 'draht7');
-        draht16 = game.add.sprite(this.game.width / 2 + 171, 1547, 'draht3');
-        draht17 = game.add.sprite(this.game.width / 2 - 29, 1547, 'draht8');
-        draht18 = game.add.sprite(this.game.width / 2 - 88, 1547, 'draht1');
-        draht19 = game.add.sprite(this.game.width / 2 - 88, 1606, 'draht7');
-        draht20 = game.add.sprite(this.game.width / 2 - 88, 1661, 'draht7');
-        ziel = game.add.sprite(this.game.width / 2 - 88, this.game.height - 59, 'ziel');
+        draht2 = game.add.sprite(this.game.width / 2 - 88.5, 200, 'draht3');  
+        draht3 = game.add.sprite(this.game.width / 2 - 488.5, 200, 'draht6');  
+        draht4 = game.add.sprite(this.game.width / 2 - 527, 200, 'draht1');
+        draht5 = game.add.sprite(this.game.width / 2 - 527, 259, 'draht5');  
+        draht6 = game.add.sprite(this.game.width / 2 - 527, 658, 'draht5');
+        draht7 = game.add.sprite(this.game.width / 2 - 527, 1058, 'draht5');  
+        draht8 = game.add.sprite(this.game.width / 2 - 527, 1458, 'draht4');
+        draht9 = game.add.sprite(this.game.width / 2 - 488.5, 1458, 'draht8');  
+        draht10 = game.add.sprite(this.game.width / 2 - 288.5, 1458, 'draht3');
+        draht11 = game.add.sprite(this.game.width / 2 - 288.5, 1058, 'draht5');  
+        draht12 = game.add.sprite(this.game.width / 2 - 288.5, 658, 'draht5');
+        draht13 = game.add.sprite(this.game.width / 2 - 288.5, 458, 'draht7');  
+        draht14 = game.add.sprite(this.game.width / 2 - 288.5, 400, 'draht1');
+        draht15 = game.add.sprite(this.game.width / 2 - 230, 400, 'draht8'); 
+        draht16 = game.add.sprite(this.game.width / 2 - 30, 400, 'draht6');  
+        draht17 = game.add.sprite(this.game.width / 2 + 370, 400, 'draht2');
+        draht18 = game.add.sprite(this.game.width / 2 + 370, 459, 'draht5');  
+        draht19 = game.add.sprite(this.game.width / 2 +  370, 859, 'draht3');
+        draht20 = game.add.sprite(this.game.width / 2 - 30, 859, 'draht6');  
+        draht21 = game.add.sprite(this.game.width / 2 - 89, 859, 'draht1');
+        draht22 = game.add.sprite(this.game.width / 2 - 89, 918, 'draht5');  
+        draht23 = game.add.sprite(this.game.width / 2 - 89, 1318, 'draht5');
+        draht24 = game.add.sprite(this.game.width / 2 - 89, 1661, 'draht7');
+        ziel = game.add.sprite(this.game.width / 2 - 89, this.game.height - 59, 'ziel');
 		
         //scale mode - central
         //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -189,6 +193,22 @@ Game.Level5_hard.prototype = {
 		{
              //text.text = 'Drag the sprites. Overlapping: true';
         }
+        else if (this.checkOverlap(sprite, draht21))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht22))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht23))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht24))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
         else if (this.checkOverlap(sprite, ziel))
 		{
             this.game.time.events.stop();
@@ -196,12 +216,12 @@ Game.Level5_hard.prototype = {
             sprite.inputEnabled = false;
             t++;
 
-            if (localStorage.getItem('level5_hard') === null) {
+            if (localStorage.getItem('level8_hard') === null) {
                 //kein Highscore gespeicher
-                localStorage.setItem('level5_hard', counter);
-            } else if (localStorage.getItem('level5_hard') > counter) {
+                localStorage.setItem('level8_hard', counter);
+            } else if (localStorage.getItem('level8_hard') > counter) {
                 //neuer Highscore
-                localStorage.setItem('level5_hard', counter);
+                localStorage.setItem('level8_hard', counter);
             }
 		}
 		else
@@ -300,7 +320,7 @@ Game.Level5_hard.prototype = {
 
         var doneText1 = this.game.add.text(0, 0, "Du hast das Level geschafft!\n Deine Zeit: " + counter + " Sekunden", style);
 
-        var highscoretxt = this.game.add.text(0, 0, "Dein Highscore: " + localStorage.getItem('level5_hard') +" Sekunden", style2);
+        var highscoretxt = this.game.add.text(0, 0, "Dein Highscore: " + localStorage.getItem('level8_hard') +" Sekunden", style2);
 
         doneText1.wordWrap = true;
         doneText1.wordWrapWidth = w * .9;
@@ -430,7 +450,7 @@ failMessageBox(w = 1050, h = 1512) {
     
 	loadNextLevelEvent() {
 		this.gamePlay();
-		this.state.start('Level6_hard');
+		this.state.start('Level9_hard');
 		counter = 0;
         this.msgBox.destroy();
         clicksound.play();	
@@ -439,7 +459,7 @@ failMessageBox(w = 1050, h = 1512) {
 
     loadThisLevelEvent() {
 		this.gamePlay();
-		this.state.start('Level5_hard');
+		this.state.start('Level8_hard');
 		counter = 0;
         this.msgBox.destroy();
         clicksound.play();			

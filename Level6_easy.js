@@ -364,7 +364,7 @@ failMessageBox(w = 1050, h = 1512) {
     
 	loadNextLevelEvent() {
 		this.gamePlay();
-		this.state.start('Level6_easy');
+		this.state.start('Level7_easy');
 		counter = 0;
         this.msgBox.destroy();
         clicksound.play();	
