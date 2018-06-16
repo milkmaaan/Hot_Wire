@@ -1,8 +1,9 @@
-Game.Level6_hard = function(game){
+Game.Level9_hard = function(game){
 	this.player = null;
 };
 
 var counter = 0;
+var countera = 0;
 var localStorageName = "drahtscore";
 var highscore;
 var sprite;
@@ -11,7 +12,7 @@ var t;
 var timerText = 0;
 var currentTimeText = 0;
 
-Game.Level6_hard.prototype = {
+Game.Level9_hard.prototype = {
 
 	create:function(game){
 
@@ -31,7 +32,7 @@ Game.Level6_hard.prototype = {
         schwerIcon = this.game.add.sprite(1200, this.game.height / 2 - 130, "schwerIcon");
         schwerIcon.angle = 90;
 
-        levelText = this.add.text(1204, this.game.height / 2 + 80, 'LEVEL \n6', { fill: "#ffffff", font: "45px Arial", fontWeight: "bold", align: "center" });
+        levelText = this.add.text(1204, this.game.height / 2 + 80, 'LEVEL \n9', { fill: "#ffffff", font: "45px Arial", fontWeight: "bold", align: "center" });
         levelText.angle = 90;
 
         fail = game.add.sprite(this.game.width / 2 + 495, 1660, 'rot');
@@ -51,29 +52,24 @@ Game.Level6_hard.prototype = {
         draht3 = game.add.sprite(this.game.width / 2 - 88.5, 600, 'draht3');
         draht4 = game.add.sprite(this.game.width / 2 - 488.5, 600, 'draht6');  
         draht5 = game.add.sprite(this.game.width / 2 - 547.5, 600, 'draht1');    
-        draht5 = game.add.sprite(this.game.width / 2 - 547.5, 659, 'draht7'); 
-        draht6 = game.add.sprite(this.game.width / 2 - 547.5, 859, 'draht4'); 
-        draht6 = game.add.sprite(this.game.width / 2 - 488.5, 859, 'draht6');  
-        draht7 = game.add.sprite(this.game.width / 2 - 88.5, 859, 'draht8');
-        draht8 = game.add.sprite(this.game.width / 2 + 111.5, 859, 'draht3');
-        draht9 = game.add.sprite(this.game.width / 2 + 111.5, 659, 'draht7'); 
-        draht10 = game.add.sprite(this.game.width / 2 + 111.5, 600, 'draht1');
-        draht11 = game.add.sprite(this.game.width / 2 + 170.5, 600, 'draht8');  
-        draht12 = game.add.sprite(this.game.width / 2 + 370.5, 600, 'draht2');   
-        draht13 = game.add.sprite(this.game.width / 2 + 370.5, 659, 'draht5');   
-        draht14 = game.add.sprite(this.game.width / 2 + 370.5, 1059, 'draht3');  
-        draht15 = game.add.sprite(this.game.width / 2 - 30, 1059, 'draht6');   
-        draht16 = game.add.sprite(this.game.width / 2 - 230, 1059, 'draht8');  
-        draht17 = game.add.sprite(this.game.width / 2 - 289, 1059, 'draht1'); 
-        draht18 = game.add.sprite(this.game.width / 2 - 289, 1118, 'draht5'); 
-        draht19 = game.add.sprite(this.game.width / 2 - 289, 1518, 'draht4');  
-        draht20 = game.add.sprite(this.game.width / 2 - 230, 1518, 'draht2');  
-        draht21 = game.add.sprite(this.game.width / 2 - 230, 1577, 'draht7');   
-        draht22 = game.add.sprite(this.game.width / 2 - 230, 1777, 'draht4');  
-        draht23 = game.add.sprite(this.game.width / 2 - 171, 1777, 'draht8');
-        draht24 = game.add.sprite(this.game.width / 2 + 29, 1777, 'draht2');  
-        draht25 = game.add.sprite(this.game.width / 2 + 29, this.game.height - 118, 'draht2');    
-        ziel = game.add.sprite(this.game.width / 2 + 29, this.game.height - 59, 'ziel');
+        draht6 = game.add.sprite(this.game.width / 2 - 547.5, 659, 'draht7'); 
+        draht7 = game.add.sprite(this.game.width / 2 - 547.5, 859, 'draht4'); 
+        draht8 = game.add.sprite(this.game.width / 2 - 488.5, 859, 'draht8');  
+        draht9 = game.add.sprite(this.game.width / 2 - 288.5, 859, 'draht3');  
+        draht10 = game.add.sprite(this.game.width / 2 - 288.5, 459, 'draht5');  
+        draht11 = game.add.sprite(this.game.width / 2 - 288.5, 259, 'draht7');  
+        draht12 = game.add.sprite(this.game.width / 2 - 288.5, 200, 'draht1');  
+        draht13 = game.add.sprite(this.game.width / 2 - 230, 200, 'draht6');  
+        draht14 = game.add.sprite(this.game.width / 2 + 170, 200, 'draht2'); 
+        draht15 = game.add.sprite(this.game.width / 2 + 170, 259, 'draht7');  
+        draht16 = game.add.sprite(this.game.width / 2 + 170, 461, 'draht5');  
+        draht17= game.add.sprite(this.game.width / 2 + 170, 861, 'draht5');  
+        draht18 = game.add.sprite(this.game.width / 2 + 170, 1261, 'draht3');  
+        draht19 = game.add.sprite(this.game.width / 2 - 30, 1261, 'draht8');  
+        draht20 = game.add.sprite(this.game.width / 2 - 89, 1261, 'draht1');  
+        draht21 = game.add.sprite(this.game.width / 2 - 89, 1320, 'draht5');  
+        draht22 = game.add.sprite(this.game.width / 2 - 89, 1659, 'draht7');  
+        ziel = game.add.sprite(this.game.width / 2 - 89, this.game.height - 59, 'ziel');
 		
         //scale mode - central
         //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -147,6 +143,7 @@ Game.Level6_hard.prototype = {
         else if (this.checkOverlap(sprite, draht8))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
+            countera = 1;
         }
         else if (this.checkOverlap(sprite, draht9))
 		{
@@ -155,6 +152,12 @@ Game.Level6_hard.prototype = {
         else if (this.checkOverlap(sprite, draht10))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
+            if(countera == 1){
+            }
+            else{
+                this.wrongwayMessageBox(1512, 1050)
+                sprite.inputEnabled = false;
+            }
         }
         else if (this.checkOverlap(sprite, draht11))
 		{
@@ -163,10 +166,17 @@ Game.Level6_hard.prototype = {
         else if (this.checkOverlap(sprite, draht12))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
+            countera = 2;
 		}
 		else if (this.checkOverlap(sprite, draht13))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
+            if(countera == 2){
+            }
+            else{
+                this.wrongwayMessageBox(1512, 1050)
+                sprite.inputEnabled = false;
+            }
         }
         else if (this.checkOverlap(sprite, draht14))
 		{
@@ -195,24 +205,12 @@ Game.Level6_hard.prototype = {
         else if (this.checkOverlap(sprite, draht20))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-        }
-        else if (this.checkOverlap(sprite, draht21))
+		}
+		else if (this.checkOverlap(sprite, draht21))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
         }
         else if (this.checkOverlap(sprite, draht22))
-		{
-            //text.text = 'Drag the sprites. Overlapping: true';
-        }
-        else if (this.checkOverlap(sprite, draht23))
-		{
-            //text.text = 'Drag the sprites. Overlapping: true';
-		}
-		else if (this.checkOverlap(sprite, draht24))
-		{
-            //text.text = 'Drag the sprites. Overlapping: true';
-        }
-        else if (this.checkOverlap(sprite, draht25))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
         }
@@ -223,12 +221,12 @@ Game.Level6_hard.prototype = {
             sprite.inputEnabled = false;
             t++;
 
-            if (localStorage.getItem('level6_hard') === null) {
+            if (localStorage.getItem('level9_hard') === null) {
                 //kein Highscore gespeicher
-                localStorage.setItem('level6_hard', counter);
-            } else if (localStorage.getItem('level6_hard') > counter) {
+                localStorage.setItem('level9_hard', counter);
+            } else if (localStorage.getItem('level9_hard') > counter) {
                 //neuer Highscore
-                localStorage.setItem('level6_hard', counter);
+                localStorage.setItem('level9_hard', counter);
             }
 		}
 		else
@@ -327,7 +325,7 @@ Game.Level6_hard.prototype = {
 
         var doneText1 = this.game.add.text(0, 0, "Du hast das Level geschafft!\n Deine Zeit: " + counter + " Sekunden", style);
 
-        var highscoretxt = this.game.add.text(0, 0, "Dein Highscore: " + localStorage.getItem('level6_hard') +" Sekunden", style2);
+        var highscoretxt = this.game.add.text(0, 0, "Dein Highscore: " + localStorage.getItem('level9_hard') +" Sekunden", style2);
 
         doneText1.wordWrap = true;
         doneText1.wordWrapWidth = w * .9;
@@ -435,6 +433,68 @@ failMessageBox(w = 1050, h = 1512) {
         }
 },
 
+wrongwayMessageBox(w = 1050, h = 1512) {
+    //destroy messagebox if already exists
+    if (this.msgBox) {
+        this.msgBox.destroy();
+    }
+    //group for all boxitmes
+    var msgBox = this.game.add.group();
+    var back = this.game.add.sprite(0, 0, "gameoverBackground");
+    var upperButton = this.game.add.sprite(0, 0, "buttonAgain");
+    var lowerButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+    
+    //make a text field
+    var style = {font:"70px Arial", align:"center"};
+    var style2 = {font:"70px Arial", align:"center", fill:"#ff0000", fontWeight:"bold"};
+
+    var doneText1 = this.game.add.text(0, 0, "Du bist den falschen Weg gegangen!", style);
+
+    doneText1.wordWrap = true;
+    doneText1.wordWrapWidth = w * .9;
+
+    //set the width and height passed in the parameters
+    back.width = w;
+    back.height = h;
+
+    //add elements to group
+    msgBox.add(back);
+    msgBox.add(upperButton);
+    msgBox.add(lowerButton);
+    msgBox.add(doneText1);
+    msgBox.angle = 90;
+    
+    //set the button in the center
+    upperButton.x = back.width / 2 - upperButton.width / 2;
+    upperButton.y = back.height - upperButton.height - 400;
+
+    lowerButton.x = back.width / 2 - upperButton.width / 2;
+    lowerButton.y = back.height - upperButton.height-100;
+
+    //enable button for input
+    upperButton.inputEnabled = true;
+    lowerButton.inputEnabled = true;
+
+    //add a listener to destroy box
+    upperButton.events.onInputDown.add(this.loadThisLevelEvent, this);
+    lowerButton.events.onInputDown.add(this.backToSelectModeEvent, this);
+
+    //set the message box in the center
+    msgBox.x = this.game.width / 2 + msgBox.height/2;
+    msgBox.y = this.game.height / 2 - msgBox.width / 2;
+    
+    //text position
+    doneText1.x = back.width / 2 - doneText1.width / 2;
+    doneText1.y = back.height / 2 - doneText1.height / 2 - 200;
+
+    this.game.time.events.stop();
+    this.msgBox = msgBox;
+
+    if(t==1) {
+        failsound.play();
+    }
+},
+
 	unpauseEvent() {
 		this.gamePlay();
         this.msgBox.destroy();
@@ -457,7 +517,7 @@ failMessageBox(w = 1050, h = 1512) {
     
 	loadNextLevelEvent() {
 		this.gamePlay();
-		this.state.start('Level6_hard');
+		this.state.start('Level10_hard');
 		counter = 0;
         this.msgBox.destroy();
         clicksound.play();	
@@ -466,7 +526,7 @@ failMessageBox(w = 1050, h = 1512) {
 
     loadThisLevelEvent() {
 		this.gamePlay();
-		this.state.start('Level6_hard');
+		this.state.start('Level9_hard');
 		counter = 0;
         this.msgBox.destroy();
         clicksound.play();			
