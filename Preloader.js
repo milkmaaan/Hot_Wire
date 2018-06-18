@@ -15,7 +15,6 @@ Game.Preloader.prototype = {
 		this.load.image("background_clear", "assets/backgrounds/background_clear.png");
 		this.load.image("anleitungneu", "assets/backgrounds/anleitungneu.png");
 
-
 		//trophies
 		this.load.image("trophygold", "assets/trophies/trophy_gold.png");
 		this.load.image("trophysilber", "assets/trophies/trophy_silber.png");
@@ -80,6 +79,7 @@ Game.Preloader.prototype = {
 		this.load.image("buttonAnleitung", "assets/buttons/button_anleitung.png");
 		this.load.image("buttonZurueck", "assets/buttons/button_zurueck.png");
 		this.load.image("buttonHighscores", "assets/buttons/button_highscores.png");
+		this.load.image("speakerIcon", "assets/buttons/speaker.png");
 
 		//sounds
 		this.game.load.audio("failsound", "assets/sounds/gameover.wav");
@@ -89,8 +89,8 @@ Game.Preloader.prototype = {
 
 	create:function(){
 		//this.state.start('MainMenu');
-		//this.state.start('Level10_easy');
-		this.state.start('Level10_hard');
+		//this.state.start('Level11_easy');
+		this.state.start('Level11_hard');
 		
 	}
 };

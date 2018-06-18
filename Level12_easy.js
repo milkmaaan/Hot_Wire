@@ -1,13 +1,14 @@
-Game.Level6_easy = function(game){
+Game.Level12_easy = function(game){
 	this.player = null;
 };
 
 var counter = 0;
+var countera = 0;
 var sprite;
 var levelText;
 var t;
 
-Game.Level6_easy.prototype = {
+Game.Level12_easy.prototype = {
 
 	create:function(game){
 
@@ -27,7 +28,7 @@ Game.Level6_easy.prototype = {
         einfachIcon = this.game.add.sprite(1200, this.game.height / 2 - 130, "einfachIcon");
         einfachIcon.angle = 90;
 
-        levelText = this.add.text(1204, this.game.height / 2 + 80, 'LEVEL \n6', { fill: "#ffffff", font: "45px Arial", fontWeight: "bold", align: "center" });
+        levelText = this.add.text(1204, this.game.height / 2 + 80, 'LEVEL \n12', { fill: "#ffffff", font: "45px Arial", fontWeight: "bold", align: "center" });
         levelText.angle = 90;
 
         fail = game.add.sprite(this.game.width / 2 + 495, 1800, 'rot');
@@ -37,21 +38,43 @@ Game.Level6_easy.prototype = {
    
         //add hot-wire
         draht1 = game.add.sprite(this.game.width / 2 - 118, 0, 'draht15');  
-        draht2 = game.add.sprite(this.game.width / 2 - 118, 200, 'draht12');   
-        draht3 = game.add.sprite(this.game.width / 2 , 200, 'draht10');   
-        draht4 = game.add.sprite(this.game.width / 2 , 318, 'draht15');  
-        draht5 = game.add.sprite(this.game.width / 2 , 518, 'draht11');      
-        draht6 = game.add.sprite(this.game.width / 2 - 400, 518, 'draht14');   
-        draht7 = game.add.sprite(this.game.width / 2 - 518, 518, 'draht9');     
-        draht8 = game.add.sprite(this.game.width / 2 - 518, 636, 'draht13');  
-        draht9 = game.add.sprite(this.game.width / 2 - 518, 1036, 'draht12');    
-        draht10 = game.add.sprite(this.game.width / 2 - 400, 1036, 'draht10'); 
-        draht11 = game.add.sprite(this.game.width / 2 - 400, 1154, 'draht13'); 
-        draht12 = game.add.sprite(this.game.width / 2 - 400, 1554, 'draht12');
-        draht13 = game.add.sprite(this.game.width / 2 - 282, 1554, 'draht16');  
-        draht14 = game.add.sprite(this.game.width / 2 - 82, 1554, 'draht10');    
-        draht15 = game.add.sprite(this.game.width / 2 - 82, 1615, 'draht15');      
-        ziel = game.add.sprite(this.game.width / 2 - 82, this.game.height - 118, 'ziell');
+        draht2 = game.add.sprite(this.game.width / 2 - 118, 200, 'draht12');  
+        draht3 = game.add.sprite(this.game.width / 2 - 50, 200, 'draht16');  
+        draht4 = game.add.sprite(this.game.width / 2 + 130, 200, 'draht10');  
+        draht5 = game.add.sprite(this.game.width / 2 + 130, 318, 'draht15');  
+        draht6 = game.add.sprite(this.game.width / 2 + 130, 518, 'draht11');  
+        draht7 = game.add.sprite(this.game.width / 2 - 250, 518, 'draht14');  
+        draht8 = game.add.sprite(this.game.width / 2 - 368, 518, 'draht9');  
+        draht9 = game.add.sprite(this.game.width / 2 - 368, 636, 'draht15');  
+        draht10 = game.add.sprite(this.game.width / 2 - 368, 836, 'draht12');  
+        draht11 = game.add.sprite(this.game.width / 2 - 250, 836, 'draht14');  
+        draht12 = game.add.sprite(this.game.width / 2 + 130, 836, 'draht10');  
+        draht13 = game.add.sprite(this.game.width / 2 + 130, 954, 'draht15');  
+        draht14 = game.add.sprite(this.game.width / 2 + 130, 1154, 'draht11');  
+        draht15 = game.add.sprite(this.game.width / 2 - 250, 1154, 'draht14');  
+        draht16 = game.add.sprite(this.game.width / 2 - 368, 1154, 'draht9');  
+        draht17 = game.add.sprite(this.game.width / 2 - 368, 1260, 'draht15');  
+        draht18 = game.add.sprite(this.game.width / 2 - 368, 1410, 'draht12');  
+        draht19 = game.add.sprite(this.game.width / 2 - 250, 1410, 'draht14');  
+        draht20 = game.add.sprite(this.game.width / 2 + 150, 1410, 'draht16');  
+        draht21 = game.add.sprite(this.game.width / 2 + 330, 1410, 'draht11');  
+        draht22 = game.add.sprite(this.game.width / 2 + 330, 1010, 'draht13');  
+        draht23 = game.add.sprite(this.game.width / 2 + 330, 610, 'draht13');  
+        draht24 = game.add.sprite(this.game.width / 2 + 330, 210, 'draht13');  
+        draht25 = game.add.sprite(this.game.width / 2 + 330, 160, 'draht15');  
+        draht26 = game.add.sprite(this.game.width / 2 + 330, 42, 'draht10');  
+        draht27 = game.add.sprite(this.game.width / 2 + 130, 42, 'draht16');  
+        draht28 = game.add.sprite(this.game.width / 2 - 270, 42, 'draht14');  //if 1
+        draht29 = game.add.sprite(this.game.width / 2 - 430, 42, 'draht16');
+        draht30 = game.add.sprite(this.game.width / 2 - 548, 42, 'draht9');
+        draht31 = game.add.sprite(this.game.width / 2 - 548, 160, 'draht13');
+        draht32 = game.add.sprite(this.game.width / 2 - 548, 560, 'draht13');
+        draht33 = game.add.sprite(this.game.width / 2 - 548, 960, 'draht13');
+        draht34 = game.add.sprite(this.game.width / 2 - 548, 1283, 'draht13');
+        draht35 = game.add.sprite(this.game.width / 2 - 548, 1683, 'draht12');
+        draht36 = game.add.sprite(this.game.width / 2 - 430, 1683, 'draht14');
+        draht37 = game.add.sprite(this.game.width / 2 - 30, 1683, 'draht10');
+        ziel = game.add.sprite(this.game.width / 2 - 30, this.game.height - 118, 'ziell');
         
         //scale mode - central
         //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -143,6 +166,101 @@ Game.Level6_easy.prototype = {
             //text.text = 'Drag the sprites. Overlapping: true';
         }
         else if (this.checkOverlap(sprite, draht15))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht16))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+		}
+		else if (this.checkOverlap(sprite, draht17))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+		}
+		else if (this.checkOverlap(sprite, draht18))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht19))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht20))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht21))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+		}
+		else if (this.checkOverlap(sprite, draht22))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht23))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht24))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht25))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht26))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+            countera = 1;
+        }
+        else if (this.checkOverlap(sprite, draht27))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+		}
+		else if (this.checkOverlap(sprite, draht28))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+            if(countera == 1){
+            }
+            else{
+                this.wrongwayMessageBox(1512, 1050)
+                sprite.inputEnabled = false;
+            }
+        }
+        else if (this.checkOverlap(sprite, draht29))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht30))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht31))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht32))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht33))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+		}
+		else if (this.checkOverlap(sprite, draht34))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht35))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht36))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht37))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
         }
@@ -342,6 +460,130 @@ failMessageBox(w = 1050, h = 1512) {
         }
 },
 
+wrongwayMessageBox(w = 1050, h = 1512) {
+    //destroy messagebox if already exists
+    if (this.msgBox) {
+        this.msgBox.destroy();
+    }
+    //group for all boxitmes
+    var msgBox = this.game.add.group();
+    var back = this.game.add.sprite(0, 0, "gameoverBackground");
+    var upperButton = this.game.add.sprite(0, 0, "buttonAgain");
+    var lowerButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+    
+    //make a text field
+    var style = {font:"70px Arial", align:"center"};
+    var style2 = {font:"70px Arial", align:"center", fill:"#ff0000", fontWeight:"bold"};
+
+    var doneText1 = this.game.add.text(0, 0, "Du bist den falschen Weg gegangen!", style);
+
+    doneText1.wordWrap = true;
+    doneText1.wordWrapWidth = w * .9;
+
+    //set the width and height passed in the parameters
+    back.width = w;
+    back.height = h;
+
+    //add elements to group
+    msgBox.add(back);
+    msgBox.add(upperButton);
+    msgBox.add(lowerButton);
+    msgBox.add(doneText1);
+    msgBox.angle = 90;
+    
+    //set the button in the center
+    upperButton.x = back.width / 2 - upperButton.width / 2;
+    upperButton.y = back.height - upperButton.height - 400;
+
+    lowerButton.x = back.width / 2 - upperButton.width / 2;
+    lowerButton.y = back.height - upperButton.height-100;
+
+    //enable button for input
+    upperButton.inputEnabled = true;
+    lowerButton.inputEnabled = true;
+
+    //add a listener to destroy box
+    upperButton.events.onInputDown.add(this.loadThisLevelEvent, this);
+    lowerButton.events.onInputDown.add(this.backToSelectModeEvent, this);
+
+    //set the message box in the center
+    msgBox.x = this.game.width / 2 + msgBox.height/2;
+    msgBox.y = this.game.height / 2 - msgBox.width / 2;
+    
+    //text position
+    doneText1.x = back.width / 2 - doneText1.width / 2;
+    doneText1.y = back.height / 2 - doneText1.height / 2 - 200;
+
+    this.game.time.events.stop();
+    this.msgBox = msgBox;
+
+    if(t==1) {
+        failsound.play();
+    }
+},
+
+wrongwayMessageBox(w = 1050, h = 1512) {
+    //destroy messagebox if already exists
+    if (this.msgBox) {
+        this.msgBox.destroy();
+    }
+    //group for all boxitmes
+    var msgBox = this.game.add.group();
+    var back = this.game.add.sprite(0, 0, "gameoverBackground");
+    var upperButton = this.game.add.sprite(0, 0, "buttonAgain");
+    var lowerButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+    
+    //make a text field
+    var style = {font:"70px Arial", align:"center"};
+    var style2 = {font:"70px Arial", align:"center", fill:"#ff0000", fontWeight:"bold"};
+
+    var doneText1 = this.game.add.text(0, 0, "Du bist den falschen Weg gegangen!", style);
+
+    doneText1.wordWrap = true;
+    doneText1.wordWrapWidth = w * .9;
+
+    //set the width and height passed in the parameters
+    back.width = w;
+    back.height = h;
+
+    //add elements to group
+    msgBox.add(back);
+    msgBox.add(upperButton);
+    msgBox.add(lowerButton);
+    msgBox.add(doneText1);
+    msgBox.angle = 90;
+    
+    //set the button in the center
+    upperButton.x = back.width / 2 - upperButton.width / 2;
+    upperButton.y = back.height - upperButton.height - 400;
+
+    lowerButton.x = back.width / 2 - upperButton.width / 2;
+    lowerButton.y = back.height - upperButton.height-100;
+
+    //enable button for input
+    upperButton.inputEnabled = true;
+    lowerButton.inputEnabled = true;
+
+    //add a listener to destroy box
+    upperButton.events.onInputDown.add(this.loadThisLevelEvent, this);
+    lowerButton.events.onInputDown.add(this.backToSelectModeEvent, this);
+
+    //set the message box in the center
+    msgBox.x = this.game.width / 2 + msgBox.height/2;
+    msgBox.y = this.game.height / 2 - msgBox.width / 2;
+    
+    //text position
+    doneText1.x = back.width / 2 - doneText1.width / 2;
+    doneText1.y = back.height / 2 - doneText1.height / 2 - 200;
+
+    this.game.time.events.stop();
+    this.msgBox = msgBox;
+
+    if(t==1) {
+        failsound.play();
+    }
+},
+
 	unpauseEvent() {
 		this.gamePlay();
         this.msgBox.destroy();
@@ -364,7 +606,7 @@ failMessageBox(w = 1050, h = 1512) {
     
 	loadNextLevelEvent() {
 		this.gamePlay();
-		this.state.start('Level6_easy');
+		this.state.start('Level12_easy');
 		counter = 0;
         this.msgBox.destroy();
         clicksound.play();	
@@ -373,7 +615,7 @@ failMessageBox(w = 1050, h = 1512) {
 
     loadThisLevelEvent() {
 		this.gamePlay();
-		this.state.start('Level6_easy');
+		this.state.start('Level12_easy');
 		counter = 0;
         this.msgBox.destroy();
         clicksound.play();		

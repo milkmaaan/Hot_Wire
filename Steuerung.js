@@ -20,6 +20,16 @@ Game.Steuerung.prototype = {
         //add background
         game.add.tileSprite(0, 0, 1216, 1920, 'background_steuerung');
 
+        //speaker
+        //speaker = game.add.sprite(1140, 1200, "speakerIcon");
+        //speaker.angle = 90;
+
+        this.createButton(game,"", 1140, 1200, 150, 150, "speakerIcon",
+        function(){
+            clicksound.play();
+            
+        });
+
         //add clicksound
 		clicksound = this.game.add.audio('clicksound');
 

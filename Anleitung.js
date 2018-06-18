@@ -21,6 +21,14 @@ Game.Anleitung.prototype = {
         game.add.tileSprite(0, 0, 1216, 1920, 'background_anleitung');
         game.add.tileSprite(0, 0, 927, 1920, 'anleitungneu');
 
+        //speaker
+        this.createButton(game,"", 1060, 1260, 150, 150, "speakerIcon",
+        function(){
+            clicksound.play();
+            
+        });
+            
+
         //add clicksound
 		clicksound = this.game.add.audio('clicksound');
 

@@ -1,4 +1,4 @@
-Game.Level5_hard = function(game){
+Game.Level11_hard = function(game){
 	this.player = null;
 };
 
@@ -11,7 +11,7 @@ var t;
 var timerText = 0;
 var currentTimeText = 0;
 
-Game.Level5_hard.prototype = {
+Game.Level11_hard.prototype = {
 
 	create:function(game){
 
@@ -31,7 +31,7 @@ Game.Level5_hard.prototype = {
         schwerIcon = this.game.add.sprite(1200, this.game.height / 2 - 130, "schwerIcon");
         schwerIcon.angle = 90;
 
-        levelText = this.add.text(1204, this.game.height / 2 + 80, 'LEVEL \n5', { fill: "#ffffff", font: "45px Arial", fontWeight: "bold", align: "center" });
+        levelText = this.add.text(1204, this.game.height / 2 + 80, 'LEVEL \n11', { fill: "#ffffff", font: "45px Arial", fontWeight: "bold", align: "center" });
         levelText.angle = 90;
 
         fail = game.add.sprite(this.game.width / 2 + 495, 1660, 'rot');
@@ -47,25 +47,7 @@ Game.Level5_hard.prototype = {
         
         //add hot wire
         draht1 = game.add.sprite(this.game.width / 2 - 88.5, 0, 'draht7');  
-        draht2 = game.add.sprite(this.game.width / 2 - 88.5, 200, 'draht4');
-        draht3 = game.add.sprite(this.game.width / 2 - 30, 200, 'draht8');
-        draht4 = game.add.sprite(this.game.width / 2, 200, 'draht8');
-        draht5 = game.add.sprite(this.game.width / 2 + 200, 200, 'draht2');
-        draht6 = game.add.sprite(this.game.width / 2 + 200, 229.5, 'draht7');
-        draht7 = game.add.sprite(this.game.width / 2 + 200, 429.5, 'draht4');
-        draht8 = game.add.sprite(this.game.width / 2 + 220, 429.5, 'draht8');
-        draht9 = game.add.sprite(this.game.width / 2 + 420, 429.5, 'draht2');
-        draht10 = game.add.sprite(this.game.width / 2 + 420, 488, 'draht5');
-        draht11 = game.add.sprite(this.game.width / 2 + 420, 888, 'draht5');
-        draht12 = game.add.sprite(this.game.width / 2 + 420, 1288, 'draht3');
-        draht13 = game.add.sprite(this.game.width / 2 + 229.5, 1288, 'draht8');
-        draht14 = game.add.sprite(this.game.width / 2 + 171, 1288, 'draht1');
-        draht15 = game.add.sprite(this.game.width / 2 + 171, 1347, 'draht7');
-        draht16 = game.add.sprite(this.game.width / 2 + 171, 1547, 'draht3');
-        draht17 = game.add.sprite(this.game.width / 2 - 29, 1547, 'draht8');
-        draht18 = game.add.sprite(this.game.width / 2 - 88, 1547, 'draht1');
-        draht19 = game.add.sprite(this.game.width / 2 - 88, 1606, 'draht7');
-        draht20 = game.add.sprite(this.game.width / 2 - 88, 1661, 'draht7');
+        
         ziel = game.add.sprite(this.game.width / 2 - 88, this.game.height - 59, 'ziel');
 		
         //scale mode - central
@@ -196,12 +178,12 @@ Game.Level5_hard.prototype = {
             sprite.inputEnabled = false;
             t++;
 
-            if (localStorage.getItem('level5_hard') === null) {
+            if (localStorage.getItem('level11_hard') === null) {
                 //kein Highscore gespeicher
-                localStorage.setItem('level5_hard', counter);
-            } else if (localStorage.getItem('level5_hard') > counter) {
+                localStorage.setItem('level11_hard', counter);
+            } else if (localStorage.getItem('level11_hard') > counter) {
                 //neuer Highscore
-                localStorage.setItem('level5_hard', counter);
+                localStorage.setItem('level11_hard', counter);
             }
 		}
 		else
@@ -300,7 +282,7 @@ Game.Level5_hard.prototype = {
 
         var doneText1 = this.game.add.text(0, 0, "Du hast das Level geschafft!\n Deine Zeit: " + counter + " Sekunden", style);
 
-        var highscoretxt = this.game.add.text(0, 0, "Dein Highscore: " + localStorage.getItem('level5_hard') +" Sekunden", style2);
+        var highscoretxt = this.game.add.text(0, 0, "Dein Highscore: " + localStorage.getItem('level11_hard') +" Sekunden", style2);
 
         doneText1.wordWrap = true;
         doneText1.wordWrapWidth = w * .9;
@@ -408,6 +390,68 @@ failMessageBox(w = 1050, h = 1512) {
         }
 },
 
+wrongwayMessageBox(w = 1050, h = 1512) {
+    //destroy messagebox if already exists
+    if (this.msgBox) {
+        this.msgBox.destroy();
+    }
+    //group for all boxitmes
+    var msgBox = this.game.add.group();
+    var back = this.game.add.sprite(0, 0, "gameoverBackground");
+    var upperButton = this.game.add.sprite(0, 0, "buttonAgain");
+    var lowerButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+    
+    //make a text field
+    var style = {font:"70px Arial", align:"center"};
+    var style2 = {font:"70px Arial", align:"center", fill:"#ff0000", fontWeight:"bold"};
+
+    var doneText1 = this.game.add.text(0, 0, "Du bist den falschen Weg gegangen!", style);
+
+    doneText1.wordWrap = true;
+    doneText1.wordWrapWidth = w * .9;
+
+    //set the width and height passed in the parameters
+    back.width = w;
+    back.height = h;
+
+    //add elements to group
+    msgBox.add(back);
+    msgBox.add(upperButton);
+    msgBox.add(lowerButton);
+    msgBox.add(doneText1);
+    msgBox.angle = 90;
+    
+    //set the button in the center
+    upperButton.x = back.width / 2 - upperButton.width / 2;
+    upperButton.y = back.height - upperButton.height - 400;
+
+    lowerButton.x = back.width / 2 - upperButton.width / 2;
+    lowerButton.y = back.height - upperButton.height-100;
+
+    //enable button for input
+    upperButton.inputEnabled = true;
+    lowerButton.inputEnabled = true;
+
+    //add a listener to destroy box
+    upperButton.events.onInputDown.add(this.loadThisLevelEvent, this);
+    lowerButton.events.onInputDown.add(this.backToSelectModeEvent, this);
+
+    //set the message box in the center
+    msgBox.x = this.game.width / 2 + msgBox.height/2;
+    msgBox.y = this.game.height / 2 - msgBox.width / 2;
+    
+    //text position
+    doneText1.x = back.width / 2 - doneText1.width / 2;
+    doneText1.y = back.height / 2 - doneText1.height / 2 - 200;
+
+    this.game.time.events.stop();
+    this.msgBox = msgBox;
+
+    if(t==1) {
+        failsound.play();
+    }
+},
+
 	unpauseEvent() {
 		this.gamePlay();
         this.msgBox.destroy();
@@ -430,7 +474,7 @@ failMessageBox(w = 1050, h = 1512) {
     
 	loadNextLevelEvent() {
 		this.gamePlay();
-		this.state.start('Level6_hard');
+		this.state.start('Level12_hard');
 		counter = 0;
         this.msgBox.destroy();
         clicksound.play();	
@@ -439,7 +483,7 @@ failMessageBox(w = 1050, h = 1512) {
 
     loadThisLevelEvent() {
 		this.gamePlay();
-		this.state.start('Level5_hard');
+		this.state.start('Level11_hard');
 		counter = 0;
         this.msgBox.destroy();
         clicksound.play();			
