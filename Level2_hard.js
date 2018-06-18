@@ -256,73 +256,7 @@ Game.Level2_hard.prototype = {
         this.msgBox = msgBox;
 
     },
-    doneMessageBox(w = 1050, h = 1512) {
-    	//destroy messagebox already exists
-        if (this.msgBox) {
-            this.msgBox.destroy();
-        }
-        //group for all items
-        var msgBox = this.game.add.group();
-		var back = this.game.add.sprite(0, 0, "doneBackground");
-        var rightButton = this.game.add.sprite(0, 0, "buttonWeiter");
-        var leftButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
-        
-		//make a text field
-        var style = {font:"70px Arial", align:"center"};
-        var style2 = {font:"70px Arial", align:"center", fill:"#daa520", fontWeight:"bold"};
-
-        var doneText1 = this.game.add.text(0, 0, "Du hast das Level geschafft!\n Deine Zeit: " + counter + " Sekunden", style);
-
-        var highscoretxt = this.game.add.text(0, 0, "Dein Highscore: " + localStorage.getItem('level2_hard') +" Sekunden", style2);
-
-        doneText1.wordWrap = true;
-        doneText1.wordWrapWidth = w * .9;
-
-        highscoretxt.wordWrap = true;
-        highscoretxt.wordWrapWidth = w * .9;
- 
-        //set the width and height passed in the parameters
-        back.width = w;
-        back.height = h;
-
-        //add elements to group
-        msgBox.add(back);
-        msgBox.add(rightButton);
-        msgBox.add(leftButton);
-        msgBox.add(doneText1);
-        msgBox.add(highscoretxt);
-        msgBox.angle = 90;
-        
-        //configurate rightButton
-        rightButton.x = back.width / 2 + 100;
-        rightButton.y = back.height - rightButton.height - 90;
-        rightButton.inputEnabled = true;
-        rightButton.events.onInputDown.add(this.loadNextLevelEvent, this);
-
-        //configurate leftButton
-        leftButton.x = back.width / 2 - 600;
-		leftButton.y = back.height - leftButton.height - 90;
-        leftButton.inputEnabled = true;
-        leftButton.events.onInputDown.add(this.backToSelectModeEvent, this);
-
-        //set the message box in the center
-        msgBox.x = this.game.width / 2 + msgBox.height/2;
-        msgBox.y = this.game.height / 2 - msgBox.width / 2;
-        
-        //text position
-        doneText1.x = back.width / 2 - doneText1.width / 2;
-        doneText1.y = back.height / 2 - doneText1.height / 2 - 150;
-
-        highscoretxt.x = back.width / 2 - highscoretxt.width / 2;
-        highscoretxt.y = back.height / 2 - highscoretxt.height / 2 -25 ;
-
-        this.msgBox = msgBox;
-
-        if(t==1) {
-            winsound.play();
-            }
-    },
-
+    
     doneMessageBox(w = 1050, h = 1512) {
     	//destroy messagebox already exists
         if (this.msgBox) {
@@ -415,6 +349,64 @@ Game.Level2_hard.prototype = {
             }
 
     },
+
+    failMessageBox(w = 1050, h = 1512) {
+        //destroy messagebox if already exists
+        if (this.msgBox) {
+            this.msgBox.destroy();
+        }
+
+        //group for all boxitmes
+        var msgBox = this.game.add.group();
+		var back = this.game.add.sprite(0, 0, "gameoverBackground");
+        var rightButton = this.game.add.sprite(0, 0, "buttonAgain");
+        var leftButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+        
+		//make a text field
+        var style = {font:"70px Arial", align:"center"};
+
+        var doneText1 = this.game.add.text(0, 0, "Du hast den heißen Draht verlassen!", style);
+
+        doneText1.wordWrap = true;
+        doneText1.wordWrapWidth = w * .9;
+
+        //set the width and height passed in the parameters
+        back.width = w;
+        back.height = h;
+
+        //add elements to group
+        msgBox.add(back);
+        msgBox.add(rightButton);
+        msgBox.add(leftButton);
+        msgBox.add(doneText1);
+        msgBox.angle = 90;
+        
+        //configurate rightButton
+        rightButton.x = back.width / 2 + 100;
+        rightButton.y = back.height - rightButton.height - 90;
+        rightButton.inputEnabled = true;
+        rightButton.events.onInputDown.add(this.loadThisLevelEvent, this);   
+
+        //configurate leftButton
+        leftButton.x = back.width / 2 - 600;
+        leftButton.y = back.height - leftButton.height - 90;
+        leftButton.inputEnabled = true;
+        leftButton.events.onInputDown.add(this.backToSelectModeEvent, this);
+
+        //set the message box in the center
+        msgBox.x = this.game.width / 2 + msgBox.height/2;
+        msgBox.y = this.game.height / 2 - msgBox.width / 2;
+        
+        //text position
+        doneText1.x = back.width / 2 - doneText1.width / 2;
+        doneText1.y = back.height / 2 - doneText1.height / 2 - 200;
+
+        this.msgBox = msgBox;
+
+        if(t==1) {
+            failsound.play();
+        }
+},
 
 	unpauseEvent() {
 		this.gamePlay();

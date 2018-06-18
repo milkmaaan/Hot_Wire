@@ -291,6 +291,7 @@ Game.Level3_hard.prototype = {
         this.msgBox = msgBox;
 
     },
+
     doneMessageBox(w = 1050, h = 1512) {
     	//destroy messagebox already exists
         if (this.msgBox) {

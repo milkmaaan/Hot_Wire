@@ -424,8 +424,8 @@ wrongwayMessageBox(w = 1050, h = 1512) {
     //group for all boxitmes
     var msgBox = this.game.add.group();
     var back = this.game.add.sprite(0, 0, "gameoverBackground");
-    var upperButton = this.game.add.sprite(0, 0, "buttonAgain");
-    var lowerButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+    var rightButton = this.game.add.sprite(0, 0, "buttonAgain");
+    var leftButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
     
     //make a text field
     var style = {font:"70px Arial", align:"center"};
@@ -442,25 +442,22 @@ wrongwayMessageBox(w = 1050, h = 1512) {
 
     //add elements to group
     msgBox.add(back);
-    msgBox.add(upperButton);
-    msgBox.add(lowerButton);
+    msgBox.add(rightButton);
+    msgBox.add(leftButton);
     msgBox.add(doneText1);
     msgBox.angle = 90;
     
-    //set the button in the center
-    upperButton.x = back.width / 2 - upperButton.width / 2;
-    upperButton.y = back.height - upperButton.height - 400;
+    //configurate rightButton
+    rightButton.x = back.width / 2 + 100;
+    rightButton.y = back.height - rightButton.height - 90;
+    rightButton.inputEnabled = true;
+    rightButton.events.onInputDown.add(this.loadThisLevelEvent, this);   
 
-    lowerButton.x = back.width / 2 - upperButton.width / 2;
-    lowerButton.y = back.height - upperButton.height-100;
-
-    //enable button for input
-    upperButton.inputEnabled = true;
-    lowerButton.inputEnabled = true;
-
-    //add a listener to destroy box
-    upperButton.events.onInputDown.add(this.loadThisLevelEvent, this);
-    lowerButton.events.onInputDown.add(this.backToSelectModeEvent, this);
+    //configurate leftButton
+    leftButton.x = back.width / 2 - 600;
+    leftButton.y = back.height - leftButton.height - 90;
+    leftButton.inputEnabled = true;
+    leftButton.events.onInputDown.add(this.backToSelectModeEvent, this);
 
     //set the message box in the center
     msgBox.x = this.game.width / 2 + msgBox.height/2;

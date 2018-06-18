@@ -199,6 +199,8 @@ Game.Level12_hard.prototype = {
             if(countera == 2){
             }
             else{
+                fail.visible = true;
+                good.visible = false;
                 this.wrongwayMessageBox(1512, 1050)
                 sprite.inputEnabled = false;
             }
@@ -234,6 +236,8 @@ Game.Level12_hard.prototype = {
             if(countera == 3){
             }
             else{
+                fail.visible = true;
+                good.visible = false;
                 this.wrongwayMessageBox(1512, 1050)
                 sprite.inputEnabled = false;
             }
@@ -293,6 +297,8 @@ Game.Level12_hard.prototype = {
             if(countera == 1){
             }
             else{
+                fail.visible = true;
+                good.visible = false;
                 this.wrongwayMessageBox(1512, 1050)
                 sprite.inputEnabled = false;
             }
@@ -368,6 +374,8 @@ Game.Level12_hard.prototype = {
             if(countera == 4){
             }
             else{
+                fail.visible = true;
+                good.visible = false;
                 this.wrongwayMessageBox(1512, 1050)
                 sprite.inputEnabled = false;
             }
@@ -571,7 +579,7 @@ Game.Level12_hard.prototype = {
 
     },
 
-failMessageBox(w = 1050, h = 1512) {
+    failMessageBox(w = 1050, h = 1512) {
         //destroy messagebox if already exists
         if (this.msgBox) {
             this.msgBox.destroy();
@@ -637,8 +645,8 @@ wrongwayMessageBox(w = 1050, h = 1512) {
     //group for all boxitmes
     var msgBox = this.game.add.group();
     var back = this.game.add.sprite(0, 0, "gameoverBackground");
-    var upperButton = this.game.add.sprite(0, 0, "buttonAgain");
-    var lowerButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+    var rightButton = this.game.add.sprite(0, 0, "buttonAgain");
+    var leftButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
     
     //make a text field
     var style = {font:"70px Arial", align:"center"};
@@ -655,25 +663,22 @@ wrongwayMessageBox(w = 1050, h = 1512) {
 
     //add elements to group
     msgBox.add(back);
-    msgBox.add(upperButton);
-    msgBox.add(lowerButton);
+    msgBox.add(rightButton);
+    msgBox.add(leftButton);
     msgBox.add(doneText1);
     msgBox.angle = 90;
     
-    //set the button in the center
-    upperButton.x = back.width / 2 - upperButton.width / 2;
-    upperButton.y = back.height - upperButton.height - 400;
+    //configurate rightButton
+    rightButton.x = back.width / 2 + 100;
+    rightButton.y = back.height - rightButton.height - 90;
+    rightButton.inputEnabled = true;
+    rightButton.events.onInputDown.add(this.loadThisLevelEvent, this);   
 
-    lowerButton.x = back.width / 2 - upperButton.width / 2;
-    lowerButton.y = back.height - upperButton.height-100;
-
-    //enable button for input
-    upperButton.inputEnabled = true;
-    lowerButton.inputEnabled = true;
-
-    //add a listener to destroy box
-    upperButton.events.onInputDown.add(this.loadThisLevelEvent, this);
-    lowerButton.events.onInputDown.add(this.backToSelectModeEvent, this);
+    //configurate leftButton
+    leftButton.x = back.width / 2 - 600;
+    leftButton.y = back.height - leftButton.height - 90;
+    leftButton.inputEnabled = true;
+    leftButton.events.onInputDown.add(this.backToSelectModeEvent, this);
 
     //set the message box in the center
     msgBox.x = this.game.width / 2 + msgBox.height/2;
@@ -729,3 +734,72 @@ wrongwayMessageBox(w = 1050, h = 1512) {
     },
     
 }
+
+
+
+
+Game.Anleitung = function(game) {
+    this.player = null;
+};
+
+var titlescreen;
+
+Game.Anleitung.prototype = {
+    create:function(game) {
+
+        //black Fade
+        this.camera.flash('#000000');
+
+        //scale mode - central
+        //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+
+        //scale mode - customized
+        this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+        this.scale.pageAlignHorizontally = true;
+
+        //add background
+        game.add.tileSprite(0, 0, 1216, 1920, 'background_anleitung');
+        game.add.tileSprite(0, 0, 927, 1920, 'anleitungneu');
+
+        //speaker
+        this.createButton(game,"", 1060, 1260, 150, 150, "speakerIcon",
+        function(){
+            clicksound.play();
+            
+        });
+            
+
+        //add clicksound
+		clicksound = this.game.add.audio('clicksound');
+
+        this.createButton(game,"",game.world.centerX+450,game.world.centerY-800, 196, 196, "buttonZurueck",
+        function(){
+            clicksound.play();
+            this.state.start('MainMenu');
+        });
+    },
+
+    update:function(game) {
+
+    },
+
+    createButton: function(game, string, x, y, w, h, wallpaper, callback) {
+        var button1 = game.add.button(x, y, wallpaper, callback, this, 2, 1, 0);
+
+        button1.anchor.setTo(0.5,0.5);
+        button1.width = w;
+        button1.height = h;
+        button1.angle = 90;
+
+        var txt = game.add.text(button1.x, button1.y, string, {
+            font:"25px Arial",
+            fill:"#000",
+            align:"center"
+        });
+        
+        txt.anchor.setTo(0.5,0.5);
+        txt.angle = 90;
+    }
+}
+
+
