@@ -123,6 +123,8 @@ Game.Level10_easy.prototype = {
             if(countera == 1){
             }
             else{
+                fail.visible = true;
+                good.visible = false;
                 this.wrongwayMessageBox(1512, 1050)
                 sprite.inputEnabled = false;
             }

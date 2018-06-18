@@ -75,9 +75,9 @@ Game.Level11_easy.prototype = {
         draht37 = game.add.sprite(this.game.width / 2 - 350, 1000, 'draht10');
         draht38 = game.add.sprite(this.game.width / 2 - 500, 1000, 'draht16');
         draht39 = game.add.sprite(this.game.width / 2 - 590, 1000, 'draht9');
-        draht39 = game.add.sprite(this.game.width / 2 - 590, 1118, 'draht13');
-        draht40 = game.add.sprite(this.game.width / 2 - 590, 1518, 'draht15');
-        draht41 = game.add.sprite(this.game.width / 2 - 590, 1601, 'draht15');
+        draht40 = game.add.sprite(this.game.width / 2 - 590, 1118, 'draht13');
+        draht41 = game.add.sprite(this.game.width / 2 - 590, 1518, 'draht15');
+        draht42 = game.add.sprite(this.game.width / 2 - 590, 1602, 'draht15');
         ziel = game.add.sprite(this.game.width / 2 - 590, this.game.height - 118, 'ziell');
         
         //scale mode - central
@@ -271,6 +271,10 @@ Game.Level11_easy.prototype = {
             //text.text = 'Drag the sprites. Overlapping: true'; 
         }
         else if (this.checkOverlap(sprite, draht41))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true'; 
+        }
+        else if (this.checkOverlap(sprite, draht42))
 		{
             //text.text = 'Drag the sprites. Overlapping: true'; 
         }

@@ -53,26 +53,26 @@ Game.Level6_hard.prototype = {
         draht5 = game.add.sprite(this.game.width / 2 - 547.5, 600, 'draht1');    
         draht5 = game.add.sprite(this.game.width / 2 - 547.5, 659, 'draht7'); 
         draht6 = game.add.sprite(this.game.width / 2 - 547.5, 859, 'draht4'); 
-        draht6 = game.add.sprite(this.game.width / 2 - 488.5, 859, 'draht6');  
-        draht7 = game.add.sprite(this.game.width / 2 - 88.5, 859, 'draht8');
-        draht8 = game.add.sprite(this.game.width / 2 + 111.5, 859, 'draht3');
-        draht9 = game.add.sprite(this.game.width / 2 + 111.5, 659, 'draht7'); 
-        draht10 = game.add.sprite(this.game.width / 2 + 111.5, 600, 'draht1');
-        draht11 = game.add.sprite(this.game.width / 2 + 170.5, 600, 'draht8');  
-        draht12 = game.add.sprite(this.game.width / 2 + 370.5, 600, 'draht2');   
-        draht13 = game.add.sprite(this.game.width / 2 + 370.5, 659, 'draht5');   
-        draht14 = game.add.sprite(this.game.width / 2 + 370.5, 1059, 'draht3');  
-        draht15 = game.add.sprite(this.game.width / 2 - 30, 1059, 'draht6');   
+        draht7 = game.add.sprite(this.game.width / 2 - 488.5, 859, 'draht6');  
+        draht8 = game.add.sprite(this.game.width / 2 - 88.5, 859, 'draht8');
+        draht9 = game.add.sprite(this.game.width / 2 + 111.5, 859, 'draht3');
+        draht10 = game.add.sprite(this.game.width / 2 + 111.5, 659, 'draht7'); 
+        draht11 = game.add.sprite(this.game.width / 2 + 111.5, 600, 'draht1');
+        draht12 = game.add.sprite(this.game.width / 2 + 170.5, 600, 'draht8');  
+        draht13 = game.add.sprite(this.game.width / 2 + 370.5, 600, 'draht2');   
+        draht14 = game.add.sprite(this.game.width / 2 + 370.5, 659, 'draht5');   
+        draht15 = game.add.sprite(this.game.width / 2 + 370.5, 1059, 'draht3');  
+        draht16 = game.add.sprite(this.game.width / 2 - 30, 1059, 'draht6');   
         draht16 = game.add.sprite(this.game.width / 2 - 230, 1059, 'draht8');  
-        draht17 = game.add.sprite(this.game.width / 2 - 289, 1059, 'draht1'); 
-        draht18 = game.add.sprite(this.game.width / 2 - 289, 1118, 'draht5'); 
-        draht19 = game.add.sprite(this.game.width / 2 - 289, 1518, 'draht4');  
-        draht20 = game.add.sprite(this.game.width / 2 - 230, 1518, 'draht2');  
-        draht21 = game.add.sprite(this.game.width / 2 - 230, 1577, 'draht7');   
-        draht22 = game.add.sprite(this.game.width / 2 - 230, 1777, 'draht4');  
-        draht23 = game.add.sprite(this.game.width / 2 - 171, 1777, 'draht8');
-        draht24 = game.add.sprite(this.game.width / 2 + 29, 1777, 'draht2');  
-        draht25 = game.add.sprite(this.game.width / 2 + 29, this.game.height - 118, 'draht2');    
+        draht18 = game.add.sprite(this.game.width / 2 - 289, 1059, 'draht1'); 
+        draht19 = game.add.sprite(this.game.width / 2 - 289, 1118, 'draht5'); 
+        draht20 = game.add.sprite(this.game.width / 2 - 289, 1518, 'draht4');  
+        draht21 = game.add.sprite(this.game.width / 2 - 230, 1518, 'draht2');  
+        draht22 = game.add.sprite(this.game.width / 2 - 230, 1577, 'draht7');   
+        draht23 = game.add.sprite(this.game.width / 2 - 230, 1777, 'draht4');  
+        draht24 = game.add.sprite(this.game.width / 2 - 171, 1777, 'draht8');
+        draht25 = game.add.sprite(this.game.width / 2 + 29, 1777, 'draht2');  
+        draht26 = game.add.sprite(this.game.width / 2 + 29, this.game.height - 118, 'draht2');    
         ziel = game.add.sprite(this.game.width / 2 + 29, this.game.height - 59, 'ziel');
 		
         //scale mode - central
@@ -216,6 +216,10 @@ Game.Level6_hard.prototype = {
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
         }
+        else if (this.checkOverlap(sprite, draht26))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
         else if (this.checkOverlap(sprite, ziel))
 		{
             this.game.time.events.stop();
@@ -315,38 +319,59 @@ Game.Level6_hard.prototype = {
         if (this.msgBox) {
             this.msgBox.destroy();
         }
-        //group for all items
+
         var msgBox = this.game.add.group();
-		var back = this.game.add.sprite(0, 0, "doneBackground");
+        var back = this.game.add.sprite(0, 0, "doneBackground");
         var rightButton = this.game.add.sprite(0, 0, "buttonWeiter");
         var leftButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+    
+        //make a text field
+        var style = {font:"50px Arial", align:"center"};
+        var style2 = {font:"50px Arial", align:"center", fill:"#ff0000", fontWeight:"bold"};
+
+        var doneText1 = this.game.add.text(0, 0, "Du hast das Level geschafft!\nDeine Zeit: " + counter + " Sekunden", style);
+        var doneText2 = this.game.add.text(0, 0, "Highscore: "+ localStorage.getItem('level6_hard'), style2);
         
-		//make a text field
-        var style = {font:"70px Arial", align:"center"};
-        var style2 = {font:"70px Arial", align:"center", fill:"#daa520", fontWeight:"bold"};
+        //Set time for trophies
+        var goldtime = 15;
+        var silbertime = 30;
 
-        var doneText1 = this.game.add.text(0, 0, "Du hast das Level geschafft!\n Deine Zeit: " + counter + " Sekunden", style);
-
-        var highscoretxt = this.game.add.text(0, 0, "Dein Highscore: " + localStorage.getItem('level6_hard') +" Sekunden", style2);
+        //show trophy
+        if (counter <= goldtime) {
+            //gold
+            var trophy = this.game.add.sprite(0, 0, "trophygold");
+            var trophyText = this.game.add.text(0, 0, "Du hast den goldenen Pokal freigeschaltet!", style2);
+        }
+        else if (counter > goldtime && counter <= silbertime) {
+            //silber
+            var trophy = this.game.add.sprite(0, 0, "trophysilber");
+            var trophyText = this.game.add.text(0, 0, "Du hast den silbernen Pokal freigeschaltet!", style2);
+        }
+        else {
+            //bronze
+            var trophy = this.game.add.sprite(0, 0, "trophybronze");
+            var trophyText = this.game.add.text(0, 0, "Du hast den brozenen Pokal freigeschaltet!", style2);
+        }
 
         doneText1.wordWrap = true;
         doneText1.wordWrapWidth = w * .9;
 
-        highscoretxt.wordWrap = true;
-        highscoretxt.wordWrapWidth = w * .9;
- 
-        //set the width and height passed in the parameters
+        doneText2.wordWrap = true;
+        doneText2.wordWrapWidth = w * .9;
+
         back.width = w;
         back.height = h;
 
         //add elements to group
         msgBox.add(back);
-        msgBox.add(rightButton);
         msgBox.add(leftButton);
+        msgBox.add(rightButton);
         msgBox.add(doneText1);
-        msgBox.add(highscoretxt);
+        msgBox.add(doneText2);
+        msgBox.add(trophy);
+        msgBox.add(trophyText);
         msgBox.angle = 90;
-        
+
         //configurate rightButton
         rightButton.x = back.width / 2 + 100;
         rightButton.y = back.height - rightButton.height - 90;
@@ -355,26 +380,31 @@ Game.Level6_hard.prototype = {
 
         //configurate leftButton
         leftButton.x = back.width / 2 - 600;
-		leftButton.y = back.height - leftButton.height - 90;
+        leftButton.y = back.height - leftButton.height - 90;
         leftButton.inputEnabled = true;
-        leftButton.events.onInputDown.add(this.backToSelectModeEvent, this);
-
+		leftButton.events.onInputDown.add(this.backToSelectModeEvent, this);
+        
         //set the message box in the center
         msgBox.x = this.game.width / 2 + msgBox.height/2;
         msgBox.y = this.game.height / 2 - msgBox.width / 2;
-        
-        //text position
-        doneText1.x = back.width / 2 - doneText1.width / 2;
-        doneText1.y = back.height / 2 - doneText1.height / 2 - 150;
 
-        highscoretxt.x = back.width / 2 - highscoretxt.width / 2;
-        highscoretxt.y = back.height / 2 - highscoretxt.height / 2 -25 ;
+        //set trophy
+        trophy.x = back.width / 2 - trophy.width / 2;
+        trophy.y = back.height / 2 - trophy.height / 2 + 30;
+        
+        doneText1.x = back.width / 2 - doneText1.width / 2;
+        doneText1.y = back.height / 2 - doneText1.height / 2 - 230;
+        doneText2.x = back.width / 2 - doneText2.width / 2;
+        doneText2.y = back.height / 2 - doneText2.height / 2 + 150;
+        trophyText.x = back.width / 2 - trophyText.width / 2;
+        trophyText.y = back.height / 2 - trophyText.height / 2 - 100;
 
         this.msgBox = msgBox;
 
         if(t==1) {
             winsound.play();
             }
+
     },
 
 failMessageBox(w = 1050, h = 1512) {

@@ -7,13 +7,14 @@ Game.Preloader.prototype = {
 	preload:function(){
 	
 		//titlescreen background with Logo
-		this.load.image("background", "assets/backgrounds/background.png");
+		this.load.image("background", "assets/backgrounds/background_mainmenu.png");
 		this.load.image("background_selectmode", "assets/backgrounds/background_selectmode.png");
 		this.load.image("background_steuerung", "assets/backgrounds/background_steuerung.png");
 		this.load.image("background_anleitung", "assets/backgrounds/background_anleitung.png");
 		this.load.image("background_highscore", "assets/backgrounds/background_highscore.png");
 		this.load.image("background_clear", "assets/backgrounds/background_clear.png");
-		this.load.image("anleitungneu", "assets/backgrounds/anleitungneu.png");
+		this.load.image("anleitung1", "assets/backgrounds/anleitung1.png");
+		this.load.image("anleitung2", "assets/backgrounds/anleitung2.png");
 
 		//trophies
 		this.load.image("trophygold", "assets/trophies/trophy_gold.png");
@@ -80,6 +81,8 @@ Game.Preloader.prototype = {
 		this.load.image("buttonZurueck", "assets/buttons/button_zurueck.png");
 		this.load.image("buttonHighscores", "assets/buttons/button_highscores.png");
 		this.load.image("speakerIcon", "assets/buttons/speaker.png");
+		this.load.image("buttonPageLeft", "assets/buttons/button_pageleft.png");
+		this.load.image("buttonPageRight", "assets/buttons/button_pageright.png");
 
 		//sounds
 		this.game.load.audio("failsound", "assets/sounds/gameover.wav");
@@ -89,8 +92,8 @@ Game.Preloader.prototype = {
 
 	create:function(){
 		//this.state.start('MainMenu');
-		//this.state.start('Level11_easy');
-		this.state.start('Level11_hard');
+		this.state.start('Level10_easy');
+		//this.state.start('Level7_hard');
 		
 	}
 };

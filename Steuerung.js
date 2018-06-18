@@ -24,16 +24,16 @@ Game.Steuerung.prototype = {
         //speaker = game.add.sprite(1140, 1200, "speakerIcon");
         //speaker.angle = 90;
 
-        this.createButton(game,"", 1140, 1200, 150, 150, "speakerIcon",
+        //Speaker
+        this.createButton(game,"",1060, 1260, 150, 150, "speakerIcon",
         function(){
             clicksound.play();
-            
         });
 
         //add clicksound
 		clicksound = this.game.add.audio('clicksound');
 
-        this.createButton(game,"",game.world.centerX+450,game.world.centerY-800, 196, 196, "buttonZurueck",
+        this.createButton(game,"",game.world.centerX+450,game.world.centerY-800, 196, 245, "buttonZurueck",
         function(){
             clicksound.play();
             this.state.start('MainMenu');

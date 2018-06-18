@@ -70,10 +70,10 @@ Game.Level12_easy.prototype = {
         draht31 = game.add.sprite(this.game.width / 2 - 548, 160, 'draht13');
         draht32 = game.add.sprite(this.game.width / 2 - 548, 560, 'draht13');
         draht33 = game.add.sprite(this.game.width / 2 - 548, 960, 'draht13');
-        draht34 = game.add.sprite(this.game.width / 2 - 548, 1283, 'draht13');
-        draht35 = game.add.sprite(this.game.width / 2 - 548, 1683, 'draht12');
-        draht36 = game.add.sprite(this.game.width / 2 - 430, 1683, 'draht14');
-        draht37 = game.add.sprite(this.game.width / 2 - 30, 1683, 'draht10');
+        draht34 = game.add.sprite(this.game.width / 2 - 548, 1284, 'draht13');
+        draht35 = game.add.sprite(this.game.width / 2 - 548, 1684, 'draht12');
+        draht36 = game.add.sprite(this.game.width / 2 - 430, 1684, 'draht14');
+        draht37 = game.add.sprite(this.game.width / 2 - 30, 1684, 'draht10');
         ziel = game.add.sprite(this.game.width / 2 - 30, this.game.height - 118, 'ziell');
         
         //scale mode - central
@@ -224,6 +224,8 @@ Game.Level12_easy.prototype = {
             if(countera == 1){
             }
             else{
+                fail.visible = true;
+                good.visible = false;
                 this.wrongwayMessageBox(1512, 1050)
                 sprite.inputEnabled = false;
             }

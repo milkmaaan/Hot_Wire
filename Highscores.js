@@ -345,7 +345,7 @@ Game.Highscores.prototype = {
             }
         }
         
-        this.createButton(game,"",game.world.centerX+450,game.world.centerY-800, 196, 196, "buttonZurueck",
+        this.createButton(game,"",game.world.centerX+450,game.world.centerY-800, 196, 245, "buttonZurueck",
         function(){
             clicksound.play();
             this.state.start('SelectMode');
