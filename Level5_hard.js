@@ -451,6 +451,7 @@ failMessageBox(w = 1050, h = 1512) {
 		counter = 0;
         this.msgBox.destroy();	
         clicksound.play();	
+        winsound.stop();	
     },
     
 	loadNextLevelEvent() {

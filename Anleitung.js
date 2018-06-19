@@ -26,6 +26,7 @@ Game.Anleitung.prototype = {
         
         this.createButton(game,"",game.world.centerX+450,game.world.centerY-800, 196, 245, "buttonZurueck",
         function(){
+            soundanleitung.stop();
             clicksound.play();
             this.state.start('MainMenu');
         });

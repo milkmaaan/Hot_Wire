@@ -317,7 +317,6 @@ Game.Level11_hard.prototype = {
 		{
              //text.text = 'Drag the sprites. Overlapping: true';
              countera = 1;
-
         }
         else if (this.checkOverlap(sprite, draht45))
 		{
@@ -684,7 +683,8 @@ wrongwayMessageBox(w = 1050, h = 1512) {
 		this.state.start('SelectMode');
 		counter = 0;
         this.msgBox.destroy();	
-        clicksound.play();	
+        clicksound.play();
+        winsound.stop();		
     },
     
 	loadNextLevelEvent() {

@@ -425,7 +425,8 @@ Game.Level2_hard.prototype = {
 		this.state.start('SelectMode');
 		counter = 0;
         this.msgBox.destroy();	
-        clicksound.play();	
+        clicksound.play();
+        winsound.stop();		
     },
     
 	loadNextLevelEvent() {
