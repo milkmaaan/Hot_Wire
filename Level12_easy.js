@@ -215,7 +215,15 @@ Game.Level12_easy.prototype = {
         else if (this.checkOverlap(sprite, draht27))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-		}
+            if(countera == 1){
+            }
+            else{
+                fail.visible = true;
+                good.visible = false;
+                this.wrongwayMessageBox(1512, 1050)
+                sprite.inputEnabled = false;
+            }
+        }
 		else if (this.checkOverlap(sprite, draht28))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
@@ -231,6 +239,14 @@ Game.Level12_easy.prototype = {
         else if (this.checkOverlap(sprite, draht29))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
+            if(countera == 1){
+            }
+            else{
+                fail.visible = true;
+                good.visible = false;
+                this.wrongwayMessageBox(1512, 1050)
+                sprite.inputEnabled = false;
+            }
         }
         else if (this.checkOverlap(sprite, draht30))
 		{
