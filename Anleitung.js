@@ -17,7 +17,10 @@ Game.Anleitung.prototype = {
         clicksound = this.game.add.audio('clicksound');
         
         //clicksound
-		coinsound = this.game.add.audio('coinsound');
+        soundanleitung = this.game.add.audio('soundanleitung');
+        soundsteuerung = this.game.add.audio('soundsteuerung');
+
+        
 
         game.add.sprite(0, 0, 'anleitung1');
 
@@ -38,7 +41,7 @@ Game.Anleitung.prototype = {
         //Speaker
         this.createButton(game,"",1060, 1260, 150, 150, "speakerIcon",
         function(){
-            clicksound.play();
+            soundanleitung.play();
         });
 
         //Player (Kugel) - Wird benötigt, damit nicht 'velocity' of null

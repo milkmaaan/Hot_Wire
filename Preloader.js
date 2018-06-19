@@ -88,6 +88,8 @@ Game.Preloader.prototype = {
 		this.game.load.audio("failsound", "assets/sounds/gameover.wav");
 		this.game.load.audio("clicksound", "assets/sounds/click.wav");
 		this.game.load.audio("winsound", "assets/sounds/win.wav");
+		this.game.load.audio("soundsteuerung", "assets/sounds/hwsteuerung.wav");
+		this.game.load.audio("soundanleitung", "assets/sounds/hwanleitung.wav");
 	},
 
 	create:function(){
