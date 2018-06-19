@@ -2,8 +2,6 @@ Game.Highscores = function(game) {
     this.player = null;
 };
 
-var titlescreen;
-
 //hard
 var level1hardgold = 2
 var level1hardsilber = 5
@@ -44,20 +42,20 @@ var level12hardsilber = 14
 Game.Highscores.prototype = {
     create:function(game) {
 
-        //black Fade
+        //black fade
         this.camera.flash('#000000');
 
-        // Variante - mittig
+        //scale mode - central
         //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 
-        //Variante - angepasst
+        //scale mode - customized
         this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
         this.scale.pageAlignHorizontally = true;
 
-        //Hintergrund
+        //background
         game.add.tileSprite(0, 0, 1216, 1920, 'background_clear');
 
-        //clicksound
+        //sound
 		clicksound = this.game.add.audio('clicksound');
 
         var style = {font:"40px Arial", align:"center", fill:"#ffffff"};
@@ -81,7 +79,7 @@ Game.Highscores.prototype = {
                 trophyhard1.angle = 90;
             }
             else if (localStorage.getItem('level1_hard') > level1hardgold && localStorage.getItem('level1_hard') <= level1hardsilber) {
-                //silber
+                //silver
                 trophyhard1 = game.add.sprite(788, 535,'trophysilber');
                 trophyhard1.angle = 90;
             }
@@ -104,7 +102,7 @@ Game.Highscores.prototype = {
                 trophyhard2.angle = 90;
             }
             else if (localStorage.getItem('level2_hard') > level2hardgold && localStorage.getItem('level2_hard') <= level2hardsilber) {
-                //silber
+                //silver
                 trophyhard2 = game.add.sprite(788, 753,'trophysilber');
                 trophyhard2.angle = 90;
             }
@@ -127,7 +125,7 @@ Game.Highscores.prototype = {
                 trophyhard3.angle = 90;
             }
             else if (localStorage.getItem('level3_hard') > level3hardgold && localStorage.getItem('level3_hard') <= level3hardsilber) {
-                //silber
+                //silver
                 trophyhard3 = game.add.sprite(788, 971,'trophysilber');
                 trophyhard3.angle = 90;
             }
@@ -150,7 +148,7 @@ Game.Highscores.prototype = {
                 trophyhard4.angle = 90;
             }
             else if (localStorage.getItem('level4_hard') > level4hardgold && localStorage.getItem('level4_hard') <= level4hardsilber) {
-                //silber
+                //silver
                 trophyhard4 = game.add.sprite(788, 1189,'trophysilber');
                 trophyhard4.angle = 90;
             }
@@ -173,7 +171,7 @@ Game.Highscores.prototype = {
                 trophyhard5.angle = 90;
             }
             else if (localStorage.getItem('level5_hard') > level5hardgold && localStorage.getItem('level5_hard') <= level5hardsilber) {
-                //silber
+                //silver
                 trophyhard5 = game.add.sprite(510, 535,'trophysilber');
                 trophyhard5.angle = 90;
             }
@@ -196,7 +194,7 @@ Game.Highscores.prototype = {
                 trophyhard6.angle = 90;
             }
             else if (localStorage.getItem('level6_hard') > level6hardgold && localStorage.getItem('level6_hard') <= level6hardsilber) {
-                //silber
+                //silver
                 trophyhard6 = game.add.sprite(510, 753,'trophysilber');
                 trophyhard6.angle = 90;
             }
@@ -219,7 +217,7 @@ Game.Highscores.prototype = {
                 trophyhard7.angle = 90;
             }
             else if (localStorage.getItem('level7_hard') > level7hardgold && localStorage.getItem('level7_hard') <= level7hardsilber) {
-                //silber
+                //silver
                 trophyhard7 = game.add.sprite(510, 971,'trophysilber');
                 trophyhard7.angle = 90;
             }
@@ -242,7 +240,7 @@ Game.Highscores.prototype = {
                 trophyhard8.angle = 90;
             }
             else if (localStorage.getItem('level8_hard') > level8hardgold && localStorage.getItem('level8_hard') <= level8hardsilber) {
-                //silber
+                //silver
                 trophyhard8 = game.add.sprite(510, 1189,'trophysilber');
                 trophyhard8.angle = 90;
             }
@@ -265,7 +263,7 @@ Game.Highscores.prototype = {
                 trophyhard9.angle = 90;
             }
             else if (localStorage.getItem('level9_hard') > level9hardgold && localStorage.getItem('level9_hard') <= level9hardsilber) {
-                //silber
+                //silver
                 trophyhard9 = game.add.sprite(232, 535,'trophysilber');
                 trophyhard9.angle = 90;
             }
@@ -288,7 +286,7 @@ Game.Highscores.prototype = {
                 trophyhard10.angle = 90;
             }
             else if (localStorage.getItem('level10_hard') > level10hardgold && localStorage.getItem('level10_hard') <= level10hardsilber) {
-                //silber
+                //silver
                 trophyhard10 = game.add.sprite(232, 753,'trophysilber');
                 trophyhard10.angle = 90;
             }
@@ -311,7 +309,7 @@ Game.Highscores.prototype = {
                 trophyhard11.angle = 90;
             }
             else if (localStorage.getItem('level11_hard') > level11hardgold && localStorage.getItem('level11_hard') <= level11hardsilber) {
-                //silber
+                //silver
                 trophyhard11 = game.add.sprite(232, 971,'trophysilber');
                 trophyhard11.angle = 90;
             }
@@ -334,7 +332,7 @@ Game.Highscores.prototype = {
                 trophyhard12.angle = 90;
             }
             else if (localStorage.getItem('level12_hard') > level12hardgold && localStorage.getItem('level12_hard') <= level12hardsilber) {
-                //silber
+                //silver
                 trophyhard12 = game.add.sprite(232, 1189,'trophysilber');
                 trophyhard12.angle = 90;
             }

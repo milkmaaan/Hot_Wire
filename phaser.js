@@ -9236,7 +9236,7 @@ TopDownVehicle.prototype.update = function(){
  * @extends {Constraint}
  * @param {Vehicle} vehicle
  * @param {object} [options]
- * @param {Array} [options.localForwardVector]The local wheel forward vector in local body space. Default is zero.
+ * @param {Array} [options.localForwardVector] The local wheel forward vector in local body space. Default is zero.
  * @param {Array} [options.localPosition] The local position of the wheen in the chassis body. Default is zero - the center of the body.
  * @param {Array} [options.sideFriction=5] The max friction force in the sideways direction.
  */

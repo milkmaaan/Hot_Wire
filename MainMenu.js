@@ -2,9 +2,6 @@ Game.MainMenu = function(game) {
     this.player = null;
 };
 
-var titlescreen;
-
-
 Game.MainMenu.prototype = {
     create:function(game) {
 
@@ -42,10 +39,6 @@ Game.MainMenu.prototype = {
             this.state.start('Steuerung');
         });
           
-    },
-
-    update:function(game) {
-
     },
 
     createButton: function(game, string, x, y, w, h, wallpaper, callback) {

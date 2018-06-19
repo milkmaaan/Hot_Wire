@@ -250,7 +250,7 @@ Game.Level3_hard.prototype = {
         var style = {font:"70px Arial", align:"center"};
         var pauseText = this.game.add.text(0, 0, "Du hast das Level pausiert.\n Diese Zeiten werden benötigt, um die jeweiligen Pokale zu erreichen.", style);
 
-        var trophytime = this.game.add.sprite(0, 0, "trophytimehard1");
+        var trophytime = this.game.add.sprite(0, 0, "trophytimehard3");
 
         pauseText.wordWrap = true;
         pauseText.wordWrapWidth = w * .9;

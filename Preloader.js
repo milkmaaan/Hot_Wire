@@ -6,7 +6,7 @@ Game.Preloader = function(game){
 Game.Preloader.prototype = {
 	preload:function(){
 	
-		//titlescreen background with Logo
+		//backgrounds
 		this.load.image("background", "assets/backgrounds/background_mainmenu.png");
 		this.load.image("background_selectmode", "assets/backgrounds/background_selectmode.png");
 		this.load.image("background_steuerung", "assets/backgrounds/background_steuerung.png");
@@ -15,24 +15,33 @@ Game.Preloader.prototype = {
 		this.load.image("background_clear", "assets/backgrounds/background_clear.png");
 		this.load.image("anleitung1", "assets/backgrounds/anleitung1.png");
 		this.load.image("anleitung2", "assets/backgrounds/anleitung2.png");
+		this.load.image("pauseBackground", "assets/backgrounds/pause_background.png");
+		this.load.image("doneBackground", "assets/backgrounds/done_background.png");
+		this.load.image("gameoverBackground", "assets/backgrounds/gameover_background.png");
 
 		//trophies
 		this.load.image("trophygold", "assets/trophies/trophy_gold.png");
 		this.load.image("trophysilber", "assets/trophies/trophy_silber.png");
 		this.load.image("trophybronze", "assets/trophies/trophy_bronze.png");
 		this.load.image("trophytimehard1", "assets/trophies/hardlevel1.png");
+		this.load.image("trophytimehard2", "assets/trophies/hardlevel2.png");
+		this.load.image("trophytimehard3", "assets/trophies/hardlevel3.png");
+		this.load.image("trophytimehard4", "assets/trophies/hardlevel4.png");
+		this.load.image("trophytimehard5", "assets/trophies/hardlevel5.png");
+		this.load.image("trophytimehard6", "assets/trophies/hardlevel6.png");
+		this.load.image("trophytimehard7", "assets/trophies/hardlevel7.png");
+		this.load.image("trophytimehard8", "assets/trophies/hardlevel8.png");
+		this.load.image("trophytimehard9", "assets/trophies/hardlevel9.png");
+		this.load.image("trophytimehard10", "assets/trophies/hardlevel10.png");
+		this.load.image("trophytimehard11", "assets/trophies/hardlevel11.png");
+		this.load.image("trophytimehard12", "assets/trophies/hardlevel12.png");
 
 		//trophyboard
 		this.load.image("trophyschrank", "assets/trophies/trophyschrank.png");
 		this.load.image("pokalschrank_schwer", "assets/trophies/pokalschrank_schwer.png");
 
-		//Player Sprite
+		//player sprite
 		this.load.spritesheet('player', 'assets/sprites/player.png',59,59);
-
-		//backgrounds
-		this.load.image("pauseBackground", "assets/backgrounds/pause_background.png");
-		this.load.image("doneBackground", "assets/backgrounds/done_background.png");
-		this.load.image("gameoverBackground", "assets/backgrounds/gameover_background.png");
 
 		//sprites for gamebackground and goal
 		this.load.image("holz", "assets/sprites/holz.jpg");
