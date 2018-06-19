@@ -11,13 +11,18 @@ Game.Level5_easy.prototype = {
 
 	create:function(game){
 
-		//black Fade
+		//black fade
         this.camera.flash('#000000');
-
-        this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
         //add wood for background
         this.game.add.tileSprite(0, 0, 1090, 1920, 'holz');
+
+        //scale mode - central
+        //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+
+        //scale mode - customized
+        this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+        this.scale.pageAlignHorizontally = true;
 
         //status bar
         pauseIcon = this.game.add.sprite(1088, this.game.height / - 600, "pauseIcon");
@@ -53,13 +58,6 @@ Game.Level5_easy.prototype = {
         draht15 = game.add.sprite(this.game.width / 2 - 547, 1154, 'draht13');
         draht16 = game.add.sprite(this.game.width / 2 - 547, 1402, 'draht13');
         ziel = game.add.sprite(this.game.width / 2 - 547, this.game.height - 118, 'ziell');
-        
-        //scale mode - central
-        //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-
-        //scale mode - customized
-        this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
-        this.scale.pageAlignHorizontally = true;
 
         //add player
         sprite = game.add.sprite(this.game.width / 2 -59 , 50, 'player');
@@ -174,13 +172,14 @@ Game.Level5_easy.prototype = {
     var boundsB = spriteB.getBounds();
 
     return Phaser.Rectangle.intersects(boundsA, boundsB);
-
-	},
+    },
+    
     pauseMessageBox(w = 1050, h = 1512) {
     	//destroy messagebox if already exists
         if (this.msgBox) {
             this.msgBox.destroy();
         }
+
         //group for all box-itmes
         var msgBox = this.game.add.group();
 
@@ -236,6 +235,7 @@ Game.Level5_easy.prototype = {
         if (this.msgBox) {
             this.msgBox.destroy();
         }
+        
         //group for all box-items
         var msgBox = this.game.add.group();
 		var back = this.game.add.sprite(0, 0, "doneBackground");

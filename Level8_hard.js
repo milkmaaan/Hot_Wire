@@ -8,20 +8,24 @@ var highscore;
 var sprite;
 var levelText;
 var t;
-var timerText = 0;
 var currentTimeText = 0;
 
 Game.Level8_hard.prototype = {
 
 	create:function(game){
 
-        //black Fade
+        //black fade
         this.camera.flash('#000000');
-
-        this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
         //add wood for background
         this.game.add.tileSprite(0, 0, 1090, 1920, 'holz');
+
+        //scale mode - central
+        //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+
+        //scale mode - customized
+        this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+        this.scale.pageAlignHorizontally = true;
 
         //status bar
         pauseIcon = this.game.add.sprite(1088, this.game.height / - 600, "pauseIcon");
@@ -72,13 +76,6 @@ Game.Level8_hard.prototype = {
         draht24 = game.add.sprite(this.game.width / 2 - 89, 1661, 'draht7');
         ziel = game.add.sprite(this.game.width / 2 - 89, this.game.height - 59, 'ziel');
 		
-        //scale mode - central
-        //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-
-        //scale mode - customized
-        this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
-        this.scale.pageAlignHorizontally = true;
-
         //add player
         sprite = game.add.sprite(this.game.width / 2 - 59, 50, 'player');
 		sprite.inputEnabled = true;
@@ -96,12 +93,12 @@ Game.Level8_hard.prototype = {
 
         //set variable to 0 for failsound
         t = 0;
-
 	},
 	
 	gamePause:function(){
 		this.game.paused=true;
-	},
+    },
+    
 	gamePlay:function(){
 		this.game.paused=false;
 	},
@@ -236,6 +233,7 @@ Game.Level8_hard.prototype = {
             //text.text = 'Drag the sprites. Overlapping: false';
 		}
     },
+
 	checkOverlap:function(spriteA, spriteB) {
 
     var boundsA = spriteA.getBounds();
@@ -243,7 +241,8 @@ Game.Level8_hard.prototype = {
 
     return Phaser.Rectangle.intersects(boundsA, boundsB);
 
-	},
+    },
+    
     pauseMessageBox(w = 1050, h = 1512) {
         if (this.msgBox) {
             this.msgBox.destroy();
@@ -297,12 +296,14 @@ Game.Level8_hard.prototype = {
         trophytime.x = back.width / 2 - pauseText.width / 2 + 100;
         trophytime.y = back.height / 2 - pauseText.height / 2 + 125;
 
+        //set the message box in the center
         msgBox.x = this.game.width / 2 + msgBox.height/2;
         msgBox.y = this.game.height / 2 - msgBox.width / 2;
 
         this.msgBox = msgBox;
 
     },
+
     doneMessageBox(w = 1050, h = 1512) {
     	//destroy messagebox already exists
         if (this.msgBox) {
@@ -321,7 +322,7 @@ Game.Level8_hard.prototype = {
         var doneText1 = this.game.add.text(0, 0, "Du hast das Level geschafft!\nDeine Zeit: " + counter + " Sekunden", style);
         var doneText2 = this.game.add.text(0, 0, "Highscore: "+ localStorage.getItem('level8_hard'), style2);
         
-        //Set time for trophies
+        //set time for trophies
         var goldtime = 15;
         var silbertime = 30;
 
@@ -332,7 +333,7 @@ Game.Level8_hard.prototype = {
             var trophyText = this.game.add.text(0, 0, "Du hast den goldenen Pokal freigeschaltet!", style2);
         }
         else if (counter > goldtime && counter <= silbertime) {
-            //silber
+            //silver
             var trophy = this.game.add.sprite(0, 0, "trophysilber");
             var trophyText = this.game.add.text(0, 0, "Du hast den silbernen Pokal freigeschaltet!", style2);
         }
@@ -393,7 +394,6 @@ Game.Level8_hard.prototype = {
         if(t==1) {
             winsound.play();
             }
-
     },
 
 failMessageBox(w = 1050, h = 1512) {

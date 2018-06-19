@@ -8,20 +8,24 @@ var highscore;
 var sprite;
 var levelText;
 var t;
-var timerText = 0;
 var currentTimeText = 0;
 
 Game.Level5_hard.prototype = {
 
 	create:function(game){
 
-        //black Fade
+        //black fade
         this.camera.flash('#000000');
-
-        this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
         //add wood for background
         this.game.add.tileSprite(0, 0, 1090, 1920, 'holz');
+
+        //scale mode - central
+        //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+
+        //scale mode - customized
+        this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+        this.scale.pageAlignHorizontally = true;
 
         //status bar
         pauseIcon = this.game.add.sprite(1088, this.game.height / - 600, "pauseIcon");
@@ -68,13 +72,6 @@ Game.Level5_hard.prototype = {
         draht20 = game.add.sprite(this.game.width / 2 - 88, 1661, 'draht7');
         ziel = game.add.sprite(this.game.width / 2 - 88, this.game.height - 59, 'ziel');
 		
-        //scale mode - central
-        //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-
-        //scale mode - customized
-        this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
-        this.scale.pageAlignHorizontally = true;
-
         //add player
         sprite = game.add.sprite(this.game.width / 2 - 59, 50, 'player');
 		sprite.inputEnabled = true;
@@ -92,12 +89,12 @@ Game.Level5_hard.prototype = {
 
         //set variable to 0 for failsound
         t = 0;
-
 	},
 	
 	gamePause:function(){
 		this.game.paused=true;
-	},
+    },
+    
 	gamePlay:function(){
 		this.game.paused=false;
 	},
@@ -216,14 +213,15 @@ Game.Level5_hard.prototype = {
             //text.text = 'Drag the sprites. Overlapping: false';
 		}
     },
+
 	checkOverlap:function(spriteA, spriteB) {
 
     var boundsA = spriteA.getBounds();
     var boundsB = spriteB.getBounds();
 
     return Phaser.Rectangle.intersects(boundsA, boundsB);
-
-	},
+    },
+    
     pauseMessageBox(w = 1050, h = 1512) {
         if (this.msgBox) {
             this.msgBox.destroy();
@@ -281,8 +279,8 @@ Game.Level5_hard.prototype = {
         msgBox.y = this.game.height / 2 - msgBox.width / 2;
 
         this.msgBox = msgBox;
-
     },
+
     doneMessageBox(w = 1050, h = 1512) {
     	//destroy messagebox already exists
         if (this.msgBox) {
@@ -360,7 +358,8 @@ Game.Level5_hard.prototype = {
         //set trophy
         trophy.x = back.width / 2 - trophy.width / 2;
         trophy.y = back.height / 2 - trophy.height / 2 + 30;
-        
+         
+        //text position
         doneText1.x = back.width / 2 - doneText1.width / 2;
         doneText1.y = back.height / 2 - doneText1.height / 2 - 230;
         doneText2.x = back.width / 2 - doneText2.width / 2;
@@ -373,8 +372,8 @@ Game.Level5_hard.prototype = {
         if(t==1) {
             winsound.play();
             }
-
     },
+    
 failMessageBox(w = 1050, h = 1512) {
         //destroy messagebox if already exists
         if (this.msgBox) {

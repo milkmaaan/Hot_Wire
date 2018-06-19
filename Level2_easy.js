@@ -11,13 +11,18 @@ Game.Level2_easy.prototype = {
 
 	create:function(game){
 
-		//black Fade
+		//black fade
         this.camera.flash('#000000');
-
-        this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
         //add wood for background
         this.game.add.tileSprite(0, 0, 1090, 1920, 'holz');
+
+        //scale mode - central
+        //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+
+        //scale mode - customized
+        this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+        this.scale.pageAlignHorizontally = true;
 
         //status bar
         pauseIcon = this.game.add.sprite(1088, this.game.height / - 600, "pauseIcon");
@@ -48,14 +53,7 @@ Game.Level2_easy.prototype = {
         draht10 = game.add.sprite(this.game.width / 2 + 171, 1118, 'draht10');
         draht11 = game.add.sprite(this.game.width / 2 + 171, 1236, 'draht13');
         draht12 = game.add.sprite(this.game.width / 2 + 171, 1402, 'draht13');
-        ziel = game.add.sprite(this.game.width / 2 + 171, this.game.height - 118, 'ziell');
-        
-        //scale mode - central
-        //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-
-        //scale mode - customized
-        this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
-        this.scale.pageAlignHorizontally = true;
+        ziel = game.add.sprite(this.game.width / 2 + 171, this.game.height - 118, 'ziell'); 
 
         //add player
         sprite = game.add.sprite(this.game.width / 2 -59 , 50, 'player');
@@ -153,13 +151,14 @@ Game.Level2_easy.prototype = {
     var boundsB = spriteB.getBounds();
 
     return Phaser.Rectangle.intersects(boundsA, boundsB);
-
-	},
+    },
+    
     pauseMessageBox(w = 1050, h = 1512) {
     	//destroy messagebox if already exists
         if (this.msgBox) {
             this.msgBox.destroy();
         }
+
         //group for all box-itmes
         var msgBox = this.game.add.group();
 
@@ -206,7 +205,6 @@ Game.Level2_easy.prototype = {
         msgBox.x = this.game.width / 2 + msgBox.height/2;
         msgBox.y = this.game.height / 2 - msgBox.width / 2;
 
-        //make a state reference to the messsage box
         this.msgBox = msgBox;
     },
 
@@ -215,6 +213,7 @@ Game.Level2_easy.prototype = {
         if (this.msgBox) {
             this.msgBox.destroy();
         }
+        
         //group for all box-items
         var msgBox = this.game.add.group();
 		var back = this.game.add.sprite(0, 0, "doneBackground");

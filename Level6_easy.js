@@ -11,13 +11,18 @@ Game.Level6_easy.prototype = {
 
 	create:function(game){
 
-		//black Fade
+		//black fade
         this.camera.flash('#000000');
-
-        this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
         //add wood for background
         this.game.add.tileSprite(0, 0, 1090, 1920, 'holz');
+
+        //scale mode - central
+        //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+
+        //scale mode - customized
+        this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+        this.scale.pageAlignHorizontally = true;
 
         //status bar
         pauseIcon = this.game.add.sprite(1088, this.game.height / - 600, "pauseIcon");
@@ -53,13 +58,6 @@ Game.Level6_easy.prototype = {
         draht15 = game.add.sprite(this.game.width / 2 - 82, 1615, 'draht15');      
         ziel = game.add.sprite(this.game.width / 2 - 82, this.game.height - 118, 'ziell');
         
-        //scale mode - central
-        //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-
-        //scale mode - customized
-        this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
-        this.scale.pageAlignHorizontally = true;
-
         //add player
         sprite = game.add.sprite(this.game.width / 2 -59 , 50, 'player');
 		sprite.inputEnabled = true;
@@ -73,7 +71,6 @@ Game.Level6_easy.prototype = {
 
         //set variable to 0 for failsound
         t = 0;
-
 	},
     
 	gamePause:function(){
@@ -177,6 +174,7 @@ Game.Level6_easy.prototype = {
         if (this.msgBox) {
             this.msgBox.destroy();
         }
+
         //group for all box-itmes
         var msgBox = this.game.add.group();
 
@@ -232,6 +230,7 @@ Game.Level6_easy.prototype = {
         if (this.msgBox) {
             this.msgBox.destroy();
         }
+        
         //group for all box-items
         var msgBox = this.game.add.group();
 		var back = this.game.add.sprite(0, 0, "doneBackground");
