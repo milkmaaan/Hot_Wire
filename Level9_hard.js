@@ -66,13 +66,13 @@ Game.Level9_hard.prototype = {
         draht13 = game.add.sprite(this.game.width / 2 - 230, 200, 'draht6');  
         draht14 = game.add.sprite(this.game.width / 2 + 170, 200, 'draht2'); 
         draht15 = game.add.sprite(this.game.width / 2 + 170, 259, 'draht7');  
-        draht16 = game.add.sprite(this.game.width / 2 + 170, 461, 'draht5');  
-        draht17= game.add.sprite(this.game.width / 2 + 170, 861, 'draht5');  
-        draht18 = game.add.sprite(this.game.width / 2 + 170, 1261, 'draht3');  
+        draht16 = game.add.sprite(this.game.width / 2 + 170, 459, 'draht5');  
+        draht17= game.add.sprite(this.game.width / 2 + 170, 859, 'draht5');  
+        draht18 = game.add.sprite(this.game.width / 2 + 170, 1259, 'draht3');  
         draht19 = game.add.sprite(this.game.width / 2 - 30, 1261, 'draht8');  
         draht20 = game.add.sprite(this.game.width / 2 - 89, 1261, 'draht1');  
         draht21 = game.add.sprite(this.game.width / 2 - 89, 1320, 'draht5');  
-        draht22 = game.add.sprite(this.game.width / 2 - 89, 1659, 'draht7');  
+        draht22 = game.add.sprite(this.game.width / 2 - 89, 1660, 'draht7');  
         ziel = game.add.sprite(this.game.width / 2 - 89, this.game.height - 59, 'ziel');
 		
         //add player

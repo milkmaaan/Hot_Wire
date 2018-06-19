@@ -145,7 +145,6 @@ Game.Level10_easy.prototype = {
         else if (this.checkOverlap(sprite, draht12))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            
         }
         else if (this.checkOverlap(sprite, draht13))
 		{

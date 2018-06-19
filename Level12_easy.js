@@ -206,11 +206,11 @@ Game.Level12_easy.prototype = {
         else if (this.checkOverlap(sprite, draht25))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
+            countera = 1; 
         }
         else if (this.checkOverlap(sprite, draht26))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            countera = 1;
         }
         else if (this.checkOverlap(sprite, draht27))
 		{
@@ -529,7 +529,7 @@ wrongwayMessageBox(w = 1050, h = 1512) {
     if (this.msgBox) {
         this.msgBox.destroy();
     }
-    
+
     //group for all boxitmes
     var msgBox = this.game.add.group();
     var back = this.game.add.sprite(0, 0, "gameoverBackground");
