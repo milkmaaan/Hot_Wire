@@ -92,8 +92,8 @@ Game.Level11_hard.prototype = {
         draht43 = game.add.sprite(this.game.width / 2 + 275, 650, 'draht2');  
         draht44 = game.add.sprite(this.game.width / 2 + 275, 700, 'draht7');  
         draht45 = game.add.sprite(this.game.width / 2 + 275, 900, 'draht3');  
-        draht46 = game.add.sprite(this.game.width / 2 - 125, 900, 'draht6');  
-        draht47 = game.add.sprite(this.game.width / 2 - 525, 900, 'draht6');  
+        draht46 = game.add.sprite(this.game.width / 2 - 125, 900, 'draht6');    //if  
+        draht47 = game.add.sprite(this.game.width / 2 - 525, 900, 'draht6');    //if
         draht48 = game.add.sprite(this.game.width / 2 - 570, 900, 'draht1');  
         draht49 = game.add.sprite(this.game.width / 2 - 570, 959, 'draht5');  
         draht50 = game.add.sprite(this.game.width / 2 - 570, 1359, 'draht5');  
@@ -203,21 +203,163 @@ Game.Level11_hard.prototype = {
         }
         else if (this.checkOverlap(sprite, draht16))
 		{
-             //text.text = 'Drag the sprites. Overlapping: true';
-        }
-        else if (this.checkOverlap(sprite, draht17))
+            //text.text = 'Drag the sprites. Overlapping: true';
+		}
+		else if (this.checkOverlap(sprite, draht17))
 		{
-             //text.text = 'Drag the sprites. Overlapping: true';
-        }
-        else if (this.checkOverlap(sprite, draht18))
+            //text.text = 'Drag the sprites. Overlapping: true';
+		}
+		else if (this.checkOverlap(sprite, draht18))
 		{
-             //text.text = 'Drag the sprites. Overlapping: true';
+            //text.text = 'Drag the sprites. Overlapping: true';
         }
         else if (this.checkOverlap(sprite, draht19))
 		{
-             //text.text = 'Drag the sprites. Overlapping: true';
+            //text.text = 'Drag the sprites. Overlapping: true';
         }
         else if (this.checkOverlap(sprite, draht20))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht21))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht22))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht23))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht24))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht25))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht26))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht27))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht28))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht29))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht30))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht31))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht32))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht33))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht34))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht35))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht36))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht37))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht38))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht39))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht40))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht41))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht42))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht43))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht44))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+             countera = 1;
+
+        }
+        else if (this.checkOverlap(sprite, draht45))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht46))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+             if(countera == 1){
+            }
+            else{
+                fail.visible = true;
+                good.visible = false;
+                this.wrongwayMessageBox(1512, 1050)
+                sprite.inputEnabled = false;
+            }
+        }
+        else if (this.checkOverlap(sprite, draht47))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+             if(countera == 1){
+            }
+            else{
+                fail.visible = true;
+                good.visible = false;
+                this.wrongwayMessageBox(1512, 1050)
+                sprite.inputEnabled = false;
+            }
+        }
+        else if (this.checkOverlap(sprite, draht48))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht49))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht50))
+		{
+             //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht51))
 		{
              //text.text = 'Drag the sprites. Overlapping: true';
         }
