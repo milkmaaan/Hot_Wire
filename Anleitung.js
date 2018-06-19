@@ -7,7 +7,7 @@ var titlescreen;
 Game.Anleitung.prototype = {
     create:function(game) {
 
-        //Black Fade
+        //black Fade
         this.camera.flash('#000000');
 
         //Hintergrund
@@ -15,17 +15,9 @@ Game.Anleitung.prototype = {
 
         //clicksound
         clicksound = this.game.add.audio('clicksound');
-        
-        //clicksound
         soundanleitung = this.game.add.audio('soundanleitung');
-        soundsteuerung = this.game.add.audio('soundsteuerung');
-
-        
 
         game.add.sprite(0, 0, 'anleitung1');
-
-
- 
 
 
         pageText = this.add.text(game.world.centerX+505,game.world.centerY+615, 'Seite 1 / 2', { fill: "#ffffff", font: "45px Arial", fontWeight: "bold", align: "center" });
@@ -43,11 +35,6 @@ Game.Anleitung.prototype = {
         function(){
             soundanleitung.play();
         });
-
-        //Player (Kugel) - Wird benötigt, damit nicht 'velocity' of null
-        sprite = game.add.sprite(-199, -199, 'player');
-        this.game.physics.enable(sprite);
-        sprite.body.setSize(64, 64, 2, 2);
         
         //Variante 1 - mittig
         //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;

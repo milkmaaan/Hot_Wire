@@ -27,11 +27,12 @@ Game.Steuerung.prototype = {
         //Speaker
         this.createButton(game,"",1060, 1260, 150, 150, "speakerIcon",
         function(){
-            clicksound.play();
+            soundsteuerung.play();
         });
 
         //add clicksound
 		clicksound = this.game.add.audio('clicksound');
+		soundsteuerung = this.game.add.audio('soundsteuerung');
 
         this.createButton(game,"",game.world.centerX+450,game.world.centerY-800, 196, 245, "buttonZurueck",
         function(){

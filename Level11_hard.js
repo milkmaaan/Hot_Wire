@@ -3,6 +3,7 @@ Game.Level11_hard = function(game){
 };
 
 var counter = 0;
+var countera = 0;
 var localStorageName = "drahtscore";
 var highscore;
 var sprite;
@@ -47,8 +48,57 @@ Game.Level11_hard.prototype = {
         
         //add hot wire
         draht1 = game.add.sprite(this.game.width / 2 - 88.5, 0, 'draht7');  
-        
-        ziel = game.add.sprite(this.game.width / 2 - 88, this.game.height - 59, 'ziel');
+        draht2 = game.add.sprite(this.game.width / 2 - 88.5, 200, 'draht3');  
+        draht3 = game.add.sprite(this.game.width / 2 - 288.5, 200, 'draht8');  
+        draht4 = game.add.sprite(this.game.width / 2 - 347.5, 200, 'draht1');  
+        draht5 = game.add.sprite(this.game.width / 2 - 347.5, 259, 'draht5');  
+        draht6 = game.add.sprite(this.game.width / 2 - 347.5, 659, 'draht5');  
+        draht7 = game.add.sprite(this.game.width / 2 - 347.5, 1059, 'draht5');  
+        draht8 = game.add.sprite(this.game.width / 2 - 347.5, 1400, 'draht5');  
+        draht9 = game.add.sprite(this.game.width / 2 - 347.5, 1800, 'draht4');  
+        draht10 = game.add.sprite(this.game.width / 2 - 288.5, 1800, 'draht6');  
+        draht11 = game.add.sprite(this.game.width / 2 + 111, 1800, 'draht8');  
+        draht12 = game.add.sprite(this.game.width / 2 + 311.5, 1800, 'draht3');  
+        draht13 = game.add.sprite(this.game.width / 2 + 311.5, 1630, 'draht7');  
+        draht14 = game.add.sprite(this.game.width / 2 + 311.5, 1600, 'draht2');  
+        draht15 = game.add.sprite(this.game.width / 2 - 89, 1600, 'draht6');  
+        draht16 = game.add.sprite(this.game.width / 2 - 180, 1600, 'draht8');  
+        draht17 = game.add.sprite(this.game.width / 2 - 239, 1600, 'draht4');  
+        draht18 = game.add.sprite(this.game.width / 2 - 239, 1200, 'draht5');  
+        draht19 = game.add.sprite(this.game.width / 2 - 239, 800, 'draht5');  
+        draht20 = game.add.sprite(this.game.width / 2 - 239, 400, 'draht5');  
+        draht21 = game.add.sprite(this.game.width / 2 - 239, 342, 'draht1');  
+        draht22 = game.add.sprite(this.game.width / 2 - 180, 342, 'draht6');  
+        draht23 = game.add.sprite(this.game.width / 2 + 111, 342, 'draht8');  
+        draht24 = game.add.sprite(this.game.width / 2 + 311, 342, 'draht2');  
+        draht25 = game.add.sprite(this.game.width / 2 + 311, 382, 'draht7');  
+        draht26 = game.add.sprite(this.game.width / 2 + 311, 552, 'draht3');  
+        draht27 = game.add.sprite(this.game.width / 2 - 70, 552, 'draht6');  
+        draht28 = game.add.sprite(this.game.width / 2 - 120, 552, 'draht1');  
+        draht29 = game.add.sprite(this.game.width / 2 - 120, 611, 'draht5');  
+        draht30 = game.add.sprite(this.game.width / 2 - 120, 1011, 'draht5');  
+        draht31 = game.add.sprite(this.game.width / 2 - 120, 1300, 'draht7');  
+        draht32 = game.add.sprite(this.game.width / 2 - 120, 1500, 'draht4');  
+        draht33 = game.add.sprite(this.game.width / 2 - 61, 1500, 'draht6');  
+        draht34 = game.add.sprite(this.game.width / 2 + 310, 1500, 'draht3');  
+        draht35 = game.add.sprite(this.game.width / 2 + 310, 1300, 'draht7');  
+        draht36 = game.add.sprite(this.game.width / 2 + 310, 1260, 'draht2');  
+        draht37 = game.add.sprite(this.game.width / 2 + 110, 1260, 'draht8');  
+        draht38 = game.add.sprite(this.game.width / 2 + 51, 1260, 'draht4');  
+        draht39 = game.add.sprite(this.game.width / 2 + 51, 860, 'draht5');  
+        draht40 = game.add.sprite(this.game.width / 2 + 51, 700, 'draht7');  
+        draht41 = game.add.sprite(this.game.width / 2 + 51, 650, 'draht1');  
+        draht42 = game.add.sprite(this.game.width / 2 + 90, 650, 'draht8');  
+        draht43 = game.add.sprite(this.game.width / 2 + 275, 650, 'draht2');  
+        draht44 = game.add.sprite(this.game.width / 2 + 275, 700, 'draht7');  
+        draht45 = game.add.sprite(this.game.width / 2 + 275, 900, 'draht3');  
+        draht46 = game.add.sprite(this.game.width / 2 - 125, 900, 'draht6');  
+        draht47 = game.add.sprite(this.game.width / 2 - 525, 900, 'draht6');  
+        draht48 = game.add.sprite(this.game.width / 2 - 570, 900, 'draht1');  
+        draht49 = game.add.sprite(this.game.width / 2 - 570, 959, 'draht5');  
+        draht50 = game.add.sprite(this.game.width / 2 - 570, 1359, 'draht5');  
+        draht51 = game.add.sprite(this.game.width / 2 - 570, 1661, 'draht7');  
+        ziel = game.add.sprite(this.game.width / 2 - 570, this.game.height - 59, 'ziel');
 		
         //scale mode - central
         //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
