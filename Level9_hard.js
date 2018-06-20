@@ -76,6 +76,8 @@ Game.Level9_hard.prototype = {
         draht21 = game.add.sprite(this.game.width / 2 - 89, 1320, 'draht5');  
         draht22 = game.add.sprite(this.game.width / 2 - 89, 1660, 'draht7');  
         ziel = game.add.sprite(this.game.width / 2 - 89, this.game.height - 59, 'ziel');
+
+        this.game.add.sprite(0, 0, 'schattenhard9');  
 		
         //add player
         sprite = game.add.sprite(this.game.width / 2 - 59, 50, 'player');

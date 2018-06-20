@@ -7,6 +7,7 @@ Game.Preloader.prototype = {
 	preload:function(){
 	
 		//backgrounds
+
 		this.load.image("background", "assets/backgrounds/background_mainmenu.png");
 		this.load.image("background_selectmode", "assets/backgrounds/background_selectmode.png");
 		this.load.image("background_steuerung", "assets/backgrounds/background_steuerung.png");
@@ -74,6 +75,18 @@ Game.Preloader.prototype = {
 		this.load.image("draht6", "assets/sprites/6.png");
 		this.load.image("draht7", "assets/sprites/7.png");
 		this.load.image("draht8", "assets/sprites/8.png");
+
+		//shadow
+		this.load.image("schatteneasy7", "assets/shadows/schatteneasy7.png");
+		this.load.image("schatteneasy10", "assets/shadows/schatteneasy10.png");
+		this.load.image("schatteneasy12", "assets/shadows/schatteneasy12.png");
+
+		this.load.image("schattenhard7", "assets/shadows/schattenhard7.png");
+		this.load.image("schattenhard9", "assets/shadows/schattenhard9.png");
+		this.load.image("schattenhard10", "assets/shadows/schattenhard10.png");
+		this.load.image("schattenhard11", "assets/shadows/schattenhard11.png");
+		this.load.image("schattenhard12", "assets/shadows/schattenhard12.png");
+
 		
 		//buttons
 		this.load.image("buttonHauptmenu", "assets/buttons/button_hauptmenu.png");
@@ -99,12 +112,13 @@ Game.Preloader.prototype = {
 		this.game.load.audio("winsound", "assets/sounds/win.wav");
 		this.game.load.audio("soundsteuerung", "assets/sounds/hwsteuerung.wav");
 		this.game.load.audio("soundanleitung", "assets/sounds/hwanleitung.wav");
+
 	},
 
 	create:function(){
 		//this.state.start('MainMenu');
-		this.state.start('Level7_easy');
-		//this.state.start('Level12_hard');
+		//this.state.start('Level12_easy');
+		this.state.start('Level11_hard');
 		
 	}
 };

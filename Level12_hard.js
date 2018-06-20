@@ -131,6 +131,8 @@ Game.Level12_hard.prototype = {
         //set variable to 0 for failsound
         t = 0;
 
+        this.game.add.sprite(0, 0, 'schattenhard12');  
+
 	},
 	
 	gamePause:function(){

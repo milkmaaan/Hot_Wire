@@ -59,6 +59,8 @@ Game.Level7_easy.prototype = {
         draht15 = game.add.sprite(this.game.width / 2 - 236, 1402, 'draht13');  
         ziel = game.add.sprite(this.game.width / 2 - 236, this.game.height - 118, 'ziell');
 
+        this.game.add.sprite(0, 0, 'schatteneasy7');  
+
         //add player
         sprite = game.add.sprite(this.game.width / 2 -59 , 50, 'player');
 		sprite.inputEnabled = true;
@@ -170,7 +172,7 @@ Game.Level7_easy.prototype = {
             sprite.inputEnabled = false;
             t++;
             //text.text = 'Drag the sprites. Overlapping: false';
-        }     
+        }   
     },
 
 	checkOverlap:function(spriteA, spriteB) {

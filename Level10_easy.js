@@ -64,6 +64,8 @@ Game.Level10_easy.prototype = {
         draht20 = game.add.sprite(this.game.width / 2 - 236, 1603, 'draht15');
         ziel = game.add.sprite(this.game.width / 2 - 236, this.game.height - 118, 'ziell');
 
+        this.game.add.sprite(0, 0, 'schatteneasy10');  
+
         //add player
         sprite = game.add.sprite(this.game.width / 2 -59 , 50, 'player');
 		sprite.inputEnabled = true;

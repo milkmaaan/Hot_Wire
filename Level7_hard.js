@@ -70,6 +70,8 @@ Game.Level7_hard.prototype = {
         draht17 = game.add.sprite(this.game.width / 2 + 30, this.game.height - 259, 'draht7');
         ziel = game.add.sprite(this.game.width / 2 + 30, this.game.height - 59, 'ziel');
 
+        this.game.add.sprite(0, 0, 'schattenhard7');  
+
         //add player
         sprite = game.add.sprite(this.game.width / 2 - 59, 50, 'player');
 		sprite.inputEnabled = true;
