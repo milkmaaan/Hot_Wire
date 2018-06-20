@@ -2,7 +2,10 @@ Game.Level12_hard = function(game){
 	this.player = null;
 };
 
-var counter = 0;
+var level12hardcountera = 0;
+var level12hardcounterb = 0;
+var level12hardcounterc = 0;
+var level12hardcounterd = 0;
 var countera = 0;
 var localStorageName = "drahtscore";
 var highscore;
@@ -14,7 +17,10 @@ var currentTimeText = 0;
 Game.Level12_hard.prototype = {
 
 	create:function(game){
-
+        level12hardcountera = 0;
+        level12hardcounterb = 0;
+        level12hardcounterc = 0;
+        level12hardcounterd = 0;
         //black fade
         this.camera.flash('#000000');
 
@@ -64,46 +70,47 @@ Game.Level12_hard.prototype = {
         draht11 = game.add.sprite(this.game.width / 2 - 89, 400, 'draht8');    
         draht12 = game.add.sprite(this.game.width / 2 - 148, 400, 'draht1');    
         draht13 = game.add.sprite(this.game.width / 2 - 148, 440, 'draht5');    
-        draht14 = game.add.sprite(this.game.width / 2 - 148, 659, 'draht5');    
-        draht15 = game.add.sprite(this.game.width / 2 - 148, 1059, 'draht3');    
-        draht16 = game.add.sprite(this.game.width / 2 - 348, 1059, 'draht8');    
-        draht17 = game.add.sprite(this.game.width / 2 - 407, 1059, 'draht4');    
-        draht18 = game.add.sprite(this.game.width / 2 - 407, 880, 'draht7');    
-        draht19 = game.add.sprite(this.game.width / 2 - 407, 845, 'draht1');    
-        draht20 = game.add.sprite(this.game.width / 2 - 348, 845, 'draht6');    
-        draht21 = game.add.sprite(this.game.width / 2 + 52, 845, 'draht2');    
-        draht22 = game.add.sprite(this.game.width / 2 + 52, 880, 'draht5');    
-        draht23 = game.add.sprite(this.game.width / 2 + 52, 1259, 'draht7');    
-        draht24 = game.add.sprite(this.game.width / 2 + 52, 1459, 'draht4');    
-        draht25 = game.add.sprite(this.game.width / 2 + 111, 1459, 'draht8');    
-        draht26 = game.add.sprite(this.game.width / 2 + 311, 1459, 'draht3');    
-        draht27 = game.add.sprite(this.game.width / 2 + 311, 1059, 'draht5');    
-        draht28 = game.add.sprite(this.game.width / 2 + 311, 659, 'draht5');    
-        draht29 = game.add.sprite(this.game.width / 2 + 311, 259, 'draht5');    
-        draht30 = game.add.sprite(this.game.width / 2 + 311, 118, 'draht7');    
-        draht31 = game.add.sprite(this.game.width / 2 + 311, 59, 'draht2'); 
-        draht32 = game.add.sprite(this.game.width / 2 + 111, 59, 'draht8');       
-        draht33 = game.add.sprite(this.game.width / 2 - 289, 59, 'draht6');    //if
-        draht34 = game.add.sprite(this.game.width / 2 - 489, 59, 'draht8');
-        draht35 = game.add.sprite(this.game.width / 2 - 548, 59, 'draht1');
-        draht36 = game.add.sprite(this.game.width / 2 - 548, 118, 'draht5');
-        draht37 = game.add.sprite(this.game.width / 2 - 548, 518, 'draht5');
-        draht38 = game.add.sprite(this.game.width / 2 - 548, 918, 'draht5');
-        draht39 = game.add.sprite(this.game.width / 2 - 548, 1318, 'draht5');
-        draht40 = game.add.sprite(this.game.width / 2 - 548, 1718, 'draht4');
-        draht41 = game.add.sprite(this.game.width / 2 - 489, 1718, 'draht6');
-        draht42 = game.add.sprite(this.game.width / 2 - 89, 1718, 'draht3');
-        draht43 = game.add.sprite(this.game.width / 2 - 89, 1318, 'draht5');
-        draht44 = game.add.sprite(this.game.width / 2 - 89, 1259, 'draht2');
-        draht45 = game.add.sprite(this.game.width / 2 - 289, 1259, 'draht8');
-        draht46 = game.add.sprite(this.game.width / 2 - 348, 1259, 'draht1');
-        draht47 = game.add.sprite(this.game.width / 2 - 348, 1318, 'draht7');
-        draht48 = game.add.sprite(this.game.width / 2 - 348, 1400, 'draht7');
-        draht49 = game.add.sprite(this.game.width / 2 - 348, 1600, 'draht4');
-        draht50 = game.add.sprite(this.game.width / 2 - 289, 1600, 'draht6');
-        draht51 = game.add.sprite(this.game.width / 2 + 111, 1600, 'draht2');
-        draht52 = game.add.sprite(this.game.width / 2 + 111, 1659, 'draht7');
-        draht53 = game.add.sprite(this.game.width / 2 + 111, 1661, 'draht7');
+        draht14 = game.add.sprite(this.game.width / 2 - 148, 840, 'draht7'); 
+        draht15 = game.add.sprite(this.game.width / 2 - 148, 860, 'draht7');       
+        draht16 = game.add.sprite(this.game.width / 2 - 148, 1059, 'draht3');    
+        draht17 = game.add.sprite(this.game.width / 2 - 348, 1059, 'draht8');    
+        draht18 = game.add.sprite(this.game.width / 2 - 407, 1059, 'draht4');    
+        draht19 = game.add.sprite(this.game.width / 2 - 407, 880, 'draht7');    
+        draht20 = game.add.sprite(this.game.width / 2 - 407, 845, 'draht1');    
+        draht21 = game.add.sprite(this.game.width / 2 - 348, 845, 'draht6');    
+        draht22 = game.add.sprite(this.game.width / 2 + 52, 845, 'draht2');    
+        draht23 = game.add.sprite(this.game.width / 2 + 52, 880, 'draht5');    
+        draht24 = game.add.sprite(this.game.width / 2 + 52, 1259, 'draht7');    
+        draht25 = game.add.sprite(this.game.width / 2 + 52, 1459, 'draht4');    
+        draht26 = game.add.sprite(this.game.width / 2 + 111, 1459, 'draht8');    
+        draht27 = game.add.sprite(this.game.width / 2 + 311, 1459, 'draht3');    
+        draht28 = game.add.sprite(this.game.width / 2 + 311, 1059, 'draht5');    
+        draht29 = game.add.sprite(this.game.width / 2 + 311, 659, 'draht5');    
+        draht30 = game.add.sprite(this.game.width / 2 + 311, 259, 'draht5');    
+        draht31 = game.add.sprite(this.game.width / 2 + 311, 118, 'draht7');    
+        draht32 = game.add.sprite(this.game.width / 2 + 311, 59, 'draht2'); 
+        draht33 = game.add.sprite(this.game.width / 2 + 111, 59, 'draht8');       
+        draht34 = game.add.sprite(this.game.width / 2 - 289, 59, 'draht6');    //if
+        draht35 = game.add.sprite(this.game.width / 2 - 489, 59, 'draht8');
+        draht36 = game.add.sprite(this.game.width / 2 - 548, 59, 'draht1');
+        draht37 = game.add.sprite(this.game.width / 2 - 548, 118, 'draht5');
+        draht38 = game.add.sprite(this.game.width / 2 - 548, 518, 'draht5');
+        draht39 = game.add.sprite(this.game.width / 2 - 548, 918, 'draht5');
+        draht40 = game.add.sprite(this.game.width / 2 - 548, 1318, 'draht5');
+        draht41 = game.add.sprite(this.game.width / 2 - 548, 1718, 'draht4');
+        draht42 = game.add.sprite(this.game.width / 2 - 489, 1718, 'draht6');
+        draht43 = game.add.sprite(this.game.width / 2 - 89, 1718, 'draht3');
+        draht44 = game.add.sprite(this.game.width / 2 - 89, 1318, 'draht5');
+        draht45 = game.add.sprite(this.game.width / 2 - 89, 1259, 'draht2');
+        draht46 = game.add.sprite(this.game.width / 2 - 289, 1259, 'draht8');
+        draht47 = game.add.sprite(this.game.width / 2 - 348, 1259, 'draht1');
+        draht48 = game.add.sprite(this.game.width / 2 - 348, 1318, 'draht7');
+        draht49 = game.add.sprite(this.game.width / 2 - 348, 1400, 'draht7');
+        draht50 = game.add.sprite(this.game.width / 2 - 348, 1600, 'draht4');
+        draht51 = game.add.sprite(this.game.width / 2 - 289, 1600, 'draht6');
+        draht52 = game.add.sprite(this.game.width / 2 + 111, 1600, 'draht2');
+        draht53 = game.add.sprite(this.game.width / 2 + 111, 1659, 'draht7');
+        draht54 = game.add.sprite(this.game.width / 2 + 111, 1661, 'draht7');
         ziel = game.add.sprite(this.game.width / 2 + 111, this.game.height - 59, 'ziel');
 		
         //add player
@@ -184,7 +191,7 @@ Game.Level12_hard.prototype = {
         else if (this.checkOverlap(sprite, draht11))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            countera = 2;
+            level12hardcounterb = 2;
         }
         else if (this.checkOverlap(sprite, draht12))
 		{
@@ -193,13 +200,14 @@ Game.Level12_hard.prototype = {
 		else if (this.checkOverlap(sprite, draht13))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            if(countera == 2){
+            if(level12hardcounterb == 2){
             }
             else{
                 fail.visible = true;
                 good.visible = false;
                 this.wrongwayMessageBox(1512, 1050)
                 sprite.inputEnabled = false;
+                t++;
             }
         }
         else if (this.checkOverlap(sprite, draht14))
@@ -221,27 +229,28 @@ Game.Level12_hard.prototype = {
 		else if (this.checkOverlap(sprite, draht18))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            countera = 3;
         }
         else if (this.checkOverlap(sprite, draht19))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
+            level12hardcounterc = 3;
         }
         else if (this.checkOverlap(sprite, draht20))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            if(countera == 3){
+        }
+        else if (this.checkOverlap(sprite, draht21))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+            if(level12hardcounterc == 3){
             }
             else{
                 fail.visible = true;
                 good.visible = false;
                 this.wrongwayMessageBox(1512, 1050)
                 sprite.inputEnabled = false;
+                t++;
             }
-        }
-        else if (this.checkOverlap(sprite, draht21))
-		{
-            //text.text = 'Drag the sprites. Overlapping: true';
         }
         else if (this.checkOverlap(sprite, draht22))
 		{
@@ -282,27 +291,28 @@ Game.Level12_hard.prototype = {
         else if (this.checkOverlap(sprite, draht31))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
+            level12hardcountera = 1;
 		}
 		else if (this.checkOverlap(sprite, draht32))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            countera = 1;
         }
         else if (this.checkOverlap(sprite, draht33))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            if(countera == 1){
+        }
+        else if (this.checkOverlap(sprite, draht34))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+            if(level12hardcountera == 1){
             }
             else{
                 fail.visible = true;
                 good.visible = false;
                 this.wrongwayMessageBox(1512, 1050)
                 sprite.inputEnabled = false;
+                t++;
             }
-        }
-        else if (this.checkOverlap(sprite, draht34))
-		{
-            //text.text = 'Drag the sprites. Overlapping: true';
         }
         else if (this.checkOverlap(sprite, draht35))
 		{
@@ -363,29 +373,34 @@ Game.Level12_hard.prototype = {
 		else if (this.checkOverlap(sprite, draht49))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            countera = 4;
+            level12hardcounterd = 4;
         }
         else if (this.checkOverlap(sprite, draht50))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            if(countera == 4){
+        }
+        else if (this.checkOverlap(sprite, draht51))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+            if(level12hardcounterd == 4){
             }
             else{
                 fail.visible = true;
                 good.visible = false;
                 this.wrongwayMessageBox(1512, 1050)
                 sprite.inputEnabled = false;
+                t++;
             }
-        }
-        else if (this.checkOverlap(sprite, draht51))
-		{
-            //text.text = 'Drag the sprites. Overlapping: true';
         }
         else if (this.checkOverlap(sprite, draht52))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
         }
         else if (this.checkOverlap(sprite, draht53))
+		{
+            //text.text = 'Drag the sprites. Overlapping: true';
+        }
+        else if (this.checkOverlap(sprite, draht54))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
         }

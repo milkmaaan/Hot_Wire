@@ -3,7 +3,8 @@ Game.Level11_hard = function(game){
 };
 
 var counter = 0;
-var countera = 0;
+var level11hardcountera = 0;
+var level11hardcounterb = 0;
 var localStorageName = "drahtscore";
 var highscore;
 var sprite;
@@ -14,7 +15,8 @@ var currentTimeText = 0;
 Game.Level11_hard.prototype = {
 
 	create:function(game){
-
+        level11hardcountera = 0;
+        level11hardcounterb = 0;
         //black fade
         this.camera.flash('#000000');
 
@@ -89,8 +91,8 @@ Game.Level11_hard.prototype = {
         draht36 = game.add.sprite(this.game.width / 2 + 310, 1260, 'draht2');  
         draht37 = game.add.sprite(this.game.width / 2 + 110, 1260, 'draht8');  
         draht38 = game.add.sprite(this.game.width / 2 + 51, 1260, 'draht4');  
-        draht39 = game.add.sprite(this.game.width / 2 + 51, 860, 'draht5');  
-        draht40 = game.add.sprite(this.game.width / 2 + 51, 700, 'draht7');  
+        draht39 = game.add.sprite(this.game.width / 2 + 51, 880, 'draht5');  
+        draht40 = game.add.sprite(this.game.width / 2 + 51, 680, 'draht7');  
         draht41 = game.add.sprite(this.game.width / 2 + 51, 650, 'draht1');  
         draht42 = game.add.sprite(this.game.width / 2 + 90, 650, 'draht8');  
         draht43 = game.add.sprite(this.game.width / 2 + 275, 650, 'draht2');  
@@ -314,7 +316,8 @@ Game.Level11_hard.prototype = {
         else if (this.checkOverlap(sprite, draht44))
 		{
              //text.text = 'Drag the sprites. Overlapping: true';
-             countera = 1;
+             level11hardcountera = 1;
+             level11hardcounterb= 1;
         }
         else if (this.checkOverlap(sprite, draht45))
 		{
@@ -323,26 +326,28 @@ Game.Level11_hard.prototype = {
         else if (this.checkOverlap(sprite, draht46))
 		{
              //text.text = 'Drag the sprites. Overlapping: true';
-             if(countera == 1){
+             if(level11hardcountera == 1){
             }
             else{
                 fail.visible = true;
                 good.visible = false;
                 this.wrongwayMessageBox(1512, 1050)
                 sprite.inputEnabled = false;
+                t++;
             }
         }
         else if (this.checkOverlap(sprite, draht47))
 		{
              //text.text = 'Drag the sprites. Overlapping: true';
-             if(countera == 1){
+            if(level11hardcounterb == 1){
             }
             else{
                 fail.visible = true;
                 good.visible = false;
                 this.wrongwayMessageBox(1512, 1050)
                 sprite.inputEnabled = false;
-            }
+                t++;
+            }  
         }
         else if (this.checkOverlap(sprite, draht48))
 		{

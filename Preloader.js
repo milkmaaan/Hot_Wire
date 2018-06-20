@@ -103,8 +103,8 @@ Game.Preloader.prototype = {
 
 	create:function(){
 		//this.state.start('MainMenu');
-		this.state.start('Level12_easy');
-		//this.state.start('Level9_hard');
+		this.state.start('Level7_easy');
+		//this.state.start('Level12_hard');
 		
 	}
 };

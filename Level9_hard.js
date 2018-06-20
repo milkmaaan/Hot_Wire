@@ -3,7 +3,8 @@ Game.Level9_hard = function(game){
 };
 
 var counter = 0;
-var countera = 0;
+var level9hardcountera = 0;
+var level9hardcounterb = 0;
 var localStorageName = "drahtscore";
 var highscore;
 var sprite;
@@ -14,7 +15,8 @@ var currentTimeText = 0;
 Game.Level9_hard.prototype = {
 
 	create:function(game){
-
+        level9hardcountera = 0;
+        level9hardcounterb = 0;
         //black fade
         this.camera.flash('#000000');
 
@@ -141,7 +143,7 @@ Game.Level9_hard.prototype = {
         else if (this.checkOverlap(sprite, draht8))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            countera = 1;
+            level9hardcountera = 1;
         }
         else if (this.checkOverlap(sprite, draht9))
 		{
@@ -150,34 +152,36 @@ Game.Level9_hard.prototype = {
         else if (this.checkOverlap(sprite, draht10))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            if(countera == 1){
+            if(level9hardcountera == 1){    
             }
             else{
                 fail.visible = true;
                 good.visible = false;
                 this.wrongwayMessageBox(1512, 1050)
                 sprite.inputEnabled = false;
+                t++;
             }
         }
         else if (this.checkOverlap(sprite, draht11))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
+            level9hardcounterb = 2;
         }
         else if (this.checkOverlap(sprite, draht12))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            countera = 2;
 		}
 		else if (this.checkOverlap(sprite, draht13))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            if(countera == 2){
+            if(level9hardcounterb == 2){
             }
             else{
                 fail.visible = true;
                 good.visible = false;
                 this.wrongwayMessageBox(1512, 1050)
                 sprite.inputEnabled = false;
+                t++;
             }
         }
         else if (this.checkOverlap(sprite, draht14))

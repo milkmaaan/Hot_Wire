@@ -41,7 +41,7 @@ Game.Level1_easy.prototype = {
         good.visible = true;
    
         //add hot wire
-		draht1 = game.add.sprite(this.game.width / 2 - 118, 0, 'draht13');    
+        draht1 = game.add.sprite(this.game.width / 2 - 118, 0, 'draht13');
         draht2 = game.add.sprite(this.game.width / 2 - 118, 400, 'draht13');
         draht3 = game.add.sprite(this.game.width / 2 - 118, 800, 'draht13');
         draht4 = game.add.sprite(this.game.width / 2 - 118, 1200, 'draht13');
@@ -93,7 +93,7 @@ Game.Level1_easy.prototype = {
         else if (this.checkOverlap(sprite, draht5))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-        }
+		}
         else if (this.checkOverlap(sprite, ziel))
 		{
             this.doneMessageBox(1512, 1050);

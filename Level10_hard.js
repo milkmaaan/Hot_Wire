@@ -3,7 +3,7 @@ Game.Level10_hard = function(game){
 };
 
 var counter = 0;
-var countera = 0;
+var level10hardcounter = 0;
 var localStorageName = "drahtscore";
 var highscore;
 var sprite;
@@ -14,7 +14,7 @@ var currentTimeText = 0;
 Game.Level10_hard.prototype = {
 
 	create:function(game){
-
+        level10hardcounter = 0;
         //black fade
         this.camera.flash('#000000');
 
@@ -83,7 +83,7 @@ Game.Level10_hard.prototype = {
         draht30 = game.add.sprite(this.game.width / 2 - 298, 1436, 'draht6');    
         draht31 = game.add.sprite(this.game.width / 2 - 354, 1436, 'draht1');    
         draht32 = game.add.sprite(this.game.width / 2 - 354, 1494, 'draht7');    
-        draht33 = game.add.sprite(this.game.width / 2 - 354, 1659, 'draht7');    
+        draht33 = game.add.sprite(this.game.width / 2 - 354, 1661, 'draht7');    
         ziel = game.add.sprite(this.game.width / 2 - 354, this.game.height - 59, 'ziel');
 	
         //add player
@@ -228,7 +228,7 @@ Game.Level10_hard.prototype = {
         else if (this.checkOverlap(sprite, draht28))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            countera = 1;
+            level10hardcounter = 1;
         }
         else if (this.checkOverlap(sprite, draht29))
 		{
@@ -237,13 +237,14 @@ Game.Level10_hard.prototype = {
         else if (this.checkOverlap(sprite, draht30))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            if(countera == 1){
+            if(level10hardcounter == 1){
             }
             else{
                 fail.visible = true;
                 good.visible = false;
                 this.wrongwayMessageBox(1512, 1050)
                 sprite.inputEnabled = false;
+                t++;
             }
         }
         else if (this.checkOverlap(sprite, draht31))

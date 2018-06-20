@@ -3,7 +3,7 @@ Game.Level7_hard = function(game){
 };
 
 var counter = 0;
-var countera = 0;
+var level7hardcounter = 0;
 var localStorageName = "drahtscore";
 var highscore;
 var sprite;
@@ -14,7 +14,7 @@ var currentTimeText = 0;
 Game.Level7_hard.prototype = {
 
 	create:function(game){
-
+        level7hardcounter = 0;
         //black fade
         this.camera.flash('#000000');
 
@@ -128,10 +128,7 @@ Game.Level7_hard.prototype = {
         else if (this.checkOverlap(sprite, draht6))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-        }
-        else if (this.checkOverlap(sprite, draht7))
-        {
-            //text.text = 'Drag the sprites. Overlapping: true';
+            level7hardcounter = 1;
         }
         else if (this.checkOverlap(sprite, draht7))
 		{
@@ -140,7 +137,7 @@ Game.Level7_hard.prototype = {
         else if (this.checkOverlap(sprite, draht8))
 		{
             //text.text = 'Drag the sprites. Overlapping: true';
-            if(countera == 1){
+            if(level7hardcounter == 1){
             }
             else{
                 fail.visible = true;
