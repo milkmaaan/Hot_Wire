@@ -88,6 +88,11 @@ Game.Highscores.prototype = {
                 trophyhard1 = game.add.sprite(788, 535,'trophybronze');
                 trophyhard1.angle = 90;
             }
+            //if trophy won, able to retry level
+            trophyhard1.inputEnabled = true;
+            trophyhard1.events.onInputDown.add(function() {
+                this.state.start("Level1_hard");
+            }, this);
         }
 
         if (localStorage.getItem('level2_hard') != null) {
@@ -111,6 +116,11 @@ Game.Highscores.prototype = {
                 trophyhard2 = game.add.sprite(788, 753,'trophybronze');
                 trophyhard2.angle = 90;
             }
+            //if trophy won, able to retry level
+            trophyhard2.inputEnabled = true;
+            trophyhard2.events.onInputDown.add(function() {
+                this.state.start("Level2_hard");
+            }, this);
         }
 
         if (localStorage.getItem('level3_hard') != null) {
@@ -134,6 +144,11 @@ Game.Highscores.prototype = {
                 trophyhard3 = game.add.sprite(788, 971,'trophybronze');
                 trophyhard3.angle = 90;
             }
+            //if trophy won, able to retry level
+            trophyhard3.inputEnabled = true;
+            trophyhard3.events.onInputDown.add(function() {
+                this.state.start("Level3_hard");
+            }, this);
         }
 
         if (localStorage.getItem('level4_hard') != null) {
@@ -157,6 +172,11 @@ Game.Highscores.prototype = {
                 trophyhard4 = game.add.sprite(788, 1189,'trophybronze');
                 trophyhard4.angle = 90;
             }
+            //if trophy won, able to retry level
+            trophyhard4.inputEnabled = true;
+            trophyhard4.events.onInputDown.add(function() {
+                this.state.start("Level4_hard");
+            }, this);
         }
 
         if (localStorage.getItem('level5_hard') != null) {
@@ -180,6 +200,11 @@ Game.Highscores.prototype = {
                 trophyhard5 = game.add.sprite(510, 535,'trophybronze');
                 trophyhard5.angle = 90;
             }
+            //if trophy won, able to retry level
+            trophyhard5.inputEnabled = true;
+            trophyhard5.events.onInputDown.add(function() {
+                this.state.start("Level5_hard");
+            }, this);
         }
 
         if (localStorage.getItem('level6_hard') != null) {
@@ -203,6 +228,11 @@ Game.Highscores.prototype = {
                 trophyhard6 = game.add.sprite(510, 753,'trophybronze');
                 trophyhard6.angle = 90;
             }
+            //if trophy won, able to retry level
+            trophyhard6.inputEnabled = true;
+            trophyhard6.events.onInputDown.add(function() {
+                this.state.start("Level6_hard");
+            }, this);
         }
 
         if (localStorage.getItem('level7_hard') != null) {
@@ -226,6 +256,11 @@ Game.Highscores.prototype = {
                 trophyhard7 = game.add.sprite(510, 971,'trophybronze');
                 trophyhard7.angle = 90;
             }
+            //if trophy won, able to retry level
+            trophyhard7.inputEnabled = true;
+            trophyhard7.events.onInputDown.add(function() {
+                this.state.start("Level7_hard");
+            }, this);
         }
 
         if (localStorage.getItem('level8_hard') != null) {
@@ -249,6 +284,11 @@ Game.Highscores.prototype = {
                 trophyhard8 = game.add.sprite(510, 1189,'trophybronze');
                 trophyhard8.angle = 90;
             }
+            //if trophy won, able to retry level
+            trophyhard8.inputEnabled = true;
+            trophyhard8.events.onInputDown.add(function() {
+                this.state.start("Level8_hard");
+            }, this);
         }
 
         if (localStorage.getItem('level9_hard') != null) {
@@ -272,6 +312,11 @@ Game.Highscores.prototype = {
                 trophyhard9 = game.add.sprite(232, 535,'trophybronze');
                 trophyhard9.angle = 90;
             }
+            //if trophy won, able to retry level
+            trophyhard9.inputEnabled = true;
+            trophyhard9.events.onInputDown.add(function() {
+                this.state.start("Level9_hard");
+            }, this);
         }
 
         if (localStorage.getItem('level10_hard') != null) {
@@ -295,6 +340,11 @@ Game.Highscores.prototype = {
                 trophyhard10 = game.add.sprite(232, 753,'trophybronze');
                 trophyhard10.angle = 90;
             }
+            //if trophy won, able to retry level
+            trophyhard10.inputEnabled = true;
+            trophyhard10.events.onInputDown.add(function() {
+                this.state.start("Level10_hard");
+            }, this);
         }
 
         if (localStorage.getItem('level11_hard') != null) {
@@ -318,6 +368,11 @@ Game.Highscores.prototype = {
                 trophyhard11 = game.add.sprite(232, 971,'trophybronze');
                 trophyhard11.angle = 90;
             }
+            //if trophy won, able to retry level
+            trophyhard11.inputEnabled = true;
+            trophyhard11.events.onInputDown.add(function() {
+                this.state.start("Level11_hard");
+            }, this);
         }
 
         if (localStorage.getItem('level12_hard') != null) {
@@ -341,6 +396,11 @@ Game.Highscores.prototype = {
                 trophyhard12 = game.add.sprite(232, 1189,'trophybronze');
                 trophyhard12.angle = 90;
             }
+            //if trophy won, able to retry level
+            trophyhard12.inputEnabled = true;
+            trophyhard12.events.onInputDown.add(function() {
+                this.state.start("Level12_hard");
+            }, this);
         }
         
         this.createButton(game,"",game.world.centerX+450,game.world.centerY-800, 196, 245, "buttonZurueck",
