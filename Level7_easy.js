@@ -67,6 +67,8 @@ Game.Level7_easy.prototype = {
 		sprite.input.enableDrag();
         sprite.anchor.set(0.5);
    
+        flaecheeasy7 = this.game.add.sprite(0, 0, 'flaecheeasy7');  
+
         //add sounds
         failsound = this.game.add.audio('failsound');
         winsound = this.game.add.audio('winsound');
@@ -173,6 +175,9 @@ Game.Level7_easy.prototype = {
             t++;
             //text.text = 'Drag the sprites. Overlapping: false';
         }   
+        if(this.checkOverlap(sprite, draht9)){
+            flaecheeasy7.alpha = 0;
+        }
     },
 
 	checkOverlap:function(spriteA, spriteB) {

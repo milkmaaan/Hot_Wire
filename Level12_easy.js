@@ -89,6 +89,8 @@ Game.Level12_easy.prototype = {
 		sprite.inputEnabled = true;
 		sprite.input.enableDrag();
         sprite.anchor.set(0.5);
+
+        flaecheeasy12 = this.game.add.sprite(0, 0, 'flaecheeasy12');  
    
         //add sounds
         failsound = this.game.add.audio('failsound');
@@ -284,6 +286,9 @@ Game.Level12_easy.prototype = {
             t++;
             //text.text = 'Drag the sprites. Overlapping: false';
         }     
+        if(this.checkOverlap(sprite, draht23)){
+            flaecheeasy12.alpha = 0;
+        }
     },
 
 	checkOverlap:function(spriteA, spriteB) {
