@@ -377,7 +377,7 @@ Game.Level10_hard.prototype = {
         var style2 = {font:"50px Arial", align:"center", fill:"#ff0000", fontWeight:"bold"};
 
         var doneText1 = this.game.add.text(0, 0, "Du hast das Level geschafft!\nDeine Zeit: " + counter + " Sekunden", style);
-        var doneText2 = this.game.add.text(0, 0, "Highscore: "+ localStorage.getItem('level10_hard'), style2);
+        var doneText2 = this.game.add.text(0, 0, "Bestzeit: "+ localStorage.getItem('level10_hard') + " Sekunden", style2);
         
         //set time for trophies
         var goldtime = 15;

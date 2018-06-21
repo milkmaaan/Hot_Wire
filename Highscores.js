@@ -41,7 +41,7 @@ var level12hardsilber = 14
 
 Game.Highscores.prototype = {
     create:function(game) {
-
+        
         //black fade
         this.camera.flash('#000000');
 

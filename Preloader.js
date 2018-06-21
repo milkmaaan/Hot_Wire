@@ -6,6 +6,10 @@ Game.Preloader = function(game){
 Game.Preloader.prototype = {
 	preload:function(){
 	
+		this.load.image("confetti1", "assets/trophies/confetti1.png");
+		this.load.image("confetti2", "assets/trophies/confetti2.png");
+
+
 		//backgrounds
 
 		this.load.image("background", "assets/backgrounds/background_mainmenu.png");
@@ -18,6 +22,7 @@ Game.Preloader.prototype = {
 		this.load.image("anleitung2", "assets/backgrounds/anleitung2.png");
 		this.load.image("pauseBackground", "assets/backgrounds/pause_background.png");
 		this.load.image("doneBackground", "assets/backgrounds/done_background.png");
+		this.load.image("doneBackgroundgold", "assets/backgrounds/done_background_gold.png");
 		this.load.image("gameoverBackground", "assets/backgrounds/gameover_background.png");
 
 		//trophies
@@ -102,6 +107,7 @@ Game.Preloader.prototype = {
 		//buttons
 		this.load.image("buttonHauptmenu", "assets/buttons/button_hauptmenu.png");
 		this.load.image("buttonWeiter", "assets/buttons/button_weiter.png");
+		this.load.image("buttonWeitergold", "assets/buttons/button_weiter_gold.png");
 		this.load.image("buttonStartgame", "assets/buttons/button_startgame.png");
 		this.load.image("buttonEinfachSmall", "assets/buttons/button_einfach_small.png");
 		this.load.image("buttonSchwerSmall", "assets/buttons/button_schwer_small.png");
@@ -128,8 +134,8 @@ Game.Preloader.prototype = {
 
 	create:function(){
 		//this.state.start('MainMenu');
-		this.state.start('Level12_easy');
-		//this.state.start('Level12_hard');
+		//this.state.start('Level12_easy');
+		this.state.start('Level12_hard');
 		
 	}
 };

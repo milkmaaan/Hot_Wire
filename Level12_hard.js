@@ -24,6 +24,8 @@ Game.Level12_hard.prototype = {
         //black fade
         this.camera.flash('#000000');
 
+        console.log(localStorage.getItem('finish'));
+
         //add wood for background
         this.game.add.tileSprite(0, 0, 1090, 1920, 'holz');
 
@@ -114,7 +116,7 @@ Game.Level12_hard.prototype = {
         ziel = game.add.sprite(this.game.width / 2 + 111, this.game.height - 59, 'ziel');
 		
         //add player
-        sprite = game.add.sprite(this.game.width / 2 - 59, 50, 'player');
+        sprite = game.add.sprite(this.game.width / 2 - 59, 1300, 'player');
 		sprite.inputEnabled = true;
 		sprite.input.enableDrag();
         sprite.anchor.set(0.5);
@@ -416,6 +418,21 @@ Game.Level12_hard.prototype = {
         }
         else if (this.checkOverlap(sprite, ziel))
 		{
+            if(localStorage.getItem('finish') == 0){
+                this.game.time.events.stop();
+                this.finishMessageBox(1512, 1050);
+                sprite.inputEnabled = false;
+                t++;
+
+                if (localStorage.getItem('level12_hard') === null) {
+                    //kein Highscore gespeicher
+                    localStorage.setItem('level12_hard', counter);
+                } else if (localStorage.getItem('level12_hard') > counter) {
+                    //neuer Highscore
+                    localStorage.setItem('level12_hard', counter);
+                }
+            }
+            else if (localStorage.getItem('finish') == 1){
             this.game.time.events.stop();
             this.doneMessageBox(1512, 1050);
             sprite.inputEnabled = false;
@@ -428,7 +445,9 @@ Game.Level12_hard.prototype = {
                 //neuer Highscore
                 localStorage.setItem('level12_hard', counter);
             }
+        }
 		}
+        
 		else
         {
             fail.visible = true;
@@ -534,7 +553,7 @@ Game.Level12_hard.prototype = {
         var style2 = {font:"50px Arial", align:"center", fill:"#ff0000", fontWeight:"bold"};
 
         var doneText1 = this.game.add.text(0, 0, "Du hast das Level geschafft!\nDeine Zeit: " + counter + " Sekunden", style);
-        var doneText2 = this.game.add.text(0, 0, "Highscore: "+ localStorage.getItem('level12_hard'), style2);
+        var doneText2 = this.game.add.text(0, 0, "Bestzeit: "+ localStorage.getItem('level12_hard') + " Sekunden", style2);
         
         //Set time for trophies
         var goldtime = 15;
@@ -728,6 +747,88 @@ wrongwayMessageBox(w = 1050, h = 1512) {
     }
 },
 
+finishMessageBox(w = 1050, h = 1512) {
+    //destroy messagebox already exists
+    if (this.msgBox) {
+        this.msgBox.destroy();
+    }
+
+    var msgBox = this.game.add.group();
+    var back = this.game.add.sprite(0, 0, "doneBackgroundgold");
+    var rightButton = this.game.add.sprite(0, 0, "buttonWeitergold");
+    
+    this.game.add.sprite(750, 300, "confetti1");
+    this.game.add.sprite(750, 1450, "confetti2");
+
+    //make a text field
+    var style = {font:"60px Arial", align:"center", fill:"#a67c00", fontWeight:"bold"};
+
+    var doneText1 = this.game.add.text(0, 0, "Du hast alle Level erfolgreich \nabgeschlossen!", style);
+    var doneText2 = this.game.add.text(0, 0,  "\n Deine Zeit: " + counter + " Sekunden", style);
+
+    //Set time for trophies
+    var goldtime = 15;
+    var silbertime = 30;
+
+    //show trophy
+    if (counter <= goldtime) {
+        //gold
+        var trophy = this.game.add.sprite(0, 0, "trophygold");
+        //var trophyText = this.game.add.text(0, 0, "Du hast den goldenen Pokal freigeschaltet!", style2);
+    }
+    else if (counter > goldtime && counter <= silbertime) {
+        //silber
+        var trophy = this.game.add.sprite(0, 0, "trophysilber");
+        //var trophyText = this.game.add.text(0, 0, "Du hast den silbernen Pokal freigeschaltet!", style2);
+    }
+    else {
+        //bronze
+        var trophy = this.game.add.sprite(0, 0, "trophybronze");
+        //var trophyText = this.game.add.text(0, 0, "Du hast den brozenen Pokal freigeschaltet!", style2);
+    }
+
+    doneText1.wordWrap = true;
+    doneText1.wordWrapWidth = w * .9;
+
+    doneText2.wordWrap = true;
+    doneText2.wordWrapWidth = w * .9;
+
+    back.width = w;
+    back.height = h;
+
+    //add elements to group
+    msgBox.add(back);
+    msgBox.add(rightButton);
+    msgBox.add(doneText1);
+    msgBox.add(doneText2);
+    msgBox.add(trophy);
+    msgBox.angle = 90;
+
+    //configurate rightButton
+    rightButton.x = back.width / 2 - 260;
+    rightButton.y = back.height - rightButton.height - 90;
+    rightButton.inputEnabled = true;
+    rightButton.events.onInputDown.add(this.loadHighscoresEvent, this);
+    
+    //set the message box in the center
+    msgBox.x = this.game.width / 2 + msgBox.height/2;
+    msgBox.y = this.game.height / 2 - msgBox.width / 2;
+
+    //set trophy
+    trophy.x = back.width / 2 - trophy.width / 2;
+    trophy.y = back.height / 2 - trophy.height / 2 - 10;
+    
+    doneText1.x = back.width / 2 - doneText1.width / 2;
+    doneText1.y = back.height / 2 - doneText1.height / 2 -200;
+    doneText2.x = back.width / 2 - doneText2.width / 2;
+    doneText2.y = back.height / 2 - doneText2.height / 2 + 100;
+   
+    this.msgBox = msgBox;
+
+    if(t==1) {
+        winsound.play();
+        }
+},
 	unpauseEvent() {
 		this.gamePlay();
         this.msgBox.destroy();
@@ -765,6 +866,17 @@ wrongwayMessageBox(w = 1050, h = 1512) {
         this.msgBox.destroy();
         clicksound.play();			
     },
+
+    loadHighscoresEvent() {
+		this.gamePlay();
+		this.state.start('Highscores');
+		counter = 0;
+        this.msgBox.destroy();
+        clicksound.play();
+        winsound.stop();
+        localStorage.setItem('finish', 1);		
+    },
+    
     
 }
 
