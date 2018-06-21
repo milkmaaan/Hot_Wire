@@ -85,6 +85,9 @@ Game.Level9_hard.prototype = {
 		sprite.input.enableDrag();
         sprite.anchor.set(0.5);
 
+        flaechehard9 = this.game.add.sprite(0, 0, 'flaechehard9');  
+        
+
         //add timer
         timer = this.time.events.loop(Phaser.Timer.SECOND, this.updateCounter, this);
         this.game.time.events.start();
@@ -247,7 +250,10 @@ Game.Level9_hard.prototype = {
             sprite.inputEnabled = false;
             t++;
             //text.text = 'Drag the sprites. Overlapping: false';
-		}
+        }
+        if(this.checkOverlap(sprite, draht8)){
+            flaechehard9.alpha = 0;
+        }
     },
 
 	checkOverlap:function(spriteA, spriteB) {

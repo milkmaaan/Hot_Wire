@@ -78,6 +78,8 @@ Game.Level7_hard.prototype = {
 		sprite.input.enableDrag();
         sprite.anchor.set(0.5);
 
+        flaechehard7 = this.game.add.sprite(0, 0, 'flaechehard7');  
+
         //add timer
         timer = this.time.events.loop(Phaser.Timer.SECOND, this.updateCounter, this);
         this.game.time.events.start();
@@ -207,7 +209,11 @@ Game.Level7_hard.prototype = {
             sprite.inputEnabled = false;
             t++;
             //text.text = 'Drag the sprites. Overlapping: false';
-		}
+        }
+        
+        if(this.checkOverlap(sprite, draht3)){
+            flaechehard7.alpha = 0;
+        }
     },
 
 	checkOverlap:function(spriteA, spriteB) {

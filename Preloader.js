@@ -87,6 +87,17 @@ Game.Preloader.prototype = {
 		this.load.image("schattenhard11", "assets/shadows/schattenhard11.png");
 		this.load.image("schattenhard12", "assets/shadows/schattenhard12.png");
 
+		//this.load.image("flaecheasy7", "assets/shadows/flaecheeasy7.png");
+		//this.load.image("flaecheeasy10", "assets/shadows/flaecheeasy10.png");
+		//this.load.image("flaecheeasy12", "assets/shadows/flaecheeasy12.png");
+
+		this.load.image("flaechehard7", "assets/shadows/flaechehard7.png");
+		this.load.image("flaechehard9", "assets/shadows/flaechehard9.png");
+		this.load.image("flaechehard10", "assets/shadows/flaechehard10.png");
+		this.load.image("flaechehard11", "assets/shadows/flaechehard11.png");
+		this.load.image("flaechehard12a", "assets/shadows/flaechehard12a.png");
+		this.load.image("flaechehard12b", "assets/shadows/flaechehard12b.png");
+		this.load.image("flaechehard12c", "assets/shadows/flaechehard12c.png");
 		
 		//buttons
 		this.load.image("buttonHauptmenu", "assets/buttons/button_hauptmenu.png");
@@ -116,9 +127,9 @@ Game.Preloader.prototype = {
 	},
 
 	create:function(){
-		this.state.start('MainMenu');
+		//this.state.start('MainMenu');
 		//this.state.start('Level12_easy');
-		//this.state.start('Level11_hard');
+		this.state.start('Level12_hard');
 		
 	}
 };

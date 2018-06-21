@@ -119,6 +119,14 @@ Game.Level12_hard.prototype = {
 		sprite.input.enableDrag();
         sprite.anchor.set(0.5);
 
+        flaechehard12a = this.game.add.sprite(0, 0, 'flaechehard12a');  
+        flaechehard12b = this.game.add.sprite(0, 0, 'flaechehard12b');
+        flaechehard12b.alpha = 0;
+        flaechehard12c = this.game.add.sprite(0, 0, 'flaechehard12c');
+
+  
+
+
         //add timer
         timer = this.time.events.loop(Phaser.Timer.SECOND, this.updateCounter, this);
         this.game.time.events.start();
@@ -431,7 +439,16 @@ Game.Level12_hard.prototype = {
             sprite.inputEnabled = false;
             t++;
             //text.text = 'Drag the sprites. Overlapping: false';
-		}
+        }
+        if(this.checkOverlap(sprite, draht9)){
+            flaechehard12a.alpha = 0;
+        }
+        if(this.checkOverlap(sprite, draht19)){
+            flaechehard12b.alpha = 1;
+        }
+        if(this.checkOverlap(sprite, draht46)){
+            flaechehard12c.alpha = 0;
+        }
     },
 
 	checkOverlap:function(spriteA, spriteB) {
