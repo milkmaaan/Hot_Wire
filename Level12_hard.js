@@ -116,7 +116,7 @@ Game.Level12_hard.prototype = {
         ziel = game.add.sprite(this.game.width / 2 + 111, this.game.height - 59, 'ziel');
 		
         //add player
-        sprite = game.add.sprite(this.game.width / 2 - 59, 1300, 'player');
+        sprite = game.add.sprite(this.game.width / 2 - 59, 50, 'player');
 		sprite.inputEnabled = true;
 		sprite.input.enableDrag();
         sprite.anchor.set(0.5);
@@ -545,7 +545,7 @@ Game.Level12_hard.prototype = {
 
         var msgBox = this.game.add.group();
         var back = this.game.add.sprite(0, 0, "doneBackground");
-        var rightButton = this.game.add.sprite(0, 0, "buttonWeiter");
+        var rightButton = this.game.add.sprite(0, 0, "buttonAgain");
         var leftButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
     
         //make a text field
@@ -599,7 +599,7 @@ Game.Level12_hard.prototype = {
         rightButton.x = back.width / 2 + 100;
         rightButton.y = back.height - rightButton.height - 90;
         rightButton.inputEnabled = true;
-        rightButton.events.onInputDown.add(this.loadNextLevelEvent, this);
+        rightButton.events.onInputDown.add(this.loadThisLevelEvent, this);
 
         //configurate leftButton
         leftButton.x = back.width / 2 - 600;
