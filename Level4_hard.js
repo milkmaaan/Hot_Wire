@@ -298,8 +298,8 @@ Game.Level4_hard.prototype = {
         var doneText2 = this.game.add.text(0, 0, "Bestzeit: "+ localStorage.getItem('level4_hard') + " Sekunden", style2);
         
         //Set time for trophies
-        var goldtime = 15;
-        var silbertime = 30;
+        var goldtime = 13;
+        var silbertime = 18;
 
         //show trophy
         if (counter <= goldtime) {

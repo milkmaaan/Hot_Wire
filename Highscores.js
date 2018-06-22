@@ -41,7 +41,7 @@ var level12hardsilber = 14
 
 Game.Highscores.prototype = {
     create:function(game) {
-        
+
         //black fade
         this.camera.flash('#000000');
 
@@ -69,7 +69,7 @@ Game.Highscores.prototype = {
         //hard
         if (localStorage.getItem('level1_hard') != null) {
 
-            highscore_schwer1 = this.game.add.text(855, 570, (localStorage.getItem('level1_hard') + " Sek."), style);
+            highscore_schwer1 = this.game.add.text(855, 555, (localStorage.getItem('level1_hard') + " Sek."), style);
             highscore_schwer1.angle = 90;
 
             //show trophy
@@ -97,7 +97,7 @@ Game.Highscores.prototype = {
 
         if (localStorage.getItem('level2_hard') != null) {
 
-            highscore_schwer2 = this.game.add.text(855, 788, (localStorage.getItem('level2_hard') + " Sek."), style);
+            highscore_schwer2 = this.game.add.text(855, 773, (localStorage.getItem('level2_hard') + " Sek."), style);
             highscore_schwer2.angle = 90;
 
             //show trophy
@@ -125,7 +125,7 @@ Game.Highscores.prototype = {
 
         if (localStorage.getItem('level3_hard') != null) {
 
-            highscore_schwer3 = this.game.add.text(855, 1006, (localStorage.getItem('level3_hard') + " Sek."), style);
+            highscore_schwer3 = this.game.add.text(855, 991, (localStorage.getItem('level3_hard') + " Sek."), style);
             highscore_schwer3.angle = 90;
 
             //show trophy
@@ -153,7 +153,7 @@ Game.Highscores.prototype = {
 
         if (localStorage.getItem('level4_hard') != null) {
 
-            highscore_schwer4 = this.game.add.text(855, 1224, (localStorage.getItem('level4_hard') + " Sek."), style);
+            highscore_schwer4 = this.game.add.text(855, 1209, (localStorage.getItem('level4_hard') + " Sek."), style);
             highscore_schwer4.angle = 90;
 
             //show trophy
@@ -181,7 +181,7 @@ Game.Highscores.prototype = {
 
         if (localStorage.getItem('level5_hard') != null) {
 
-            highscore_schwer5 = this.game.add.text(576, 570, (localStorage.getItem('level5_hard') + " Sek."), style);
+            highscore_schwer5 = this.game.add.text(576, 555, (localStorage.getItem('level5_hard') + " Sek."), style);
             highscore_schwer5.angle = 90;
 
             //show trophy
@@ -209,7 +209,7 @@ Game.Highscores.prototype = {
 
         if (localStorage.getItem('level6_hard') != null) {
 
-            highscore_schwer6 = this.game.add.text(576, 788, (localStorage.getItem('level6_hard') + " Sek."), style);
+            highscore_schwer6 = this.game.add.text(576, 773, (localStorage.getItem('level6_hard') + " Sek."), style);
             highscore_schwer6.angle = 90;
 
             //show trophy
@@ -237,7 +237,7 @@ Game.Highscores.prototype = {
 
         if (localStorage.getItem('level7_hard') != null) {
 
-            highscore_schwer7 = this.game.add.text(576, 1006, (localStorage.getItem('level7_hard') + " Sek."), style);
+            highscore_schwer7 = this.game.add.text(576, 991, (localStorage.getItem('level7_hard') + " Sek."), style);
             highscore_schwer7.angle = 90;
 
             //show trophy
@@ -265,7 +265,7 @@ Game.Highscores.prototype = {
 
         if (localStorage.getItem('level8_hard') != null) {
 
-            highscore_schwer8 = this.game.add.text(576, 1224, (localStorage.getItem('level8_hard') + " Sek."), style);
+            highscore_schwer8 = this.game.add.text(576, 1209, (localStorage.getItem('level8_hard') + " Sek."), style);
             highscore_schwer8.angle = 90;
 
             //show trophy
@@ -293,7 +293,7 @@ Game.Highscores.prototype = {
 
         if (localStorage.getItem('level9_hard') != null) {
 
-            highscore_schwer9 = this.game.add.text(297, 570, (localStorage.getItem('level9_hard') + " Sek."), style);
+            highscore_schwer9 = this.game.add.text(297, 555, (localStorage.getItem('level9_hard') + " Sek."), style);
             highscore_schwer9.angle = 90;
 
             //show trophy
@@ -321,7 +321,7 @@ Game.Highscores.prototype = {
 
         if (localStorage.getItem('level10_hard') != null) {
 
-            highscore_schwer10 = this.game.add.text(297, 788, (localStorage.getItem('level10_hard') + " Sek."), style);
+            highscore_schwer10 = this.game.add.text(297, 773, (localStorage.getItem('level10_hard') + " Sek."), style);
             highscore_schwer10.angle = 90;
 
             //show trophy
@@ -349,7 +349,7 @@ Game.Highscores.prototype = {
 
         if (localStorage.getItem('level11_hard') != null) {
 
-            highscore_schwer11 = this.game.add.text(297, 1006, (localStorage.getItem('level11_hard') + " Sek."), style);
+            highscore_schwer11 = this.game.add.text(297, 991, (localStorage.getItem('level11_hard') + " Sek."), style);
             highscore_schwer11.angle = 90;
 
             //show trophy
@@ -377,7 +377,7 @@ Game.Highscores.prototype = {
 
         if (localStorage.getItem('level12_hard') != null) {
 
-            highscore_schwer12 = this.game.add.text(297, 1224, (localStorage.getItem('level12_hard') + " Sek."), style);
+            highscore_schwer12 = this.game.add.text(297, 1209, (localStorage.getItem('level12_hard') + " Sek."), style);
             highscore_schwer12.angle = 90;
 
             //show trophy

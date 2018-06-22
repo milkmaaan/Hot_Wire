@@ -323,8 +323,8 @@ Game.Level8_hard.prototype = {
         var doneText2 = this.game.add.text(0, 0, "Bestzeit: "+ localStorage.getItem('level8_hard') + " Sekunden", style2);
         
         //set time for trophies
-        var goldtime = 15;
-        var silbertime = 30;
+        var goldtime = 16;
+        var silbertime = 21;
 
         //show trophy
         if (counter <= goldtime) {
