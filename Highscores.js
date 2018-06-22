@@ -3,41 +3,41 @@ Game.Highscores = function(game) {
 };
 
 //hard
-var level1hardgold = 2
-var level1hardsilber = 5
+var level1hardgold = 7
+var level1hardsilber = 12
 
-var level2hardgold = 4
-var level2hardsilber = 10
+var level2hardgold = 12
+var level2hardsilber = 17
 
-var level3hardgold = 6
-var level3hardsilber = 12
+var level3hardgold = 14
+var level3hardsilber = 19
 
-var level4hardgold = 8
-var level4hardsilber = 14
+var level4hardgold = 13
+var level4hardsilber = 18
 
-var level5hardgold = 2
-var level5hardsilber = 5
+var level5hardgold = 12
+var level5hardsilber = 17
 
-var level6hardgold = 4
-var level6hardsilber = 10
+var level6hardgold = 16
+var level6hardsilber = 21
 
-var level7hardgold = 6
-var level7hardsilber = 12
+var level7hardgold = 13
+var level7hardsilber = 18
 
-var level8hardgold = 8
-var level8hardsilber = 14
+var level8hardgold = 16
+var level8hardsilber = 21
 
-var level9hardgold = 2
-var level9hardsilber = 5
+var level9hardgold = 14
+var level9hardsilber = 19
 
-var level10hardgold = 4
-var level10hardsilber = 10
+var level10hardgold = 18
+var level10hardsilber = 23
 
-var level11hardgold = 6
-var level11hardsilber = 12
+var level11hardgold = 20
+var level11hardsilber = 25
 
-var level12hardgold = 8
-var level12hardsilber = 14
+var level12hardgold = 23
+var level12hardsilber = 28
 
 Game.Highscores.prototype = {
     create:function(game) {
