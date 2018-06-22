@@ -234,8 +234,9 @@ Game.Level5_hard.prototype = {
         var back = this.game.add.sprite(0, 0, "pauseBackground");
         
         //add buttons to messagebox
-        var rightButton = this.game.add.sprite(0, 0, "buttonWeiter");
-        var leftButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+        var rightButton = this.game.add.sprite(0, 0, "buttonWeiterKlein");
+        var middleButton = this.game.add.sprite(0, 0, "buttonNochmalKlein");
+        var leftButton = this.game.add.sprite(0, 0, "buttonMenuKlein");
 
         var style = {font:"70px Arial", align:"center"};
         var pauseText = this.game.add.text(0, 0, "Du hast das Level pausiert.\n Diese Zeiten werden benötigt, um die jeweiligen Pokale zu erreichen.", style);
@@ -252,19 +253,26 @@ Game.Level5_hard.prototype = {
         //add elements to group        
         msgBox.add(back);
         msgBox.add(rightButton);
+        msgBox.add(middleButton);
         msgBox.add(leftButton);
         msgBox.add(pauseText);
         msgBox.add(trophytime);
 		msgBox.angle = 90;
 
         //configurate rightButton
-        rightButton.x = back.width / 2 + 100;
+        rightButton.x = back.width / 2 + 250;
         rightButton.y = back.height - rightButton.height - 90;    
         rightButton.inputEnabled = true;
         rightButton.events.onInputDown.add(this.unpauseEvent, this);
 
+        //configurate middleButton
+        middleButton.x = back.width / 2 - 200;
+        middleButton.y = back.height - middleButton.height - 90;    
+        middleButton.inputEnabled = true;
+        middleButton.events.onInputDown.add(this.loadThisLevelEvent, this);
+
         //configurate leftButton
-        leftButton.x = back.width / 2 - 600;
+        leftButton.x = back.width / 2 - 650;
         leftButton.y = back.height - leftButton.height - 90; 
         leftButton.inputEnabled = true;
         leftButton.events.onInputDown.add(this.backToSelectModeEvent, this);
@@ -275,6 +283,7 @@ Game.Level5_hard.prototype = {
         trophytime.x = back.width / 2 - pauseText.width / 2 + 100;
         trophytime.y = back.height / 2 - pauseText.height / 2 + 125;
 
+        //set the message box in the center
         msgBox.x = this.game.width / 2 + msgBox.height/2;
         msgBox.y = this.game.height / 2 - msgBox.width / 2;
 
@@ -286,11 +295,13 @@ Game.Level5_hard.prototype = {
         if (this.msgBox) {
             this.msgBox.destroy();
         }
-
+        
+        //group for all box-items
         var msgBox = this.game.add.group();
         var back = this.game.add.sprite(0, 0, "doneBackground");
-        var rightButton = this.game.add.sprite(0, 0, "buttonWeiter");
-        var leftButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+        var rightButton = this.game.add.sprite(0, 0, "buttonWeiterKlein");
+        var middleButton = this.game.add.sprite(0, 0, "buttonNochmalKlein");
+        var leftButton = this.game.add.sprite(0, 0, "buttonMenuKlein");
     
         //make a text field
         var style = {font:"50px Arial", align:"center"};
@@ -299,7 +310,7 @@ Game.Level5_hard.prototype = {
         var doneText1 = this.game.add.text(0, 0, "Du hast das Level geschafft!\nDeine Zeit: " + counter + " Sekunden", style);
         var doneText2 = this.game.add.text(0, 0, "Bestzeit: "+ localStorage.getItem('level5_hard') + " Sekunden", style2);
         
-        //Set time for trophies
+        //set time for trophies
         var goldtime = 12;
         var silbertime = 17;
 
@@ -310,7 +321,7 @@ Game.Level5_hard.prototype = {
             var trophyText = this.game.add.text(0, 0, "Du hast den goldenen Pokal freigeschaltet!", style2);
         }
         else if (counter > goldtime && counter <= silbertime) {
-            //silber
+            //silver
             var trophy = this.game.add.sprite(0, 0, "trophysilber");
             var trophyText = this.game.add.text(0, 0, "Du hast den silbernen Pokal freigeschaltet!", style2);
         }
@@ -332,6 +343,7 @@ Game.Level5_hard.prototype = {
         //add elements to group
         msgBox.add(back);
         msgBox.add(leftButton);
+        msgBox.add(middleButton);
         msgBox.add(rightButton);
         msgBox.add(doneText1);
         msgBox.add(doneText2);
@@ -340,13 +352,19 @@ Game.Level5_hard.prototype = {
         msgBox.angle = 90;
 
         //configurate rightButton
-        rightButton.x = back.width / 2 + 100;
+        rightButton.x = back.width / 2 + 250;
         rightButton.y = back.height - rightButton.height - 90;
         rightButton.inputEnabled = true;
         rightButton.events.onInputDown.add(this.loadNextLevelEvent, this);
 
+        //configurate middleButton
+        middleButton.x = back.width / 2 - 200;
+        middleButton.y = back.height - middleButton.height - 90;    
+        middleButton.inputEnabled = true;
+        middleButton.events.onInputDown.add(this.loadThisLevelEvent, this);
+
         //configurate leftButton
-        leftButton.x = back.width / 2 - 600;
+        leftButton.x = back.width / 2 - 650;
         leftButton.y = back.height - leftButton.height - 90;
         leftButton.inputEnabled = true;
 		leftButton.events.onInputDown.add(this.backToSelectModeEvent, this);
@@ -358,7 +376,7 @@ Game.Level5_hard.prototype = {
         //set trophy
         trophy.x = back.width / 2 - trophy.width / 2;
         trophy.y = back.height / 2 - trophy.height / 2 + 30;
-         
+        
         //text position
         doneText1.x = back.width / 2 - doneText1.width / 2;
         doneText1.y = back.height / 2 - doneText1.height / 2 - 230;
@@ -373,6 +391,7 @@ Game.Level5_hard.prototype = {
             winsound.play();
             }
     },
+
     
 failMessageBox(w = 1050, h = 1512) {
         //destroy messagebox if already exists
@@ -467,7 +486,8 @@ failMessageBox(w = 1050, h = 1512) {
 		this.state.start('Level5_hard');
 		counter = 0;
         this.msgBox.destroy();
-        clicksound.play();			
+        clicksound.play();	
+        winsound.stop();		
     },
     
 }

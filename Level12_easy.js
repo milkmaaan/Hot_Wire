@@ -272,9 +272,19 @@ Game.Level12_easy.prototype = {
         }
         else if (this.checkOverlap(sprite, ziel))
 		{
+            if(localStorage.getItem('finisheasy') == null){
+                this.game.time.events.stop();
+                this.finishMessageBox(1512, 1050);
+                sprite.inputEnabled = false;
+                t++;
+            }
+            
+            else {
+            this.game.time.events.stop();
             this.doneMessageBox(1512, 1050);
             sprite.inputEnabled = false;
             t++;
+            }
 		}
 		else
         {
@@ -312,8 +322,9 @@ Game.Level12_easy.prototype = {
         var back = this.game.add.sprite(0, 0, "pauseBackground");
         
         //add buttons to messagebox
-		var rightButton = this.game.add.sprite(0, 0, "buttonWeiter");
-        var leftButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+        var rightButton = this.game.add.sprite(0, 0, "buttonWeiterKlein");
+        var middleButton = this.game.add.sprite(0, 0, "buttonNochmalKlein");
+        var leftButton = this.game.add.sprite(0, 0, "buttonMenuKlein");
         
         var style = {font:"70px Arial", align:"center"};
         var pauseText = this.game.add.text(0, 0, "Du hast das Level pausiert.", style);
@@ -327,19 +338,26 @@ Game.Level12_easy.prototype = {
 
         //add elements to group
         msgBox.add(back);
-		msgBox.add(rightButton);
+        msgBox.add(rightButton);
+        msgBox.add(middleButton);
         msgBox.add(leftButton);
         msgBox.add(pauseText);
         msgBox.angle = 90;
 
         //configurate rightButton
-        rightButton.x = back.width / 2 + 100;
+        rightButton.x = back.width / 2 + 250;
         rightButton.y = back.height - rightButton.height - 90;    
         rightButton.inputEnabled = true;
         rightButton.events.onInputDown.add(this.unpauseEvent, this);
+
+        //configurate middleButton
+        middleButton.x = back.width / 2 - 200;
+        middleButton.y = back.height - middleButton.height - 90;    
+        middleButton.inputEnabled = true;
+        middleButton.events.onInputDown.add(this.loadThisLevelEvent, this);
         
         //configurate leftButton
-        leftButton.x = back.width / 2 - 600;
+        leftButton.x = back.width / 2 - 650;
         leftButton.y = back.height - leftButton.height - 90; 
         leftButton.inputEnabled = true;
         leftButton.events.onInputDown.add(this.backToSelectModeEvent, this);
@@ -363,8 +381,9 @@ Game.Level12_easy.prototype = {
         //group for all box-items
         var msgBox = this.game.add.group();
 		var back = this.game.add.sprite(0, 0, "doneBackground");
-        var rightButton = this.game.add.sprite(0, 0, "buttonAgain");
-        var leftButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+        var rightButton = this.game.add.sprite(0, 0, "buttonWeiterKlein");
+        var middleButton = this.game.add.sprite(0, 0, "buttonNochmalKlein");
+        var leftButton = this.game.add.sprite(0, 0, "buttonMenuKlein");
 
 		//make a text field
         var style = {font:"70px Arial", align:"center"};
@@ -381,18 +400,25 @@ Game.Level12_easy.prototype = {
         //add elements to group
         msgBox.add(back);
         msgBox.add(rightButton);
+        msgBox.add(middleButton);
         msgBox.add(leftButton);
         msgBox.add(doneText1);
         msgBox.angle = 90;
         
         //configurate rightButton
-        rightButton.x = back.width / 2 + 100;
+        rightButton.x = back.width / 2 + 250;
         rightButton.y = back.height - rightButton.height - 90;
         rightButton.inputEnabled = true;
-        rightButton.events.onInputDown.add(this.loadThisLevelEvent, this);
+        rightButton.events.onInputDown.add(this.loadNextLevelEvent, this);
+
+        //configurate middleButton
+        middleButton.x = back.width / 2 - 200;
+        middleButton.y = back.height - middleButton.height - 90;    
+        middleButton.inputEnabled = true;
+        middleButton.events.onInputDown.add(this.loadThisLevelEvent, this);
 
         //configurate leftButton
-        leftButton.x = back.width / 2 - 600;
+        leftButton.x = back.width / 2 - 650;
         leftButton.y = back.height - leftButton.height - 90;
         leftButton.inputEnabled = true;
         leftButton.events.onInputDown.add(this.backToSelectModeEvent, this);
@@ -529,6 +555,56 @@ wrongwayMessageBox(w = 1050, h = 1512) {
     }
 },
 
+finishMessageBox(w = 1050, h = 1512) {
+    //destroy messagebox already exists
+    if (this.msgBox) {
+        this.msgBox.destroy();
+    }
+
+    var msgBox = this.game.add.group();
+    var back = this.game.add.sprite(0, 0, "doneBackgroundgold");
+    var rightButton = this.game.add.sprite(0, 0, "buttonHauptmenugold");
+    
+    this.game.add.sprite(550, 300, "confetti1");
+    this.game.add.sprite(550, 1450, "confetti2");
+
+    //make a text field
+    var style = {font:"60px Arial", align:"center", fill:"#a67c00", fontWeight:"bold"};
+
+    var doneText1 = this.game.add.text(0, 0, "Du hast alle Level im Schwierigkeitsgrad EINFACH \nerfolgreich abgeschlossen!", style);
+
+    doneText1.wordWrap = true;
+    doneText1.wordWrapWidth = w * .9;
+
+    back.width = w;
+    back.height = h;
+
+    //add elements to group
+    msgBox.add(back);
+    msgBox.add(rightButton);
+    msgBox.add(doneText1);
+    msgBox.angle = 90;
+
+    //configurate rightButton
+    rightButton.x = back.width / 2 - 260;
+    rightButton.y = back.height - rightButton.height - 90;
+    rightButton.inputEnabled = true;
+    rightButton.events.onInputDown.add(this.backToSelectModefinishEvent, this);
+    
+    //set the message box in the center
+    msgBox.x = this.game.width / 2 + msgBox.height/2;
+    msgBox.y = this.game.height / 2 - msgBox.width / 2;
+    
+    doneText1.x = back.width / 2 - doneText1.width / 2;
+    doneText1.y = back.height / 2 - doneText1.height / 2 - 100;
+   
+    this.msgBox = msgBox;
+
+    if(t==1) {
+        winsound.play();
+        }
+},
+
 	unpauseEvent() {
 		this.gamePlay();
         this.msgBox.destroy();
@@ -549,6 +625,16 @@ wrongwayMessageBox(w = 1050, h = 1512) {
         clicksound.play();
         winsound.stop();		
     },
+
+    backToSelectModefinishEvent() {
+		this.gamePlay();
+		this.state.start('SelectMode');
+		counter = 0;
+        this.msgBox.destroy();
+        clicksound.play();
+        winsound.stop();	
+        localStorage.setItem('finisheasy', 1);			
+    },
     
 	loadNextLevelEvent() {
 		this.gamePlay();
@@ -565,6 +651,7 @@ wrongwayMessageBox(w = 1050, h = 1512) {
 		counter = 0;
         this.msgBox.destroy();
         clicksound.play();		
+        winsound.stop();	
     },
     
 }

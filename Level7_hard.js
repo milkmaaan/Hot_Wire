@@ -236,13 +236,14 @@ Game.Level7_hard.prototype = {
         var back = this.game.add.sprite(0, 0, "pauseBackground");
         
         //add buttons to messagebox
-        var rightButton = this.game.add.sprite(0, 0, "buttonWeiter");
-        var leftButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+        var rightButton = this.game.add.sprite(0, 0, "buttonWeiterKlein");
+        var middleButton = this.game.add.sprite(0, 0, "buttonNochmalKlein");
+        var leftButton = this.game.add.sprite(0, 0, "buttonMenuKlein");
 
         var style = {font:"70px Arial", align:"center"};
         var pauseText = this.game.add.text(0, 0, "Du hast das Level pausiert.\n Diese Zeiten werden benötigt, um die jeweiligen Pokale zu erreichen.", style);
 
-        var trophytime = this.game.add.sprite(0, 0, "trophytimehard3");
+        var trophytime = this.game.add.sprite(0, 0, "trophytimehard7");
 
         pauseText.wordWrap = true;
         pauseText.wordWrapWidth = w * .9;
@@ -254,19 +255,26 @@ Game.Level7_hard.prototype = {
         //add elements to group        
         msgBox.add(back);
         msgBox.add(rightButton);
+        msgBox.add(middleButton);
         msgBox.add(leftButton);
         msgBox.add(pauseText);
         msgBox.add(trophytime);
 		msgBox.angle = 90;
 
         //configurate rightButton
-        rightButton.x = back.width / 2 + 100;
+        rightButton.x = back.width / 2 + 250;
         rightButton.y = back.height - rightButton.height - 90;    
         rightButton.inputEnabled = true;
         rightButton.events.onInputDown.add(this.unpauseEvent, this);
 
+        //configurate middleButton
+        middleButton.x = back.width / 2 - 200;
+        middleButton.y = back.height - middleButton.height - 90;    
+        middleButton.inputEnabled = true;
+        middleButton.events.onInputDown.add(this.loadThisLevelEvent, this);
+
         //configurate leftButton
-        leftButton.x = back.width / 2 - 600;
+        leftButton.x = back.width / 2 - 650;
         leftButton.y = back.height - leftButton.height - 90; 
         leftButton.inputEnabled = true;
         leftButton.events.onInputDown.add(this.backToSelectModeEvent, this);
@@ -293,8 +301,9 @@ Game.Level7_hard.prototype = {
         //group for all box-items
         var msgBox = this.game.add.group();
         var back = this.game.add.sprite(0, 0, "doneBackground");
-        var rightButton = this.game.add.sprite(0, 0, "buttonWeiter");
-        var leftButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+        var rightButton = this.game.add.sprite(0, 0, "buttonWeiterKlein");
+        var middleButton = this.game.add.sprite(0, 0, "buttonNochmalKlein");
+        var leftButton = this.game.add.sprite(0, 0, "buttonMenuKlein");
     
         //make a text field
         var style = {font:"50px Arial", align:"center"};
@@ -303,7 +312,7 @@ Game.Level7_hard.prototype = {
         var doneText1 = this.game.add.text(0, 0, "Du hast das Level geschafft!\nDeine Zeit: " + counter + " Sekunden", style);
         var doneText2 = this.game.add.text(0, 0, "Bestzeit: "+ localStorage.getItem('level7_hard') + " Sekunden", style2);
         
-        //Set time for trophies
+        //set time for trophies
         var goldtime = 13;
         var silbertime = 18;
 
@@ -336,6 +345,7 @@ Game.Level7_hard.prototype = {
         //add elements to group
         msgBox.add(back);
         msgBox.add(leftButton);
+        msgBox.add(middleButton);
         msgBox.add(rightButton);
         msgBox.add(doneText1);
         msgBox.add(doneText2);
@@ -344,13 +354,19 @@ Game.Level7_hard.prototype = {
         msgBox.angle = 90;
 
         //configurate rightButton
-        rightButton.x = back.width / 2 + 100;
+        rightButton.x = back.width / 2 + 250;
         rightButton.y = back.height - rightButton.height - 90;
         rightButton.inputEnabled = true;
         rightButton.events.onInputDown.add(this.loadNextLevelEvent, this);
 
+        //configurate middleButton
+        middleButton.x = back.width / 2 - 200;
+        middleButton.y = back.height - middleButton.height - 90;    
+        middleButton.inputEnabled = true;
+        middleButton.events.onInputDown.add(this.loadThisLevelEvent, this);
+
         //configurate leftButton
-        leftButton.x = back.width / 2 - 600;
+        leftButton.x = back.width / 2 - 650;
         leftButton.y = back.height - leftButton.height - 90;
         leftButton.inputEnabled = true;
 		leftButton.events.onInputDown.add(this.backToSelectModeEvent, this);
@@ -531,7 +547,8 @@ wrongwayMessageBox(w = 1050, h = 1512) {
 		this.state.start('Level7_hard');
 		counter = 0;
         this.msgBox.destroy();
-        clicksound.play();			
+        clicksound.play();		
+        winsound.stop();	
     },
     
 }

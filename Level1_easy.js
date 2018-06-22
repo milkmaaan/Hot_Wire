@@ -133,8 +133,9 @@ Game.Level1_easy.prototype = {
         var back = this.game.add.sprite(0, 0, "pauseBackground");
         
         //add buttons to messagebox
-		var rightButton = this.game.add.sprite(0, 0, "buttonWeiter");
-        var leftButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+        var rightButton = this.game.add.sprite(0, 0, "buttonWeiterKlein");
+        var middleButton = this.game.add.sprite(0, 0, "buttonNochmalKlein");
+        var leftButton = this.game.add.sprite(0, 0, "buttonMenuKlein");
         
         var style = {font:"70px Arial", align:"center"};
         var pauseText = this.game.add.text(0, 0, "Du hast das Level pausiert.", style);
@@ -148,19 +149,26 @@ Game.Level1_easy.prototype = {
 
         //add elements to group
         msgBox.add(back);
-		msgBox.add(rightButton);
+        msgBox.add(rightButton);
+        msgBox.add(middleButton);
         msgBox.add(leftButton);
         msgBox.add(pauseText);
         msgBox.angle = 90;
 
         //configurate rightButton
-        rightButton.x = back.width / 2 + 100;
+        rightButton.x = back.width / 2 + 250;
         rightButton.y = back.height - rightButton.height - 90;    
         rightButton.inputEnabled = true;
         rightButton.events.onInputDown.add(this.unpauseEvent, this);
+
+        //configurate middleButton
+        middleButton.x = back.width / 2 - 200;
+        middleButton.y = back.height - middleButton.height - 90;    
+        middleButton.inputEnabled = true;
+        middleButton.events.onInputDown.add(this.loadThisLevelEvent, this);
         
         //configurate leftButton
-        leftButton.x = back.width / 2 - 600;
+        leftButton.x = back.width / 2 - 650;
         leftButton.y = back.height - leftButton.height - 90; 
         leftButton.inputEnabled = true;
         leftButton.events.onInputDown.add(this.backToSelectModeEvent, this);
@@ -184,8 +192,9 @@ Game.Level1_easy.prototype = {
         //group for all box-items
         var msgBox = this.game.add.group();
 		var back = this.game.add.sprite(0, 0, "doneBackground");
-        var rightButton = this.game.add.sprite(0, 0, "buttonWeiter");
-        var leftButton = this.game.add.sprite(0, 0, "buttonHauptmenu");
+        var rightButton = this.game.add.sprite(0, 0, "buttonWeiterKlein");
+        var middleButton = this.game.add.sprite(0, 0, "buttonNochmalKlein");
+        var leftButton = this.game.add.sprite(0, 0, "buttonMenuKlein");
 
 		//make a text field
         var style = {font:"70px Arial", align:"center"};
@@ -202,18 +211,25 @@ Game.Level1_easy.prototype = {
         //add elements to group
         msgBox.add(back);
         msgBox.add(rightButton);
+        msgBox.add(middleButton);
         msgBox.add(leftButton);
         msgBox.add(doneText1);
         msgBox.angle = 90;
         
         //configurate rightButton
-        rightButton.x = back.width / 2 + 100;
+        rightButton.x = back.width / 2 + 250;
         rightButton.y = back.height - rightButton.height - 90;
         rightButton.inputEnabled = true;
         rightButton.events.onInputDown.add(this.loadNextLevelEvent, this);
 
+        //configurate middleButton
+        middleButton.x = back.width / 2 - 200;
+        middleButton.y = back.height - middleButton.height - 90;    
+        middleButton.inputEnabled = true;
+        middleButton.events.onInputDown.add(this.loadThisLevelEvent, this);
+
         //configurate leftButton
-        leftButton.x = back.width / 2 - 600;
+        leftButton.x = back.width / 2 - 650;
         leftButton.y = back.height - leftButton.height - 90;
         leftButton.inputEnabled = true;
         leftButton.events.onInputDown.add(this.backToSelectModeEvent, this);
@@ -326,7 +342,8 @@ failMessageBox(w = 1050, h = 1512) {
 		this.state.start('Level1_easy');
 		counter = 0;
         this.msgBox.destroy();
-        clicksound.play();		
+        clicksound.play();	
+        winsound.stop();		
     },
     
 }

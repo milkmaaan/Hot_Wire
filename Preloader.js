@@ -11,7 +11,6 @@ Game.Preloader.prototype = {
 
 
 		//backgrounds
-
 		this.load.image("background", "assets/backgrounds/background_mainmenu.png");
 		this.load.image("background_selectmode", "assets/backgrounds/background_selectmode.png");
 		this.load.image("background_steuerung", "assets/backgrounds/background_steuerung.png");
@@ -106,6 +105,7 @@ Game.Preloader.prototype = {
 		
 		//buttons
 		this.load.image("buttonHauptmenu", "assets/buttons/button_hauptmenu.png");
+		this.load.image("buttonHauptmenugold", "assets/buttons/button_hauptmenu_gold.png");
 		this.load.image("buttonWeiter", "assets/buttons/button_weiter.png");
 		this.load.image("buttonWeitergold", "assets/buttons/button_weiter_gold.png");
 		this.load.image("buttonStartgame", "assets/buttons/button_startgame.png");
@@ -122,6 +122,10 @@ Game.Preloader.prototype = {
 		this.load.image("speakerIcon", "assets/buttons/speaker.png");
 		this.load.image("buttonPageLeft", "assets/buttons/button_pageleft.png");
 		this.load.image("buttonPageRight", "assets/buttons/button_pageright.png");
+		this.load.image("buttonMenuKlein", "assets/buttons/menu_klein.png");
+		this.load.image("buttonWeiterKlein", "assets/buttons/weiter_klein.png");
+		this.load.image("buttonNochmalKlein", "assets/buttons/nochmal_klein.png");
+
 
 		//sounds
 		this.game.load.audio("failsound", "assets/sounds/gameover.wav");
@@ -133,9 +137,9 @@ Game.Preloader.prototype = {
 	},
 
 	create:function(){
-		this.state.start('MainMenu');
-		//this.state.start('Level12_easy');
-		//this.state.start('Level12_hard');
+		//this.state.start('MainMenu');
+		//this.state.start('Level3_easy');
+		this.state.start('Level2_hard');
 		
 	}
 };
