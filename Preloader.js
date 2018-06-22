@@ -137,9 +137,9 @@ Game.Preloader.prototype = {
 	},
 
 	create:function(){
-		//this.state.start('MainMenu');
+		this.state.start('MainMenu');
 		//this.state.start('Level3_easy');
-		this.state.start('Level2_hard');
+		//this.state.start('Level2_hard');
 		
 	}
 };
