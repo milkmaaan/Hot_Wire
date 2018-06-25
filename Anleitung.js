@@ -34,11 +34,18 @@ Game.Anleitung.prototype = {
             soundanleitung.stop();
             clicksound.play();
             this.state.start('MainMenu');
+
+            if(localStorage.getItem('sounds') == 1) {
+                this.game.sound.mute = false;
+            } else {
+                this.game.sound.mute = true;
+            }
         });
 
         //speaker
         this.createButton(game,"",1060, 1260, 150, 150, "speakerIcon",
         function(){
+            this.game.sound.mute = false;
             soundanleitung.play();
         });
 

@@ -58,7 +58,9 @@ Game.Preloader.prototype = {
 		this.game.load.image("schwerIcon", "assets/statusbar/schwer.png");
 		this.game.load.image("pauseIcon", "assets/statusbar/pauseicon.png");
 		this.load.image("rot", "assets/statusbar/rot.png");
-		this.load.image("gruen", "assets/statusbar/gruen.png");		
+		this.load.image("gruen", "assets/statusbar/gruen.png");	
+		this.load.image("soundOff", "assets/statusbar/musicoff.png");
+		this.load.image("soundOn", "assets/statusbar/musicon.png");
 
 		//wires easy
 		this.load.image("draht9", "assets/sprites/1l.png");
@@ -137,9 +139,9 @@ Game.Preloader.prototype = {
 	},
 
 	create:function(){
-		this.state.start('MainMenu');
-		//this.state.start('Level3_easy');
-		//this.state.start('Level2_hard');
+		//this.state.start('MainMenu');
+		//this.state.start('Level1_easy');
+		this.state.start('Level1_hard');
 		
 	}
 };

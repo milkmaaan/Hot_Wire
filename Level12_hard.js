@@ -39,6 +39,18 @@ Game.Level12_hard.prototype = {
         pauseIcon.inputEnabled = true;
         pauseIcon.events.onInputDown.add(this.pauseEvent, this);
 
+        if (localStorage.getItem('sounds') == 1) {
+            musicIcon = this.game.add.sprite(1217, this.game.height / 2 - 600, "soundOn");
+            musicIcon.angle = 90;
+            musicIcon.inputEnabled = true;
+            musicIcon.events.onInputDown.add(this.muteMusic, this);
+        } else {
+            musicIcon = this.game.add.sprite(1217, this.game.height / 2 - 600, "soundOff");
+            musicIcon.angle = 90;
+            musicIcon.inputEnabled = true;
+            musicIcon.events.onInputDown.add(this.muteMusic, this);
+        }
+
         schwerIcon = this.game.add.sprite(1200, this.game.height / 2 - 130, "schwerIcon");
         schwerIcon.angle = 90;
 
@@ -886,6 +898,20 @@ finishMessageBox(w = 1050, h = 1512) {
         winsound.stop();
         winsound.stop();
         localStorage.setItem('finish', 1);		
+    },
+
+    muteMusic() {
+        if (localStorage.getItem('sounds') == 1) {
+            musicIcon = this.game.add.sprite(1217, this.game.height / 2 - 600, "soundOff");
+            musicIcon.angle = 90;
+            localStorage.setItem('sounds', 0);
+            this.game.sound.mute = true;
+        } else {
+            musicIcon = this.game.add.sprite(1217, this.game.height / 2 - 600, "soundOn");
+            musicIcon.angle = 90;
+            localStorage.setItem('sounds', 1);
+            this.game.sound.mute = false;
+        }
     },
     
     

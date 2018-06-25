@@ -24,12 +24,6 @@ Game.Steuerung.prototype = {
         //speaker = game.add.sprite(1140, 1200, "speakerIcon");
         //speaker.angle = 90;
 
-        //Speaker
-        this.createButton(game,"",1060, 1260, 150, 150, "speakerIcon",
-        function(){
-            soundsteuerung.play();
-        });
-
         //add clicksound
 		clicksound = this.game.add.audio('clicksound');
 		soundsteuerung = this.game.add.audio('soundsteuerung');
@@ -39,6 +33,19 @@ Game.Steuerung.prototype = {
             soundsteuerung.stop();
             clicksound.play();
             this.state.start('MainMenu');
+
+            if(localStorage.getItem('sounds') == 1) {
+                this.game.sound.mute = false;
+            } else {
+                this.game.sound.mute = true;
+            }
+        });
+
+        //Speaker
+        this.createButton(game,"",1060, 1260, 150, 150, "speakerIcon",
+        function(){
+            soundsteuerung.play();
+            this.game.sound.mute = false;
         });
     },
 
