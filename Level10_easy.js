@@ -79,7 +79,7 @@ Game.Level10_easy.prototype = {
         this.game.add.sprite(0, 0, 'schatteneasy10');  
 
         //add player
-        sprite = game.add.sprite(this.game.width / 2 -59 , 50, 'player');
+        sprite = game.add.sprite(this.game.width / 2 -59 , 59, 'playerBig');
 		sprite.inputEnabled = true;
 		sprite.input.enableDrag();
         sprite.anchor.set(0.5);

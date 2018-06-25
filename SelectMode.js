@@ -82,7 +82,7 @@ Game.SelectMode.prototype = {
 
         selectedMode = "Level1_hard";
 
-        this.modeText.setText("Schwierigkeitsgrad Schwer:\n\n● für Fortgeschrittene\n● erreiche das Ziel schnellstmöglich\n● dünnerer Draht\n● versuche einen neuen Highscore aufzustellen");
+        this.modeText.setText("Schwierigkeitsgrad Schwer:\n\n● für Fortgeschrittene\n● erreiche das Ziel schnellstmöglich\n● dünnerer Draht und größerer Spieler\n● versuche einen neuen Highscore aufzustellen");
         this.modeText.angle = 90;
 
         clicksound.play();

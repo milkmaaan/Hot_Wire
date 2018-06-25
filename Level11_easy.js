@@ -98,7 +98,7 @@ Game.Level11_easy.prototype = {
         ziel = game.add.sprite(this.game.width / 2 - 590, this.game.height - 118, 'ziell');
         
         //add player
-        sprite = game.add.sprite(this.game.width / 2 -59 , 50, 'player');
+        sprite = game.add.sprite(this.game.width / 2 -59 , 59, 'playerBig');
 		sprite.inputEnabled = true;
 		sprite.input.enableDrag();
         sprite.anchor.set(0.5);

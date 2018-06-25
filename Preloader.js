@@ -47,6 +47,8 @@ Game.Preloader.prototype = {
 
 		//player sprite
 		this.load.spritesheet('player', 'assets/sprites/player.png',59,59);
+		this.load.spritesheet('playerBig', 'assets/sprites/playergross.png');
+
 
 		//sprites for gamebackground and goal
 		this.load.image("holz", "assets/sprites/holz.jpg");
@@ -139,9 +141,9 @@ Game.Preloader.prototype = {
 	},
 
 	create:function(){
-		//this.state.start('MainMenu');
+		this.state.start('MainMenu');
 		//this.state.start('Level1_easy');
-		this.state.start('Level1_hard');
+		//this.state.start('Level1_hard');
 		
 	}
 };
