@@ -4,7 +4,7 @@ Game.Level10_hard = function(game){
 
 var counter = 0;
 var level10hardcounter = 0;
-var localStorageName = "drahtscore";
+var localStorageName = "drahtscorehd";
 var highscore;
 var sprite;
 var levelText;
@@ -33,7 +33,7 @@ Game.Level10_hard.prototype = {
         pauseIcon.inputEnabled = true;
         pauseIcon.events.onInputDown.add(this.pauseEvent, this);
 
-        if (localStorage.getItem('sounds') == 1) {
+        if (localStorage.getItem('soundshd') == 1) {
             musicIcon = this.game.add.sprite(1217, this.game.height / 2 - 600, "soundOn");
             musicIcon.angle = 90;
             musicIcon.inputEnabled = true;
@@ -282,12 +282,12 @@ Game.Level10_hard.prototype = {
             sprite.inputEnabled = false;
             t++;
 
-            if (localStorage.getItem('level10_hard') === null) {
+            if (localStorage.getItem('level10_hardhd') === null) {
                 //kein Highscore gespeicher
-                localStorage.setItem('level10_hard', counter);
-            } else if (localStorage.getItem('level10_hard') > counter) {
+                localStorage.setItem('level10_hardhd', counter);
+            } else if (localStorage.getItem('level10_hardhd') > counter) {
                 //neuer Highscore
-                localStorage.setItem('level10_hard', counter);
+                localStorage.setItem('level10_hardhd', counter);
             }
 		}
 		else
@@ -400,7 +400,7 @@ Game.Level10_hard.prototype = {
         var style2 = {font:"50px Arial", align:"center", fill:"#ff0000", fontWeight:"bold"};
 
         var doneText1 = this.game.add.text(0, 0, "Du hast das Level geschafft!\nDeine Zeit: " + counter + " Sekunden", style);
-        var doneText2 = this.game.add.text(0, 0, "Bestzeit: "+ localStorage.getItem('level10_hard') + " Sekunden", style2);
+        var doneText2 = this.game.add.text(0, 0, "Bestzeit: "+ localStorage.getItem('level10_hardhd') + " Sekunden", style2);
         
         //set time for trophies
         var goldtime = 18;
@@ -643,15 +643,15 @@ wrongwayMessageBox(w = 1050, h = 1512) {
     },
 
     muteMusic() {
-        if (localStorage.getItem('sounds') == 1) {
+        if (localStorage.getItem('soundshd') == 1) {
             musicIcon = this.game.add.sprite(1217, this.game.height / 2 - 600, "soundOff");
             musicIcon.angle = 90;
-            localStorage.setItem('sounds', 0);
+            localStorage.setItem('soundshd', 0);
             this.game.sound.mute = true;
         } else {
             musicIcon = this.game.add.sprite(1217, this.game.height / 2 - 600, "soundOn");
             musicIcon.angle = 90;
-            localStorage.setItem('sounds', 1);
+            localStorage.setItem('soundshd', 1);
             this.game.sound.mute = false;
         }
     },

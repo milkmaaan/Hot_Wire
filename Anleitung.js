@@ -35,7 +35,7 @@ Game.Anleitung.prototype = {
             clicksound.play();
             this.state.start('MainMenu');
 
-            if(localStorage.getItem('sounds') == 1) {
+            if(localStorage.getItem('soundshd') == 1) {
                 this.game.sound.mute = false;
             } else {
                 this.game.sound.mute = true;

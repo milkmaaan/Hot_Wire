@@ -67,18 +67,18 @@ Game.Highscores.prototype = {
         schwerIcon.angle = 90;
 
         //hard
-        if (localStorage.getItem('level1_hard') != null) {
+        if (localStorage.getItem('level1_hardhd') != null) {
 
-            highscore_schwer1 = this.game.add.text(855, 555, (localStorage.getItem('level1_hard') + " Sek."), style);
+            highscore_schwer1 = this.game.add.text(855, 555, (localStorage.getItem('level1_hardhd') + " Sek."), style);
             highscore_schwer1.angle = 90;
 
             //show trophy
-            if (localStorage.getItem('level1_hard') <= level1hardgold) {
+            if (localStorage.getItem('level1_hardhd') <= level1hardgold) {
                 //gold
                 trophyhard1 = game.add.sprite(788, 535,'trophygold');
                 trophyhard1.angle = 90;
             }
-            else if (localStorage.getItem('level1_hard') > level1hardgold && localStorage.getItem('level1_hard') <= level1hardsilber) {
+            else if (localStorage.getItem('level1_hardhd') > level1hardgold && localStorage.getItem('level1_hardhd') <= level1hardsilber) {
                 //silver
                 trophyhard1 = game.add.sprite(788, 535,'trophysilber');
                 trophyhard1.angle = 90;
@@ -95,18 +95,18 @@ Game.Highscores.prototype = {
             }, this);
         }
 
-        if (localStorage.getItem('level2_hard') != null) {
+        if (localStorage.getItem('level2_hardhd') != null) {
 
-            highscore_schwer2 = this.game.add.text(855, 773, (localStorage.getItem('level2_hard') + " Sek."), style);
+            highscore_schwer2 = this.game.add.text(855, 773, (localStorage.getItem('level2_hardhd') + " Sek."), style);
             highscore_schwer2.angle = 90;
 
             //show trophy
-            if (localStorage.getItem('level2_hard') <= level2hardgold) {
+            if (localStorage.getItem('level2_hardhd') <= level2hardgold) {
                 //gold
                 trophyhard2 = game.add.sprite(788, 753,'trophygold');
                 trophyhard2.angle = 90;
             }
-            else if (localStorage.getItem('level2_hard') > level2hardgold && localStorage.getItem('level2_hard') <= level2hardsilber) {
+            else if (localStorage.getItem('level2_hardhd') > level2hardgold && localStorage.getItem('level2_hardhd') <= level2hardsilber) {
                 //silver
                 trophyhard2 = game.add.sprite(788, 753,'trophysilber');
                 trophyhard2.angle = 90;
@@ -123,18 +123,18 @@ Game.Highscores.prototype = {
             }, this);
         }
 
-        if (localStorage.getItem('level3_hard') != null) {
+        if (localStorage.getItem('level3_hardhd') != null) {
 
-            highscore_schwer3 = this.game.add.text(855, 991, (localStorage.getItem('level3_hard') + " Sek."), style);
+            highscore_schwer3 = this.game.add.text(855, 991, (localStorage.getItem('level3_hardhd') + " Sek."), style);
             highscore_schwer3.angle = 90;
 
             //show trophy
-            if (localStorage.getItem('level3_hard') <= level3hardgold) {
+            if (localStorage.getItem('level3_hardhd') <= level3hardgold) {
                 //gold
                 trophyhard3 = game.add.sprite(788, 971,'trophygold');
                 trophyhard3.angle = 90;
             }
-            else if (localStorage.getItem('level3_hard') > level3hardgold && localStorage.getItem('level3_hard') <= level3hardsilber) {
+            else if (localStorage.getItem('level3_hardhd') > level3hardgold && localStorage.getItem('level3_hardhd') <= level3hardsilber) {
                 //silver
                 trophyhard3 = game.add.sprite(788, 971,'trophysilber');
                 trophyhard3.angle = 90;
@@ -151,18 +151,18 @@ Game.Highscores.prototype = {
             }, this);
         }
 
-        if (localStorage.getItem('level4_hard') != null) {
+        if (localStorage.getItem('level4_hardhd') != null) {
 
-            highscore_schwer4 = this.game.add.text(855, 1209, (localStorage.getItem('level4_hard') + " Sek."), style);
+            highscore_schwer4 = this.game.add.text(855, 1209, (localStorage.getItem('level4_hardhd') + " Sek."), style);
             highscore_schwer4.angle = 90;
 
             //show trophy
-            if (localStorage.getItem('level4_hard') <= level4hardgold) {
+            if (localStorage.getItem('level4_hardhd') <= level4hardgold) {
                 //gold
                 trophyhard4 = game.add.sprite(788, 1189,'trophygold');
                 trophyhard4.angle = 90;
             }
-            else if (localStorage.getItem('level4_hard') > level4hardgold && localStorage.getItem('level4_hard') <= level4hardsilber) {
+            else if (localStorage.getItem('level4_hardhd') > level4hardgold && localStorage.getItem('level4_hardhd') <= level4hardsilber) {
                 //silver
                 trophyhard4 = game.add.sprite(788, 1189,'trophysilber');
                 trophyhard4.angle = 90;
@@ -179,18 +179,18 @@ Game.Highscores.prototype = {
             }, this);
         }
 
-        if (localStorage.getItem('level5_hard') != null) {
+        if (localStorage.getItem('level5_hardhd') != null) {
 
-            highscore_schwer5 = this.game.add.text(576, 555, (localStorage.getItem('level5_hard') + " Sek."), style);
+            highscore_schwer5 = this.game.add.text(576, 555, (localStorage.getItem('level5_hardhd') + " Sek."), style);
             highscore_schwer5.angle = 90;
 
             //show trophy
-            if (localStorage.getItem('level5_hard') <= level5hardgold) {
+            if (localStorage.getItem('level5_hardhd') <= level5hardgold) {
                 //gold
                 trophyhard5 = game.add.sprite(510, 535,'trophygold');
                 trophyhard5.angle = 90;
             }
-            else if (localStorage.getItem('level5_hard') > level5hardgold && localStorage.getItem('level5_hard') <= level5hardsilber) {
+            else if (localStorage.getItem('level5_hardhd') > level5hardgold && localStorage.getItem('level5_hardhd') <= level5hardsilber) {
                 //silver
                 trophyhard5 = game.add.sprite(510, 535,'trophysilber');
                 trophyhard5.angle = 90;
@@ -207,18 +207,18 @@ Game.Highscores.prototype = {
             }, this);
         }
 
-        if (localStorage.getItem('level6_hard') != null) {
+        if (localStorage.getItem('level6_hardhd') != null) {
 
-            highscore_schwer6 = this.game.add.text(576, 773, (localStorage.getItem('level6_hard') + " Sek."), style);
+            highscore_schwer6 = this.game.add.text(576, 773, (localStorage.getItem('level6_hardhd') + " Sek."), style);
             highscore_schwer6.angle = 90;
 
             //show trophy
-            if (localStorage.getItem('level6_hard') <= level6hardgold) {
+            if (localStorage.getItem('level6_hardhd') <= level6hardgold) {
                 //gold
                 trophyhard6 = game.add.sprite(510, 753,'trophygold');
                 trophyhard6.angle = 90;
             }
-            else if (localStorage.getItem('level6_hard') > level6hardgold && localStorage.getItem('level6_hard') <= level6hardsilber) {
+            else if (localStorage.getItem('level6_hardhd') > level6hardgold && localStorage.getItem('level6_hardhd') <= level6hardsilber) {
                 //silver
                 trophyhard6 = game.add.sprite(510, 753,'trophysilber');
                 trophyhard6.angle = 90;
@@ -235,18 +235,18 @@ Game.Highscores.prototype = {
             }, this);
         }
 
-        if (localStorage.getItem('level7_hard') != null) {
+        if (localStorage.getItem('level7_hardhd') != null) {
 
-            highscore_schwer7 = this.game.add.text(576, 991, (localStorage.getItem('level7_hard') + " Sek."), style);
+            highscore_schwer7 = this.game.add.text(576, 991, (localStorage.getItem('level7_hardhd') + " Sek."), style);
             highscore_schwer7.angle = 90;
 
             //show trophy
-            if (localStorage.getItem('level7_hard') <= level7hardgold) {
+            if (localStorage.getItem('level7_hardhd') <= level7hardgold) {
                 //gold
                 trophyhard7 = game.add.sprite(510, 971,'trophygold');
                 trophyhard7.angle = 90;
             }
-            else if (localStorage.getItem('level7_hard') > level7hardgold && localStorage.getItem('level7_hard') <= level7hardsilber) {
+            else if (localStorage.getItem('level7_hardhd') > level7hardgold && localStorage.getItem('level7_hardhd') <= level7hardsilber) {
                 //silver
                 trophyhard7 = game.add.sprite(510, 971,'trophysilber');
                 trophyhard7.angle = 90;
@@ -263,18 +263,18 @@ Game.Highscores.prototype = {
             }, this);
         }
 
-        if (localStorage.getItem('level8_hard') != null) {
+        if (localStorage.getItem('level8_hardhd') != null) {
 
-            highscore_schwer8 = this.game.add.text(576, 1209, (localStorage.getItem('level8_hard') + " Sek."), style);
+            highscore_schwer8 = this.game.add.text(576, 1209, (localStorage.getItem('level8_hardhd') + " Sek."), style);
             highscore_schwer8.angle = 90;
 
             //show trophy
-            if (localStorage.getItem('level8_hard') <= level8hardgold) {
+            if (localStorage.getItem('level8_hardhd') <= level8hardgold) {
                 //gold
                 trophyhard8 = game.add.sprite(510, 1189,'trophygold');
                 trophyhard8.angle = 90;
             }
-            else if (localStorage.getItem('level8_hard') > level8hardgold && localStorage.getItem('level8_hard') <= level8hardsilber) {
+            else if (localStorage.getItem('level8_hardhd') > level8hardgold && localStorage.getItem('level8_hardhd') <= level8hardsilber) {
                 //silver
                 trophyhard8 = game.add.sprite(510, 1189,'trophysilber');
                 trophyhard8.angle = 90;
@@ -291,18 +291,18 @@ Game.Highscores.prototype = {
             }, this);
         }
 
-        if (localStorage.getItem('level9_hard') != null) {
+        if (localStorage.getItem('level9_hardhd') != null) {
 
-            highscore_schwer9 = this.game.add.text(297, 555, (localStorage.getItem('level9_hard') + " Sek."), style);
+            highscore_schwer9 = this.game.add.text(297, 555, (localStorage.getItem('level9_hardhd') + " Sek."), style);
             highscore_schwer9.angle = 90;
 
             //show trophy
-            if (localStorage.getItem('level9_hard') <= level9hardgold) {
+            if (localStorage.getItem('level9_hardhd') <= level9hardgold) {
                 //gold
                 trophyhard9 = game.add.sprite(232, 535,'trophygold');
                 trophyhard9.angle = 90;
             }
-            else if (localStorage.getItem('level9_hard') > level9hardgold && localStorage.getItem('level9_hard') <= level9hardsilber) {
+            else if (localStorage.getItem('level9_hardhd') > level9hardgold && localStorage.getItem('level9_hardhd') <= level9hardsilber) {
                 //silver
                 trophyhard9 = game.add.sprite(232, 535,'trophysilber');
                 trophyhard9.angle = 90;
@@ -319,18 +319,18 @@ Game.Highscores.prototype = {
             }, this);
         }
 
-        if (localStorage.getItem('level10_hard') != null) {
+        if (localStorage.getItem('level10_hardhd') != null) {
 
-            highscore_schwer10 = this.game.add.text(297, 773, (localStorage.getItem('level10_hard') + " Sek."), style);
+            highscore_schwer10 = this.game.add.text(297, 773, (localStorage.getItem('level10_hardhd') + " Sek."), style);
             highscore_schwer10.angle = 90;
 
             //show trophy
-            if (localStorage.getItem('level10_hard') <= level10hardgold) {
+            if (localStorage.getItem('level10_hardhd') <= level10hardgold) {
                 //gold
                 trophyhard10 = game.add.sprite(232, 753,'trophygold');
                 trophyhard10.angle = 90;
             }
-            else if (localStorage.getItem('level10_hard') > level10hardgold && localStorage.getItem('level10_hard') <= level10hardsilber) {
+            else if (localStorage.getItem('level10_hardhd') > level10hardgold && localStorage.getItem('level10_hardhd') <= level10hardsilber) {
                 //silver
                 trophyhard10 = game.add.sprite(232, 753,'trophysilber');
                 trophyhard10.angle = 90;
@@ -347,18 +347,18 @@ Game.Highscores.prototype = {
             }, this);
         }
 
-        if (localStorage.getItem('level11_hard') != null) {
+        if (localStorage.getItem('level11_hardhd') != null) {
 
-            highscore_schwer11 = this.game.add.text(297, 991, (localStorage.getItem('level11_hard') + " Sek."), style);
+            highscore_schwer11 = this.game.add.text(297, 991, (localStorage.getItem('level11_hardhd') + " Sek."), style);
             highscore_schwer11.angle = 90;
 
             //show trophy
-            if (localStorage.getItem('level11_hard') <= level11hardgold) {
+            if (localStorage.getItem('level11_hardhd') <= level11hardgold) {
                 //gold
                 trophyhard11 = game.add.sprite(232, 971,'trophygold');
                 trophyhard11.angle = 90;
             }
-            else if (localStorage.getItem('level11_hard') > level11hardgold && localStorage.getItem('level11_hard') <= level11hardsilber) {
+            else if (localStorage.getItem('level11_hardhd') > level11hardgold && localStorage.getItem('level11_hardhd') <= level11hardsilber) {
                 //silver
                 trophyhard11 = game.add.sprite(232, 971,'trophysilber');
                 trophyhard11.angle = 90;
@@ -375,18 +375,18 @@ Game.Highscores.prototype = {
             }, this);
         }
 
-        if (localStorage.getItem('level12_hard') != null) {
+        if (localStorage.getItem('level12_hardhd') != null) {
 
-            highscore_schwer12 = this.game.add.text(297, 1209, (localStorage.getItem('level12_hard') + " Sek."), style);
+            highscore_schwer12 = this.game.add.text(297, 1209, (localStorage.getItem('level12_hardhd') + " Sek."), style);
             highscore_schwer12.angle = 90;
 
             //show trophy
-            if (localStorage.getItem('level12_hard') <= level12hardgold) {
+            if (localStorage.getItem('level12_hardhd') <= level12hardgold) {
                 //gold
                 trophyhard12 = game.add.sprite(232, 1189,'trophygold');
                 trophyhard12.angle = 90;
             }
-            else if (localStorage.getItem('level12_hard') > level12hardgold && localStorage.getItem('level12_hard') <= level12hardsilber) {
+            else if (localStorage.getItem('level12_hardhd') > level12hardgold && localStorage.getItem('level12_hardhd') <= level12hardsilber) {
                 //silver
                 trophyhard12 = game.add.sprite(232, 1189,'trophysilber');
                 trophyhard12.angle = 90;

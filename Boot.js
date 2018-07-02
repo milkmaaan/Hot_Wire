@@ -8,7 +8,7 @@ Game.Boot.prototype = {
 		this.input.maxPointers = 1;
 		this.stage.disableVisibilityChange = true;
 		//set sound on
-		localStorage.setItem('sounds', 1);
+		localStorage.setItem('soundshd', 1);
 	},
 
 	preload:function(){

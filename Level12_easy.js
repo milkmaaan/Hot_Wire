@@ -31,7 +31,7 @@ Game.Level12_easy.prototype = {
         pauseIcon.inputEnabled = true;
         pauseIcon.events.onInputDown.add(this.pauseEvent, this);
 
-        if (localStorage.getItem('sounds') == 1) {
+        if (localStorage.getItem('soundshd') == 1) {
             musicIcon = this.game.add.sprite(1217, this.game.height / 2 - 600, "soundOn");
             musicIcon.angle = 90;
             musicIcon.inputEnabled = true;
@@ -284,7 +284,7 @@ Game.Level12_easy.prototype = {
         }
         else if (this.checkOverlap(sprite, ziel))
 		{
-            if(localStorage.getItem('finisheasy') == null){
+            if(localStorage.getItem('finisheasyhd') == null){
                 this.game.time.events.stop();
                 this.finishMessageBox(1512, 1050);
                 sprite.inputEnabled = false;
@@ -645,7 +645,7 @@ finishMessageBox(w = 1050, h = 1512) {
         this.msgBox.destroy();
         clicksound.play();
         winsound.stop();	
-        localStorage.setItem('finisheasy', 1);			
+        localStorage.setItem('finisheasyhd', 1);			
     },
     
 	loadNextLevelEvent() {
@@ -667,15 +667,15 @@ finishMessageBox(w = 1050, h = 1512) {
     },
 
     muteMusic() {
-        if (localStorage.getItem('sounds') == 1) {
+        if (localStorage.getItem('soundshd') == 1) {
             musicIcon = this.game.add.sprite(1217, this.game.height / 2 - 600, "soundOff");
             musicIcon.angle = 90;
-            localStorage.setItem('sounds', 0);
+            localStorage.setItem('soundshd', 0);
             this.game.sound.mute = true;
         } else {
             musicIcon = this.game.add.sprite(1217, this.game.height / 2 - 600, "soundOn");
             musicIcon.angle = 90;
-            localStorage.setItem('sounds', 1);
+            localStorage.setItem('soundshd', 1);
             this.game.sound.mute = false;
         }
     },
