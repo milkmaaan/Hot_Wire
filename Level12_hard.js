@@ -126,7 +126,7 @@ Game.Level12_hard.prototype = {
         ziel = game.add.sprite(this.game.width / 2 + 111, this.game.height - 59, 'ziel');
 		
         //add player
-        sprite = game.add.sprite(this.game.width / 2 - 59, 1300, 'player');
+        sprite = game.add.sprite(this.game.width / 2 - 59, 50, 'player');
 		sprite.inputEnabled = true;
 		sprite.input.enableDrag();
         sprite.anchor.set(0.5);

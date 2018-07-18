@@ -129,7 +129,7 @@ Game.Preloader.prototype = {
 		this.load.image("buttonMenuKlein", "assets/buttons/menu_klein.png");
 		this.load.image("buttonWeiterKlein", "assets/buttons/weiter_klein.png");
 		this.load.image("buttonNochmalKlein", "assets/buttons/nochmal_klein.png");
-
+		this.load.image("buttonSpielBeenden", "assets/buttons/button_spiel_beenden.png");
 
 		//sounds
 		this.game.load.audio("failsound", "assets/sounds/gameover.wav");
@@ -143,7 +143,7 @@ Game.Preloader.prototype = {
 	create:function(){
 		this.state.start('MainMenu');
 		//this.state.start('Level1_easy');
-		//this.state.start('Level1_hard');
+		//this.state.start('Level12_hard');
 		
 	}
 };

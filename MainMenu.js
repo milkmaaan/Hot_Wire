@@ -27,6 +27,12 @@ Game.MainMenu.prototype = {
             this.state.start('SelectMode');
         });
 
+        this.createButton(game,"",game.world.centerX-450,game.world.centerY, 473, 102, "buttonSpielBeenden",
+        function(){
+            clicksound.play();
+            window.open("http://www.timo-semmler.de/icare/games.php", "_self");
+        });
+
         this.createButton(game,"",game.world.centerX+450,game.world.centerY-800, 196, 245, "buttonAnleitung",
         function(){
             clicksound.play();
